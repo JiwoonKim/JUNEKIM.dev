@@ -23,8 +23,8 @@ const Layout = ({ children }) => (
         <Menu />
         <div
           style={{ 
-            margin: `3rem auto`, 
-            maxWidth: 600 
+            margin: `2.5rem auto`, 
+            maxWidth: 800 
           }}
         >
           {children}
