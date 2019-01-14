@@ -2,7 +2,7 @@
 =====
 
 ReactJS와 GatsbyJS를 이용하여 만든 정적 웹 사이트 블로그.
-[!Tyra Gatsby starter](https://github.com/madelyneriksen/gatsby-starter-tyra)을 바탕으로 build.
+![Tyra Gatsby starter](https://github.com/madelyneriksen/gatsby-starter-tyra)을 바탕으로 build.
 
 ## 블로그 커스터마이즈하기
 
@@ -12,7 +12,7 @@ ReactJS와 GatsbyJS를 이용하여 만든 정적 웹 사이트 블로그.
 ## 블로그 포스트 추가하기
 
 - 포스트는 마크업(Markup)을 사용하여 작성.
-- `content/posts/`에 아래 템플릿에 기반한 파일을 만들어 사용.
+- `content/posts/`에 아래와 같이 파일을 만들어 사용.
 
 ```markdown
 ---
@@ -29,11 +29,12 @@ metaDescription: "내 첫 포스트!"
 ---
 
 여기다 마크다운을 사용하여 포스트 작성하기! 
-Link to images in the `img` folder using this syntax:
+이미지는 다음과 같은 문법을 사용하여 링크를 걸기:
 
 ![Alt Text](./img/my-image.jpeg)
 ```
 
 - 이미지는 `content/`에 이미지 추가하여 사용.
 
-Images for posts are stored in `content/posts/img/`. Images in the frontmatter will be used as thumbnails for the articles, as well as in search results.
+- Images for posts are stored in `content/posts/img/`. 
+- Images in the frontmatter will be used as thumbnails for the articles, as well as in search results.
