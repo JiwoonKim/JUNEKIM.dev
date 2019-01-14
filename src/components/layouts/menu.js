@@ -1,23 +1,21 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const Menu = () => (
-    <div style={{
-        background: '#f4f4f4',
-        paddingTop: '10px'
-    }}>
+import { slide as Menu } from 'react-burger-menu'
+import './menu.css'
 
-        <ul style={{
-            listStyle: 'none',
-            display: 'flex',
-            justifyContent: 'space-evenly'
-        }}>
-            <li><Link to="/">HOME</Link></li>
-            <li><Link to="/about">ABOUT</Link></li>
-            <li><Link to="/postlist">CATEGORY</Link></li>
-        </ul>
+class ToggleMenu extends React.Component {
+    showSettings(event) {
+        event.preventDefault();
+    }
 
-    </div>
-)
+    render() {
+        return <Menu >
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/postlist">Category</Link>
+          </Menu>
+    }
+}
 
-export default Menu
+export default ToggleMenu;
