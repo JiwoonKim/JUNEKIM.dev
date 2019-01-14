@@ -8,15 +8,14 @@ const PostListPage = ({data}) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <h1>태그</h1>
+    <hr />
     <h1>최근 글</h1>
-    <p>post list</p>
     {data.allMarkdownRemark.edges.map(post => (
       <div key={post.node.id}>
-        <h3>{post.node.frontmatter.title}</h3>
-        <small>Posted on {post.node.frontmatter.date}</small>
-        <br />
-        <br />
-        <hr />
+        <Link to={post.node.frontmatter.path}>
+          <h4>{post.node.frontmatter.title}</h4>
+          <small>Posted on {post.node.frontmatter.date}</small>
+        </Link>
       </div>
     ))}
   </Layout>
@@ -24,19 +23,20 @@ const PostListPage = ({data}) => (
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
-  allMarkdownRemark{
-    edges{
-      node{
-        id
-        frontmatter{
-           title
-           date
-           tags
+    allMarkdownRemark{
+      edges{
+        node{
+          id
+          frontmatter{
+            path
+            title
+            date
+            tags
+          }
         }
       }
     }
   }
-}
 `
 
 export default PostListPage

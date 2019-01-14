@@ -1,11 +1,12 @@
 ---
-title: My first Blog post
-description: This post is related to the gatsbyjs
-date: '2018-12-2'
+path: "/post-one"
+date: '2018-01-14'
+title: 백준 알고리즘 - 입출력
+description: 백준 알고리즘 기초 - 입출력 정리
 image: ''
-tags: ['javascript','react','gatsby']
+tags: ['백준','알고리즘','C++']
 ---
 
-## First blog
+## 백준 알고리즘 입출력 정리
 
-hahahahahah
+입출력 내용
