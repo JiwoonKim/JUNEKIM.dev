@@ -15,9 +15,10 @@ export default function Template({ data }) {
           <Link to="/">Go Back</Link>
           <hr />
           <h1>{post.frontmatter.title}</h1>
-          <h4>
-            Posted by {post.frontmatter.author} on {post.frontmatter.date}
-          </h4>
+          <span style={{ color: `lightgrey` }}>{post.frontmatter.date}</span> | 
+          <span>{post.frontmatter.tags}</span>
+          <br />
+          <br />
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
       </Layout>
