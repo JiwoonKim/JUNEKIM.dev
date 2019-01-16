@@ -1,7 +1,7 @@
 ---
 path: "/algorithm/baekjoon-basic/algorithm-and-io"
 date: '2018-01-14'
-title: [1-1] 시간복잡도와 입출력
+title: "[1-1] 시간복잡도와 입출력"
 description: 백준 알고리즘 기초 정리
 image: ''
 tags: ['백준','알고리즘','C++']
