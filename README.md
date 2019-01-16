@@ -25,3 +25,8 @@ tags: ['태그1','태그2','태그3'] // 원하는 태그 달아주기
 ```
 ## 이미지 추가
 - 
+
+## 블로그 업데이트
+- 블로그의 설정 또는 포스트 등에 대한 추가, 수정, 삭제 등의 변화가 있다면 
+- 1. 먼저 `master branch로 push`한 후
+- 2. `npm run deploy`하여 gh-page branch에 public 폴더의 contents를 업데이트.
