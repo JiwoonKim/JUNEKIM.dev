@@ -1,4 +1,4 @@
-# baby dragon devlog
+# 개발 공부 로그
 공부한 내용을 정리하는 블로그
 
 ## Developed With
