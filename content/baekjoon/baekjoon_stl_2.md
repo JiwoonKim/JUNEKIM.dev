@@ -54,7 +54,7 @@ for (auto x : a) {...}
 ```c++
 cout << [](int x, int y) {
     return x + y; 
-}(1, 2) ;
+}(1, 2);
 ```
 ```c++
 auto sum = [](int x, int y) {
