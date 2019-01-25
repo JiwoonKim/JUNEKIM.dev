@@ -28,5 +28,13 @@ namespace B{
 // 같은 이름이지만 다른 함수가 실행된다
 ```
 
-### class
-- 
+### 클래스 (class)
+- 객체 지향 프로그래밍 (Object-oriented programming)을 가능하도록 해주는 기본적인 단위.
+- 클래스를 통해 틀을 정의하고 이 틀을 바탕으로 각 인스턴스인 객체를 만들어 사용한다.
+- 기본적으로, private 영역에서 멤버(member)를 정의하고 public 영역에서 메소드(method)를 정의한다. 
+- 추상화(abstraction), 캡슐화(encapsulation), 정보 은닉(data hiding)
+- 클래스를 활용해 인스턴스(instance)를 만든다.
+
+#### 상속 (inheritance)
+
+#### 다항성 (polymorphism)
