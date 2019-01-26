@@ -1,5 +1,5 @@
 ---
-path: "/cheatsheets/cpp"
+path: "/cheatkeys/cpp"
 date: '2018-01-14'
 title: "[C++] 치트키 정리"
 description: C++ 치트키 정리

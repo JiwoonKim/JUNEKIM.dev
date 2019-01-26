@@ -226,4 +226,3 @@ catch (const char* str) {               // catch를 통해 던져진 예외를 �
     cout << str;
 }
 ```
-- 
