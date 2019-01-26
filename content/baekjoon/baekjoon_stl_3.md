@@ -46,6 +46,7 @@ tie(x, y, z) = t1;      // tie를 통해 각 index에 접근
 tie(x, y, ignore) = t1  // tie에 ignore를 함께 사용하여 특정 index에 접근
 ```
 
+
 #### Vector
 - 길이를 변경할 수 있는 배열이다.
 - 선언: 길이를 직접 지정하거나, 특정 값으로 초기화하는 옵션도 가능하다.
@@ -113,8 +114,13 @@ l.sort([](int &u, int &v) {    // compare 함수를 사용하여 절대값 기�
 });
 l.reverse();            // 현재 상태를 거꾸로 뒤집는다
 ```
+
 #### Set
+- 
+
 #### Map
+- 
+
 #### Stack
 #### Queue
 #### Priority Queue

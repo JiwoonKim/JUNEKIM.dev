@@ -34,7 +34,8 @@ while (scanf("%d %d\n", &a, &b) == 2)  { ... } // 입력 개수가 일치할 경
 while (cin >> a >> b)  { ... } // 입력 개수가 주어질 때까지 진행
 ```
 ```c++
-while (getline(cin, a)) { ... } // 마찬가지 with getline
+string s;
+while (getline(cin, s)) { ... } // 마찬가지 with getline
 ```
 
 #### Input 형태
@@ -44,5 +45,5 @@ scanf("%1d", &x); // 12345에서 1자리씩 읽기
 scanf("%10s", s); // 문자열 길이 10씩 읽기
 ```
 
-### 자료형
-- 숫자가 너무 커지는 경우, int보다는 long이나 long long이 적절하다 (런타임에러 피하기)
+### 런타임 에러 프로토콜
+- 자료형: 숫자가 너무 커지는 경우, int보다는 long이나 long long이 적절하다 (런타임에러 피하기)
