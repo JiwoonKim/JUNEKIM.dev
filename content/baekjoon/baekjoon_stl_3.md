@@ -46,6 +46,8 @@ tie(x, y, z) = t1;      // tie를 통해 각 index에 접근
 tie(x, y, ignore) = t1  // tie에 ignore를 함께 사용하여 특정 index에 접근
 ```
 
+### 순차 컨테이너 (Sequential Container)
+- 순서가 있는 컨테이너로 vector, list, deque가 존재한다. 
 
 #### Vector
 - 길이를 변경할 수 있는 배열이다.
@@ -115,11 +117,27 @@ l.sort([](int &u, int &v) {    // compare 함수를 사용하여 절대값 기�
 l.reverse();            // 현재 상태를 거꾸로 뒤집는다
 ```
 
+### 연관 컨테이너 (Associative Containers)
+- 순서가 없으나 Binary Search Tree로 구현이 되어 있는 자료구조들로 set과 map이 존재한다.
+
 #### Set
-- 
+- 집합을 나타낼 때 효과적인 자료구조이다. 
+- 선언: <set> 헤더파일을 포함시킨 후에 set<자료> s를 통해 선언한다.
+- 삽입: `insert`를 이용한다.
+    - 내부가 정렬된 상태로 유지되며 중복된 값은 허용되지 않는다.
+- 크기: `size`를 이용한다.
+```c++
+#include <set>
+set<int> s;
+set<int> s = {1, 1, 2, 3} // 중복된 값을 인정하지 않기에 {1, 2, 3}으로만 구성
+s.insert(4);
+```
 
 #### Map
 - 
+```c++
+
+```
 
 #### Stack
 #### Queue
