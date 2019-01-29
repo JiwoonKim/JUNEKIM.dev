@@ -14,7 +14,7 @@ tags: ['백준', 'C', '강의노트']
 | char | %c |   |
 | string| %s |   |
 | int | %d | 16진수는 %x , 8진수는 %o 사용|
-|long long | %lld|   |
+| long long | %lld|   |
 | float | %f |   |
 | double | %lf |   |
 - cf) %i는 10진수, 8진수, 16진수 등 int가 표현된 형태를 따름.

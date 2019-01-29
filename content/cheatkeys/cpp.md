@@ -11,7 +11,7 @@ tags: ['C++', '치트키']
 
 ### 입출력
 - 기본적으로 `scanf`와 `printf`이 가장 빠르다.
-- `ios_base::sync_with_stdio(false);`를 `cin`과 `cout` 사용 전에 명시하면 비슷한 빠르기로 실행가능.
+- `ios_base::sync_with_stdio(false);`를 `cin`과 `cout` 사용 전에 명시하면 비슷한 빠르기로 실행가능 (하지만 그래도 scanf와 printf가 더 빠름)
 - 입력:
     - `getline(cin, s)`를 사용하면 '\n' 기준으로 한 줄씩 읽을 수 있다 (단, cin 사용 후에 getline을 사용하려면 `cin.ignore`로 먼저 istream에 있는 '\n'을 flush해주어야 함) 
 - 출력:

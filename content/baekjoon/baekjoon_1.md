@@ -28,7 +28,7 @@ tags: ['백준','알고리즘','C++', '강의노트']
 
 
 ### C++ 입출력
-- `ios_base::sync_with_stdio(false);`를 cin, cout 전에 사용하면 scanf, printf와 같은 속도로 입출력을 실행할 수 있다.
+- `ios_base::sync_with_stdio(false);`를 cin, cout 전에 사용하면 scanf, printf와 비슷한 속도로 입출력을 실행할 수 있다.
 - 입력: 
     - `scanf("%d\n", &x)`: \n을 자동으로 읽지 않으니 따로 명시하는 것 주의!
     - `cin >> s`
