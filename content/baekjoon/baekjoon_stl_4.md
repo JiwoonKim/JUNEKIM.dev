@@ -53,7 +53,7 @@ str = "21 Guns";
 num = stoi(str); // 21 (숫자가 있는 부분까지만 읽어 바꿈)
 ```
 
-#### 문자열 재조합
+#### 문자열 파싱 (string parsing)
 - `istringstream`을 사용하여 string을 표준 입출력처럼 사용할 수가 있다.
 ```c++
 #include <string>
