@@ -4,7 +4,7 @@ date: '2018-01-28'
 title: "[백준] 프로그래밍 대회에서 사용하는 C++ STL string"
 description: 백준 알고리즘 강의 STL 5강 정리
 image: ''
-tags: ['백준', 'C++', '강의노트']
+tags: ['백준', 'C++', '강의노트', 'STL']
 ---
 > C와 C++의 문자열 정리.
 
@@ -13,10 +13,10 @@ tags: ['백준', 'C++', '강의노트']
 - C++ 문자열: `string s`로 선언을 한다.
 ```c++
 char c[] = "c string"; // C 문자열
-        
 string s = "c++ string"; // C++ 문자열 (NULL전까지만 할당)
 string s = c;            // C 문자열을 담을 수도 있음 
-string s(5, '#');        // "#####"
+string s(5, '#');        
+// "#####"
 ```
 #### 문자열 입출력
 - `cin`와 `cout`, 그리고 `getline(cin, str)`사용이 편리하다.
