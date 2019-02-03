@@ -22,15 +22,43 @@ tags: ['백준', '알고리즘', 'C++', '강의노트', '다이나믹 프로그�
 - 작은 문제: N-1번째 피보나치 수 구하기, N-2번째 피보나치 수 구하기
 - 문제의 정답을 작은 문제의 정답을 합하는 것으로 구할 수 있다.
 ```cpp
-int memo[100];
+int d[100];
 int fibonacci(int n) {
     if (n <= 1) {
         return n;
     }
     else {
-        // memoriazation을 통해 
-        memo[n] = fibonacci(n-1) + fibonacci(n-2);
-        return memo[n];
+        // memoriazation을 하여 다음에 사용할 수 있게 하기
+        if (d[n] > 0) { // 이 부분의 값들이 단순히 양수라서 
+            return d[n];
+        }
+        d[n] = fibonacci(n-1) + fibonacci(n-2);
+        return d[n];
     }
 }
 ```
+
+### 다이나믹을 푸는 두 가지 방법 (구현의 차이일 뿐)
+1. Top-down: 큰 문제를 점점 작게 만들어나가면서 푸는 방법 
+    - 시간복잡도: 메모에 채워야하는 칸의 수 x 1칸을 채우는 복잡도
+    - 예) 위의 피보나치 수 구하는 방식 (재귀함수 사용): O(N)
+2. Bottom-up: 작은 문제부터 하나도 빠짐없이 차례대로 푸는 방법
+    - 시간복잡도: 
+    - 예) for문으로 피보나치 수 구하는 방식: O(N)
+
+```cpp
+int d[100];
+int fibonacci(int n) {
+    d[0] = 0;
+    d[1] = 1;
+    for (int i = 2; i <= n; i++) {
+        d[i] = d[i-1] + d[i-2];
+    }
+    return d[n];
+}
+```
+- top-down 또는 bottom-up 편한대로 사용하면 된다!
+
+### 문제 풀이 전략
+1. d[n] 구하는 방식으로 문제를 이해하기
+2. d[i]에 무엇이 들어가야 하는지 파악하여 식 적기
