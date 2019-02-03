@@ -7,21 +7,24 @@ image: ''
 tags: ['css', '치트키']
 ---
 > CSS 언어로 프로그래밍할 때 필요한 치트키들을 정리.
+
 > 개인적인 자주 사용하는 문법을 반영하여 만든 치트키입니다.
 
 ### CSS
 - Cascading Style Sheet의 약자
 - HTML 태그에 스타일 입히기
 
-#### CSS 적용 방법
-- 3가지 방법 (점점 코드를 분리해나가면서 불필요한 중복을 피하고 수정 시 더 효율적임)
-1. `In-line style`
-  - html 태그 내에 일일히 스타일 명시
+### CSS 적용 방법
+점점 코드를 분리해나가면서 불필요한 중복을 피하고 수정 시 더 효율적임
+
+
+#### 1. In-line style
+- html 태그 내에 일일히 스타일 명시
 ```html
 <p style=”color: red;”></p> <!-- 텍스트의 글씨를 빨간색으로-->
 ```
 
-2. `Internal style sheet`
+#### 2. Internal style sheet
   - <head> 부분에 따로 <style></style> 태그를 만들어서 그 안에 모든 스타일 명시
   - body에서는 페이지 구조만 정의하고 스타일은 명시하지 않는 방법
   - 여러 tag에 같은 스타일을 적용하기도 편함 (다른 방법: class와 id를 적용하기)
@@ -31,11 +34,12 @@ tags: ['css', '치트키']
     h1, h2, p { color: red; }
 </style>
 ```
-3. `External style sheet`
-  - 따로 아예 파일을 빼놓기
-  - 다른 html 파일에서 같은 스타일 사용할 때 사용하기 용이
-  - 스타일을 수정할 때 html 파일은 건드리지 않고 css 파일만 바꾸면 되어 편함
+
+#### 3. External style sheet
+  - 따로 아예 파일을 빼서 스타일을 정의하는 방법
   - 사용시 적용하는 html 파일의 <head> 부분에 link 추가하고 css
+  - 수정할 때 html 파일은 건드리지 않고 css 파일만 바꾸면 되어 편함
+  - 다른 html 파일에서 같은 스타일 적용도 가능
 ```html
 <link rel=”stylesheet” type=”text/css” href=”{스타일파일}.css”>
 ```
@@ -44,9 +48,9 @@ tags: ['css', '치트키']
 h1, h2, p { color: red; }
 ```
 
-#### Selector 사용하기
-- 일부분만 스타일 적용하기 (위의 2번 또는 3번 방법과 같이 사용)
-- Selector란 특정 tag를 가르키는 것들: tag자체, #id, .class, etc.
+### Selector 사용하기
+일부분만 스타일 적용하기 (위의 2번 또는 3번 방법과 같이 사용)
+Selector란 특정 tag를 가르키는 것들: tag자체, #id, .class, etc.
 
 1. `#Id`: 오직 한 특정 태그에만 적용하면서 동일한 종류의 태그에는 적용하지 않는 방법
 ```html
@@ -58,21 +62,19 @@ h1, h2, p { color: red; }
 ```
 
 2.	`.Class`: 한 번에 특정한 여러 태그에만 스타일을 적용하는 방법
-  - 태그의 종류와 상관없이 class로 정의된 모든 태그에 스타일 적용가능
+    - 태그의 종류와 상관없이 class로 정의된 모든 태그에 스타일 적용가능
 ```html
 <!-- <p> 태그가 세 개 중 두 개와 <div> 태그에도 스타일 적용하고 싶을 때 -->
-<p class=” red_color”>
-<div class=” red_color”>
+<p class=”red_color myfont”>
+<div class=”red_color”>
 ```
 ```css
 .red_color { color: red; }
 ```
-  - 한 태그 내에 여러 class가 정의될 수 있음
-ex) <p class=” red_color  myfont”>
 
-- ※ Specificity: 태그 자체, id, class 등 여러 스타일이 정의된 상태에서 스타일이 충돌 시 우선순위가 높은 selector가 최종적으로 적용됨. 즉, 더 자세히 정의된 selector의 스타일이 적용됨.
+※ Specificity: 태그 자체, id, class 등 여러 스타일이 정의된 상태에서 스타일이 충돌 시 우선순위가 높은 selector가 최종적으로 적용됨. 즉, 더 자세히 정의된 selector의 스타일이 적용됨.
 
-#### 자주 사용되는 스타일 종류 (+예시)
+### 자주 사용되는 스타일 종류 (+예시)
 - fonts
 ```css
 { font-family: Arial, Helvectica, sans-serif; }
@@ -159,48 +161,48 @@ a:link { color: red; }
 { opacity: 1.0; }, { opacity: 0.5; }
 ```
 
-#### Grouping
+### Grouping
 - 페이지의 section을 나눌 때 <div>나 <span> 태그를 사용하여 태그들을 group으로 묶음.
   - DOM 구조를 만드는 것. 묶으면 구조의 hierarchy에 따라 스타일들이 적용됨.
-```css
+```html
 <div>
-    <p> abcd </p>
-	<p> efgh</p>
+  <p> abcd </p>
+  <p> efgh</p>
 </div> 
 ```
 
-#### Display mode 
+### Display mode 
 - block vs. inline vs. inline-block
 
-##### Block
+#### Block
 - 한 element 당 한 row 전체를 사용함 (그 다음 element는 줄 바꿔서 사용)
 - 크기가 있음.
 - Default가 block display인 태그:
-<div>  <h{숫자}>  <p>  <ul>  <ol>  <li>  <table>  <hr>  
-<form>  <header>  <footer>  <main>  <section>  <nav>
+`<div>`, `<h{숫자}>`, `<p>`, `<ul>`, `<ol>`, `<li>`, `<table>`, `<hr>`,  
+`<form>`, `<header>`, `<footer>`, `<main>`, `<section>`, `<nav>`
 
 - Display를 따로 지정하는 방법: { display: block; }
 
-##### Inline
+#### Inline
 - 여러 element가 row를 나눠 사용 (줄 바꿈 없음; 그 다음 element 바로 옆에 붙음)
 - 선을 삐죽 튀어나와 다른 element와 overlap 될 수도 있는 문제.
 - 자체적인 크기 지정 불가능: 자신이 포함하고 있는 내용물의 크기에 자동으로 맞춤.
 - Default가 inline display인 태그:
-<a>  <img>  <button>  <input>  <span>  <textarea>  <br>
+`<a>`, `<img>`, `<button>`, `<input>`, `<span>`, `<textarea>`, `<br>`
 - Display를 따로 지정하는 방법: { display: inline; }
 
-#####Inline-block
+#### Inline-block
 - 한 줄 (block) 내에 inline element들을 나열할 수 있는 방법
 - 한 줄에 한 element만 표현할 수 있는 block display와 element들이 위아래로 overlap될 수 있는 inline display의 문제점들을 보완한 방법
 - 따로 지정 by: { display: inline-block; }
 - ※ 개인적으로 block과 inline-block가 유용한 것 같음.
 
-#### Layout ( Grid 또는 Flexbox 사용하기 )
+### Layout ( Grid 또는 Flexbox 사용하기 )
 - Layout을 더 간편하게 만들 수 있는 방법들.
 - Grid: (그리드 가든 게임으로 연습하기) https://cssgridgarden.com/#ko 
 - Flexbox: (개구리 게임으로 연습하기) https://flexboxfroggy.com/#ko 
 
-#### Responsive Design 만들기 (@media query 사용하기)
+### Responsive Design 만들기 (@media query 사용하기)
 - 웹 페이지의 폭의 길이에 따라 화면의 배치가 반응하여 알아서 조정
 - 브라우저 width에 따라 style이 달라지게끔 만들기
 - @media를 사용하여 길이 condition을 적용하여 조정
@@ -214,7 +216,7 @@ div { width: 300px; }
 */
 ```
 
-#### 그외: CSS transform, transition, perspective, animation, position 등
+### 그외: CSS transform, transition, perspective, animation, position 등
 
 #### 참고자료
 https://opentutorials.org/course/3086 (생활코딩 css)

@@ -12,11 +12,12 @@ tags: ['백준', 'C++', '강의노트']
 - `getline(cin, s)`: 한 줄 읽기
 
 #### 실수 출력
+- setprecision과 fixed을 사용한다.
 ```cpp
 #include <iomanip>
 #include <iostream>
 using namespace std;
-
+// 소수점 출력하기
 double f = 3.14159;
 cout << setprecision(5) << f ; // 총 5글자 반올림하여 출력: 3.1416
 cout << fixed << setprecision(5) << f; // 소수점 5자리까지 출력: 3.1415

@@ -46,6 +46,7 @@ int(*fp(char* a))(int, int) {
     return add;
 }
 ```
+
 #### 전처리기
 - `#include`: 외부파일을 라이브러리로 포함시킨다.
 ```c

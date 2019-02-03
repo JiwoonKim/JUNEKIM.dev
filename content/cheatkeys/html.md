@@ -18,23 +18,23 @@ tags: ['html', '치트키']
 - `<head></head>`: content 보다는 data 및 특정정보를 담는다
   - `<title></title>`
   - `<meta charset=”utf-8”>`  
-  - css style 정의: <style></style>  
-  - javascript 정의: <script></script>
-  - 따로 파일을 링크 걸 때 (예: external style sheet 사용): <link></link>
+  - css style 정의: `<style></style>`  
+  - javascript 정의: `<script></script>`
+  - 따로 파일을 링크 걸 때 (예: external style sheet 사용): `<link></link>`
 
 - `<body></body>`: 페이지의 content를 담는다
-  - 텍스트: <h{숫자}></h{숫자}>  <p></p>  <div></div>  <span></span>  <br> 
-  - 그룹화: <div></div>  <span></span>
-  - 도표: <table></table>  <th></th>  <tr></tr>  <td></td> 
-  - 리스트: <ul></ul>  <ol></ol>  <li></li>  
-  - 이미지: <img src=”{이미지.파일}”>
-  - 하이퍼링크: <a ref=”{링크}”>  
-  - 그외: <form></form>  <input></input>  <button></button>  
+  - 텍스트: `<h{숫자}></h{숫자}>`, `<p></p>`, `<div></div>`, `<span></span>`, `<br>` 
+  - 그룹화: `<div></div>`, `<span></span>`
+  - 도표: `<table></table>`, `<th></th>`, `<tr></tr>`, `<td></td>` 
+  - 리스트: `<ul></ul>`, `<ol></ol>`, `<li></li>`  
+  - 이미지: `<img src=”{이미지.파일}”>`
+  - 하이퍼링크: `<a ref=”{링크}”>`  
+  - 그외: `<form></form>`, `<input></input>`, `<button></button>`  
 
 #### 의미론적 HTML (semantic HTML)
 - HTML5 새 tag: https://www.w3schools.com/html/html5_new_elements.asp 
 - 이 부분 포함해서 전체 다시 정리
 
 #### 참고자료
-https://opentutorials.org/course/3084 (생활코딩 html)
-https://www.w3schools.com/html/ (w3schools html)
+- https://opentutorials.org/course/3084 (생활코딩 html)
+- https://www.w3schools.com/html/ (w3schools html)

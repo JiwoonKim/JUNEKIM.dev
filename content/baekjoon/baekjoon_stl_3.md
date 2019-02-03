@@ -7,9 +7,10 @@ image: ''
 tags: ['백준', 'C++', '강의노트']
 ---
 > Standard Template Library (STL)는 알고리즘, 컨테이너, 함수, 이터레이터로 이루어져 있으며 그 중 컨테이너를 정리.
-> 순차 컨테이너: vector, list, deque
-> 연관 컨테이너: set, map
-> 컨테이너 어댑터: stack, queue, priority_queuq
+
+- [순차 컨테이너](#순차 컨테이너 (Sequential Container)): vector, list, deque
+- [연관 컨테이너](#연관 컨테이너 (Associative Containers)): set, map
+- [컨테이너 어댑터](컨테이너 어댑터 (Container Adaptors)): stack, queue, priority_queuq
 
 ### 컨테이너 (Container)
 - Pair, Tuple, Vector, Deque, List, Set, Map, Stack, Queue, Priority Queue, Bitset 등이 존재한다.
@@ -21,16 +22,15 @@ tags: ['백준', 'C++', '강의노트']
 - 접근: `pair.first`와 `pair.second` 또는 `tie`를 이용한다.
 ```cpp
 #include <vector>
-
+// 선언
 pair<int,int> p; // 선언이 따로 없으면 0과 0으로 초기화된다
 p = make_pair(1, 2); // make_pair를 통해 선언과 값 설정
 p = pair<int,int>(1, 2); // 생성자를 통해 선언과 값 설정
 pair<int,int> p(1, 2); // 
-
+// 접근
 p.first = 0;
 p.second = 0;
 tie(x, y) = p;
-
 tie(a, b) = make_pair(b, a) // 이러한 문법을 통해 변수에 들어가는 순서를 바꾸는 것도 가능
 ```
 
@@ -41,7 +41,7 @@ tie(a, b) = make_pair(b, a) // 이러한 문법을 통해 변수에 들어가는
 ```cpp
 #include <tuple>
 tuple<int, int, int> t1 = make_tuple(1, 2, 3);
-
+// 접근
 cout << get<0>(t1);     // get을 이용하여 접근
 tie(x, y, z) = t1;      // tie를 통해 각 index에 접근
 tie(x, y, ignore) = t1  // tie에 ignore를 함께 사용하여 특정 index에 접근
@@ -59,20 +59,22 @@ tie(x, y, ignore) = t1  // tie에 ignore를 함께 사용하여 특정 index에 
 - 크기: `size`를 통해 벡터의 크기를 알아보고, `empty`를 통해 벡터가 비었는지 안 비었는지를 알아본다.
 ```cpp
 #include <vector>
+// 선언
 vector<int> v;         // 길이가 0인 벡터 선언
 vector<int> v(10);     // 길이가 10인 벡터 선언
 vector<int> v(15, 1);  // 길이가 15이고 1로 모두 초기화된 벡터 선언
 vector<int> v = {1, 2} // list를 이용한 벡터 선언
-
+// 삽입
 v.insert(인덱스, 값) // 인덱스에 값 추가
 v.insert(인덱스, 개수, 값) // 인덱스에 값 개수만큼 추가
 vv.insert(인덱스, v.begin(), v.end()) // 인덱스에 v 벡터의 값들을 모두 삽입
-
+// 삭제
 v.erase(v.begin() + 인덱스) // 인덱스 + 1 자리 제거
 v.erase(v.begin() + 인덱스, v.begin() + 끝자리) // 인덱스 + 1부터 끝자리 바로 전까지 제거
 ```
 - 순회: size와 [] 또는 iterator와 begin & end의 조합을 이용한 다양한 방식이 있다.
 ```cpp
+// 순회접근
 for (int i = 0; i < v.size(); i++) {
     v[i];
 }
@@ -80,7 +82,7 @@ for (int &x : v) {
     x; // 인덱스 접근
     *x; // 값 접근
 }
-
+// 이터레이터 사용하여 순회 접근
 for(vector<int>::iterator it = v.begin(); it != v.end(); it++) {
     cout << *it;
 }
@@ -110,11 +112,11 @@ a.push_back( {3, 4} );
 - 정렬: list 자체에 내장된 `sort`함수를 사용해야 한다 (<algorithm>에 포함된 sort 함수를 사용하지 못함)
 ```cpp
 list<int> l = {2, 1, -1, 0, -2}; // 리스트 선언과 초기화
-
+// 정렬
 l.sort();               // 오름차순으로 정렬 {-2, -1, 0, 1, 2}
 l.sort(greater<int>()); // 알고리즘 greater를 사용하여 내림차순으로 정렬
 l.sort([](int &u, int &v) {    // compare 함수를 사용하여 절대값 기준으로 정렬
-    return abs(u) < abs(v);
+        return abs(u) < abs(v);
 });
 l.reverse();            // 현재 상태를 거꾸로 뒤집는다
 ```
@@ -136,23 +138,25 @@ l.reverse();            // 현재 상태를 거꾸로 뒤집는다
 #include <set>
 set<int> s;
 set<int> s = {1, 1, 2, 3} // 중복된 값을 인정하지 않기에 {1, 2, 3}으로만 구성
-
-pair<set<int>::iterator, bool> result = s.insert(4); // 정렬된 형태를 유지하며 삽입, 삽입위치와 성공여부를 return
+// 삽입 (정렬된 상태를 유지한다)
+pair<set<int>::iterator, bool> result = s.insert(4); // 삽입위치와 성공여부를 return
 s.erase(s.begin()); // 첫 번째 인덱스 삭제
-
+// 탐색
 auto it = s.find(5); // 없기 때문에 end()를 호출
+// 일일히 find()를 하기보다는 수가 있는지 없는지 (1 or 0) 확인이 효율적
 for (int i = 1; i < 9; i++) {
-    s.count(i);      // 일일히 find()를 하고 end()값과 비교하기보다는 수가 있는지 없는지 (1 or 0) 확인하는 방법이 효율적
+    s.count(i);      
 }
-
-for (auto it = s.begin(); it != s.end(); it++) { // it++ 연산이 O(logN) 걸리므로 총 O(NlogN)이 걸림
+// 순회접근 (it++ 연산이 O(logN)으로 총 O(NlogN)이 걸림)
+for (auto it = s.begin(); it != s.end(); it++) { 
     *it;
 }
 for (auto x : s) {
     x;
 }
 ```
-##### Multiset
+
+#### Multiset
 - set과 완벽하게 동일하나 같은 수 여러 개를 저장할 수 있는 점이 추가된 자료구조이다.
 
 #### Map
@@ -166,10 +170,10 @@ for (auto x : s) {
 ```cpp
 map<int, int> m;
 map<int, string> m = { {1, "슬라임"}, {2, "드래곤"}};
-
+// 접근
 cout << m[1]; // "슬라임"이 출력
               // 존재하지 않는 경우 0을 반환한다 (트리구조이기에 O(logN)이 걸림)
-
+// 순회 접근
 for (int i = 1; i <= 10; i++) {
     if (m[i]) {...} // 없는 경우에는 key값을 생성하는 문제가 생김 
 }
@@ -219,14 +223,14 @@ s.pop(); // 제일 앞의 데이터를 삭제
 - 삽입 & 삭제: `push`와 `pop`을 이용한다.
 - 접근: 큐이지만 `top`을 사용하여 가장 큰 수가 위로 올라온다.
 - 최대힙: 내림차순으로 정렬되어 삽입이 되고, 큰 순서대로 나온다.
-- 최소힙: `priority_queue<자료형, vector<자료형>, greater<자료형>>`으로 선언하면 된다.
+- 최소힙: `priority_queue<자료형, vector<자료형>, greater<자료형>`으로 선언하면 된다.
 ```cpp
 vector<int> v = {1, 3, 2};
-
+// 벡터에 있는 원소 우선순위 큐에도 삽입 (최대힙)
 priority_queue<int> q1;
-for (int x : v) { q1.push(x); } // 우선순위 큐에는 {3, 2, 1} 큰 순서대로 정렬이 됨 (최대힙)
-
-priority_queue<int, vector<int>, greater<int>> q2; // 작은 순서대로 정렬이 됨 (최소힙)
+for (int x : v) { q1.push(x); } // {3, 2, 1} 큰 순서대로 정렬이 됨
+// 작은 순서대로 정렬이 됨 (최소힙)
+priority_queue<int, vector<int>, greater<int>> q2; 
 for (int x : v) { q2.push(x); }
 ```
 
@@ -241,7 +245,7 @@ for (int x : v) { q2.push(x); }
 bitset<8> b1 ; // 0, 0, 0, 0, 0, 0, 0, 0
 bitset<10> b2(88); // 0, 0, 0, 1, 0, 1, 1, 0, 0, 0
 bitset<8> b3("10110";) // 0, 0, 0, 1, 0, 1, 1, 0
-
+// bit 연산
 cout << (b1 & b2); // AND 연산
 cout << (b1 | b2); // OR 연산
 cout << (b1 ^ b2); // XOR 연산
