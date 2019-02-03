@@ -55,11 +55,8 @@ int(*fp(char* a))(int, int) {
 - `#define`: 상수나 함수를 매크로로 정의한다.
 ```c
 #define PI 3.14159265
-
 #define ll longlong
-
 #define POW(x) (x * x)
-
 ```
 - `#ifndef`과 `#endif`: 헤더파일의 내용이 중복되지 않도록 조건부 컴파일을 실행한다.
 ```c
