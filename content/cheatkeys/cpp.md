@@ -1,7 +1,7 @@
 ---
 path: "/cheatkeys/cpp"
 date: '2018-01-14'
-title: "[C++] 치트키 정리"
+title: "C++ 치트키"
 description: C++ 치트키 정리
 image: ''
 tags: ['C++', '치트키']

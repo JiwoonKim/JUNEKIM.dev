@@ -1,7 +1,7 @@
 ---
 path: "/cheatkeys/css"
 date: '2018-01-31'
-title: "[CSS] 치트키 정리"
+title: "CSS 치트키"
 description: CSS 치트키 정리
 image: ''
 tags: ['css', '치트키']
@@ -47,22 +47,30 @@ h1, h2, p { color: red; }
 #### Selector 사용하기
 - 일부분만 스타일 적용하기 (위의 2번 또는 3번 방법과 같이 사용)
 - Selector란 특정 tag를 가르키는 것들: tag자체, #id, .class, etc.
-- `#Id`: 오직 한 특정 태그에만 적용하면서 동일한 종류의 태그에는 적용하지 않는 방법
-  - ex) <p> 태그가 세 개나 있는데 어떤 특정한 <p> 태그에만 스타일 적용하고 싶을 때
-해당 태그에다가 <p id=”red_color”> id를 정의한 후, 
-stylesheet에서는 #red_color { color: red; } 정의하면 (#중요!)
-id가 있는 태그에만 스타일 적용됨.
 
-	.Class: 한 번에 특정한 여러 태그에만 스타일을 적용하는 방법
-	태그의 종류와 상관없이 class로 정의된 모든 태그에 스타일 적용가능
-   		  ex) <p> 태그가 세 개 중 두 개와 <div> 태그에도 스타일 적용하고 싶을 때
-태그들에다가 <p class=” red_color”> 또는 <div class=” red_color”> 한 후,
-stylesheet에서는 . red_color { color: red; } 정의하면 (.중요!)
-class가 있는 태그에만 스타일 적용됨.
-	한 태그 내에 여러 class가 정의될 수 있음
+1. `#Id`: 오직 한 특정 태그에만 적용하면서 동일한 종류의 태그에는 적용하지 않는 방법
+```html
+<!-- <p> 태그가 세 개 중 특정한 <p> 태그에만 스타일 적용하고 싶을 때 -->
+<p id=”red_color”>
+```
+```css
+#red_color { color: red; }
+```
+
+2.	`.Class`: 한 번에 특정한 여러 태그에만 스타일을 적용하는 방법
+  - 태그의 종류와 상관없이 class로 정의된 모든 태그에 스타일 적용가능
+```html
+<!-- <p> 태그가 세 개 중 두 개와 <div> 태그에도 스타일 적용하고 싶을 때 -->
+<p class=” red_color”>
+<div class=” red_color”>
+```
+```css
+.red_color { color: red; }
+```
+  - 한 태그 내에 여러 class가 정의될 수 있음
 ex) <p class=” red_color  myfont”>
 
-※ Specificity: 태그 자체, id, class 등 여러 스타일이 정의된 상태에서 스타일이 충돌 시 우선순위가 높은 selector가 최종적으로 적용됨. 즉, 더 자세히 정의된 selector의 스타일이 적용됨.
+- ※ Specificity: 태그 자체, id, class 등 여러 스타일이 정의된 상태에서 스타일이 충돌 시 우선순위가 높은 selector가 최종적으로 적용됨. 즉, 더 자세히 정의된 selector의 스타일이 적용됨.
 
 #### 자주 사용되는 스타일 종류 (+예시)
 - fonts
@@ -86,7 +94,8 @@ ex) <p class=” red_color  myfont”>
 ```
 - background color
 ```css
-{ background-color: alice-blue; }, { background-color: #845EC2; }, { background-color: rgba(250, 235, 215, 0.5);
+{ background-color: alice-blue; }, { background-color: #845EC2; }, 
+{ background-color: rgba(250, 235, 215, 0.5);
 ```
 - background image
 ```css
@@ -102,7 +111,8 @@ ex) <p class=” red_color  myfont”>
 ```
 - max-width
 ```css
-{ max-width: 500px; } /* 해당 tag내의 내용물이 width보다 더 길면 height가 자동으로 늘어남 */
+{ max-width: 500px; } 
+/* 해당 tag내의 내용물이 width보다 더 길면 height가 자동으로 늘어남 */
 ```
 - box
 ```css
@@ -168,6 +178,7 @@ a:link { color: red; }
 - Default가 block display인 태그:
 <div>  <h{숫자}>  <p>  <ul>  <ol>  <li>  <table>  <hr>  
 <form>  <header>  <footer>  <main>  <section>  <nav>
+
 - Display를 따로 지정하는 방법: { display: block; }
 
 ##### Inline
