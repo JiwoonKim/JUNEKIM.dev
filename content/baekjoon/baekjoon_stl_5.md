@@ -15,7 +15,7 @@ tags: ['백준', 'C++', '강의노트', 'STL']
 - `count(begin, end, value)`: [begin, end)에 포함되어 있는 원소 중에서 value의 개수를 찾는다.
 - `count_if(begin, end, p)`: [begin, end)에 포함되어 있는 원소 중에서 조건 p에 해당하는 것에 개수를 찾는다.
 - 시간복잡도: O(N)
-```c++
+```cpp
 #include <vector>
 #include <algorithm>
 vector<int> v = {1, 2, 2, 3, 4, 5};
@@ -33,6 +33,6 @@ cout << "짝수의 개수: " << even;
 - `find_if(begin, end, value)`: [begin, end)에 포함되어 있는 원소 중에서 조건 p에 해당하는 것의 이터레이터를 반환한다.
 - 찾는 것이 없는 경우에는 end를 반환한다.
 - 시간복잡도: O(N)
-```c++
+```cpp
 
 ```

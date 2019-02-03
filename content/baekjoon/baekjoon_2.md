@@ -12,7 +12,7 @@ tags: ['백준','알고리즘','C++', '강의노트', '자료구조']
 - C++의 STL의 stack을 사용하여 push, pop, top, empty, size 연산을 사용.
 - 직접 구현할 경우, stack을 표현할 배열과 크기를 기록할 size 변수 사용.
 - 가장 가까운 원소를 O(1)만에 찾을 수 있는 장점 (push & pop)을 적극적으로 활용해서 문제를 풀 것!
-```c++
+```cpp
 stack[size] = x; size++;     // push 연산
 stack[size - 1] = 0; size--; // pop 연산
 ```
@@ -26,7 +26,7 @@ stack[size - 1] = 0; size--; // pop 연산
 - back보다 front가 더 중요.
 - 양쪽에서 넣을 수 있다
 - 직접 구현할 경우, queue을 표현할 배열과 시작 인덱스를 기록할 begin 변수와 마지막 인덱스를 기록할 end를 사용.
-```c++
+```cpp
 queue[end] = x; end++;          // push 연산
 queue[begin] = 0; begin += 1;   // pop 연산
 size = end - begin;             // size 연산 
@@ -41,7 +41,7 @@ empty = (begin == end)? 1 : 0;  // empty 연산
 ### 문자열 (String)
 - ASCII 코드를 사용하여 저장함.
 - 단어 길이가 필요 시, 아래와 같이 len값을 따로 저장하여 사용해야 O(n) 실행 가능 (매번 루프에서 조건체크 시 strlen 호출하면 O(n^2)가 걸린다)
-```c++
+```cpp
 int len = strlen(s);
 for (int i = 0; i < len; i ++)
 ```

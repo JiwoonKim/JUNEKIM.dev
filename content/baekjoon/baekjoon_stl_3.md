@@ -19,7 +19,7 @@ tags: ['백준', 'C++', '강의노트']
 - Pair는 <utility> 헤더파일에 정의되지만, <algorithm>이나 <vector> 헤더파일에도 포함되어 있기 때문에 일반적으로 이 둘을 사용한다.
 - 선언: `make_pair` 또는 생성자를 이용한다.
 - 접근: `pair.first`와 `pair.second` 또는 `tie`를 이용한다.
-```c++
+```cpp
 #include <vector>
 
 pair<int,int> p; // 선언이 따로 없으면 0과 0으로 초기화된다
@@ -38,7 +38,7 @@ tie(a, b) = make_pair(b, a) // 이러한 문법을 통해 변수에 들어가는
 - 둘 이상의 여러 개의 자료를 묶어 사용할 수 있다.
 - 선언: `make_tuple`을 이용한다.
 - 접근: `get<>` 또는 `tie`를 이용한다.
-```c++
+```cpp
 #include <tuple>
 tuple<int, int, int> t1 = make_tuple(1, 2, 3);
 
@@ -57,7 +57,7 @@ tie(x, y, ignore) = t1  // tie에 ignore를 함께 사용하여 특정 index에 
 - 삽입: `push_back`을 통해 가장 뒤쪽에 삽입, `insert`를 통해 원하는 자리에 원소를 삽입한다.
 - 삭제: `pop_back`을 통해 가장 뒤쪽을 삭제, `erase`를 통해 원하는 자리의 원소를 제거, `clear`로 모든 원소 삭제한다.
 - 크기: `size`를 통해 벡터의 크기를 알아보고, `empty`를 통해 벡터가 비었는지 안 비었는지를 알아본다.
-```c++
+```cpp
 #include <vector>
 vector<int> v;         // 길이가 0인 벡터 선언
 vector<int> v(10);     // 길이가 10인 벡터 선언
@@ -72,7 +72,7 @@ v.erase(v.begin() + 인덱스) // 인덱스 + 1 자리 제거
 v.erase(v.begin() + 인덱스, v.begin() + 끝자리) // 인덱스 + 1부터 끝자리 바로 전까지 제거
 ```
 - 순회: size와 [] 또는 iterator와 begin & end의 조합을 이용한 다양한 방식이 있다.
-```c++
+```cpp
 for (int i = 0; i < v.size(); i++) {
     v[i];
 }
@@ -90,7 +90,7 @@ for (auto it = v.begin(); it != v.end(); it++) {
 }
 ```
 - cf) vector가 pair 자료로 이루어지는 경우, emplace_back을 push_back과 동일하게 사용할 수 있다.
-```c++
+```cpp
 #include <vector>
 vector<pair<int,int>> a;
 a.emplace_back(1, 2);
@@ -108,7 +108,7 @@ a.push_back( {3, 4} );
 - 사실 프로그래밍 대회에서는 잘 사용하지 않는 컨테이너에 해당된다.
 - 삽입 & 삭제: `insert`와 `erase`를 사용하여 O(1)로 연산이 가능하다.
 - 정렬: list 자체에 내장된 `sort`함수를 사용해야 한다 (<algorithm>에 포함된 sort 함수를 사용하지 못함)
-```c++
+```cpp
 list<int> l = {2, 1, -1, 0, -2}; // 리스트 선언과 초기화
 
 l.sort();               // 오름차순으로 정렬 {-2, -1, 0, 1, 2}
@@ -132,7 +132,7 @@ l.reverse();            // 현재 상태를 거꾸로 뒤집는다
 - 크기: `size`를 이용한다.
 - 탐색: `find`를 사용하여 set에 어떤 값이 들어가있는지 없는지, 있다면 위치가 어디인지를 알 수 있고, `count`를 이용하는 방법도 있다.
 - 순회: iterator와 begin & end 조합을 사용한다 (순서가 없기 때문에 begin() + i와 같은 표현은 불가능)
-```c++
+```cpp
 #include <set>
 set<int> s;
 set<int> s = {1, 1, 2, 3} // 중복된 값을 인정하지 않기에 {1, 2, 3}으로만 구성
@@ -163,7 +163,7 @@ for (auto x : s) {
 - 삭제: 
 - 크기: `size`를 이용한다.
 - 탐색: 자료가 있는지 없는지 확인하는 경우에는 [key값]보다는 `count`를 사용하는 방법이 더 알맞다.
-```c++
+```cpp
 map<int, int> m;
 map<int, string> m = { {1, "슬라임"}, {2, "드래곤"}};
 
@@ -188,7 +188,7 @@ for (int i = 1; i <= 10; i++) {
 - 접근: `top`을 사용하여 O(1)로 연산이 가능하다.
 - 삽입 & 삭제: `push`와 `pop`를 사용하여 O(1)로 연산이 가능하다.
 - 크기: `size`를 통해 크기를 알아보고, `empty`를 통해 스택이 비었는지 안 비었는지를 알아본다.
-```c++
+```cpp
 #include <stack>
 stack<int> s;
 s.push(1); s.push(2); s.push(3); // 차례대로 쌓이게끔 삽입
@@ -204,7 +204,7 @@ s.pop(); // 제일 위의 데이터를 삭제
 - 접근: `front`와 `back`을 사용하여 O(1)로 연산이 가능하다.
 - 삽입 & 삭제: `push`와 `pop`를 사용하여 O(1)로 연산이 가능하다.
 - 크기: `size`를 통해 크기를 알아보고, `empty`를 통해 스택이 비었는지 안 비었는지를 알아본다.
-```c++
+```cpp
 #include <queue>
 queue<int> q;
 q.push(1); q.push(2); q.push(3); // 차례대로 쌓이게끔 삽입
@@ -220,7 +220,7 @@ s.pop(); // 제일 앞의 데이터를 삭제
 - 접근: 큐이지만 `top`을 사용하여 가장 큰 수가 위로 올라온다.
 - 최대힙: 내림차순으로 정렬되어 삽입이 되고, 큰 순서대로 나온다.
 - 최소힙: `priority_queue<자료형, vector<자료형>, greater<자료형>>`으로 선언하면 된다.
-```c++
+```cpp
 vector<int> v = {1, 3, 2};
 
 priority_queue<int> q1;
@@ -237,7 +237,7 @@ for (int x : v) { q2.push(x); }
 - 값 확인: `all`로 모든 bit가 1인지를 확인하고, `any`로 1인 bit가 하나라도 존재하는지를 확인하고, `none`으로 모든 bit가 0인지를 확인할 수 있다.
 - 개수 세기: `count`로 1인 bit의 개수를 센다.
 - bit 연산: `&`, `|`, `^`, `~`, `<<`, `>>`의 연산이 가능하다.
-```c++
+```cpp
 bitset<8> b1 ; // 0, 0, 0, 0, 0, 0, 0, 0
 bitset<10> b2(88); // 0, 0, 0, 1, 0, 1, 1, 0, 0, 0
 bitset<8> b3("10110";) // 0, 0, 0, 1, 0, 1, 1, 0
