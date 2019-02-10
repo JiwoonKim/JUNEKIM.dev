@@ -9,7 +9,7 @@ tags: ['백준', 'C++', '강의노트', 'STL']
 > Standard Template Library (STL)는 알고리즘, 컨테이너, 함수, 이터레이터로 이루어져 있으며 그 중 알고리즘을 정리.
 
 ### 알고리즘 (Algorithm)
-- Count, Find, Fill, Reverse, Rotate, Swap, Unique, Sort, Stable_sort, Binary_search, Lower_bound, Upper_bound, Min, Max, Min_element, Max_element, Next_permutation
+- [Count](#count), Find, Fill, Reverse, Rotate, Swap, Unique, Sort, Stable_sort, Binary_search, Lower_bound, Upper_bound, Min, Max, Min_element, Max_element, Next_permutation
 
 #### Count
 - `count(begin, end, value)`: [begin, end)에 포함되어 있는 원소 중에서 value의 개수를 찾는다.
@@ -186,28 +186,62 @@ vector<int> v = {1, 2, 3, 3, 4};
 auto l = lower_bound(v.begin(), v.end(), 3); // 3자리 (2 인덱스)
 auto r = upper_bound(v.begin(), v.end(), 3); // 4 자리 (4 인덱스)
 int n = l - r; // 4 - 2 = 2개
-equal_range(v.begin(), v.end(), 3); // 
+// 한 번에 lower_bound와 upper_bound를 구해 pair 형태로 반환
+equal_range(v.begin(), v.end(), 3);
 ```
 
 #### Min & Max
-- `min(a, b)`
+- `min(a, b)` & `max(a, b)`: 각 각 두 수 중 최소값, 최대값을 반환한다. (두 수만 비교)
+- `min(initializer_list)` & `max(initializer_list)`:
 ```cpp
 #include <vector>
 #include <algorithm>
-
-``
+int a = 10, b = 20, c = 30;
+// 최소값과 최대값 구하기 (두 수 비교)
+cout << min(a, b) << max(a, b);
+// list 형태로 입력값을 주어 최소값과 최대값 구하기
+cout << min({a, b, c}) << max({a, b, c});
+```
+- compare 함수를 정의하여 사용할 수도 있다.
+```cpp
+string u = "long string";
+string v = "short";
+// 문자열의 최소값은 첫번째 값의 ascii 값 (사전순)으로 찾음
+cout << min(u, v); // 
+// 비교 함수를 정의하여 사용하면, 길이 비교하여 최소값 찾을 수 있음
+cout << min(u, v [](string u, string v) {
+    return u.size() < v.size();
+})
+```
+- `minmax(a, b)`, `minmax(a, b, cmp)`, `minmax(initializer_list)`, `minmax(initializer_list, cmp)` 사용을 통해 동시에 min과 max값을 구할 수 있다.
 
 #### Min_element & Max_element
-- 
+- `min_element(begin, end)`: [begin, end)에서 최소값의 _이터레이터_ 를 구한다.
+- `max_element(begin, end)`: [begin, end)에서 최대값의 _이터레이터_ 를 구한다.
+- `min_element(begin, end, cmp)` & `max_element(begin, end, cmp)` : [begin, end)에서 비교함수를 기준으로 최소값과 최대값의 _이터레이터_ 를 구한다.
 ```cpp
 #include <vector>
 #include <algorithm>
+vector<int> v = {4, 2, 1, 5, 3};
+// 이터레이터를 구하면 값과 인덱스 모두 사용할 수 있음
+auto it = min_element(v.begin(), v.end());
+cout << *it << "의 위치는 " << it - v.begin(); 
+auto it = max_element(v.begin(), v.end());
+cout << *it << "의 위치는 " << it - v.begin(); 
+```
+- 마찬가지로 `minmax_element(begin, end)`와 `minmax_element(begin, end, cmp)`를 사용하여 최소와 최대값의 이터레이터를 구할 수 있다.
 
-``
 #### Next_permutation
-- 
+- `next_permutation(begin, end)`: [begin, end)를 순열이라고 생각했을 때, 사전 순으로 다음에 오는 순열을 만든다.
+- `prev_permutation(begin, end)`: 사전 순으로 그 전에 오는 순열을 만든다.
+- `next_permutation(begin, end, cmp)`와 `prev_permutation(begin, end, cmp)`를 통해 비교 함수를 정의하여 사용할 수도 있다.
 ```cpp
 #include <vector>
 #include <algorithm>
-
+vector<int> v = {1, 2, 3};
+// false를 리턴하는 마지막 순열까지 출력
+while (next_permutation(v.begin(), v.end())) {
+    for (int x: v) cout << x;
+}
+// 차례대로 출력: 132, 213, 231, 312, 321
 ``
