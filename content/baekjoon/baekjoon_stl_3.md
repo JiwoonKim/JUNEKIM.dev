@@ -108,7 +108,7 @@ a.push_back( {3, 4} );
 #### List 
 - 이중 연결 리스트(Doubly-linked list)를 의미한다.
 - 사실 프로그래밍 대회에서는 잘 사용하지 않는 컨테이너에 해당된다.
-- 삽입 & 삭제: `insert`와 `erase`를 사용하여 O(1)로 연산이 가능하다.
+- 삽입 & 삭제: `push_back`과 `insert`, 그리고 `erase`를 사용하여 O(1)로 연산이 가능하다.
 - 정렬: list 자체에 내장된 `sort`함수를 사용해야 한다 (<algorithm>에 포함된 sort 함수를 사용하지 못함)
 ```cpp
 list<int> l = {2, 1, -1, 0, -2}; // 리스트 선언과 초기화

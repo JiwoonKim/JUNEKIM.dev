@@ -73,7 +73,7 @@ reverse(v.begin(), v.end()); // {5, 4, 3, 2, 1}으로 바뀜
 ```
 
 #### Rotate
-- `rotate(begin, mid, end)`: [begin, end)를 min를 기준으로 왼쪽으로 회전시킨다 (a.k.a shift: _mid 값이 begin에 들어가고_, 순서대로 end-1 값까지 들어간다)
+- `rotate(begin, mid, end)`: [begin, end)를 mid를 기준으로 왼쪽으로 회전시킨다 (a.k.a shift: _mid 값이 begin에 들어가고_, 순서대로 end-1 값까지 들어간다)
 - 시간복잡도: O(N)
 ```cpp
 #include <vector>
@@ -166,6 +166,7 @@ for (int i = 1; i <= 5; i++) {
 #### Lower_bound & Upper_bound
 - `lower_bound(begin, end, value)`: [begin, end) 범위 내에서 value 보다 작지 않은 첫번째 이터레이터를 반환한다.
 - `upper_bound(begin, end, value)`: [begin, end) 범위 내에서 value 보다 큰 첫번째 이터레이터를 반환한다.
+- _정렬_ 된 상태에서 사용해야 효과가 있다!
 - binary_search를 통해 구현이 되어 있어, 어떤 값의 _위치_ 를 알고 싶을 때 사용한다.
 ```cpp
 #include <vector>
