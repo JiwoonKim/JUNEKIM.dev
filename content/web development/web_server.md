@@ -8,6 +8,9 @@ tags: ['웹개발', '백엔드', '서버']
 ---
 > 웹 서버가 어떻게 구성이 되고, 웹 프레임워크와 어떠한 관계를 가지는 지, 그리고 백엔드란 무엇인지에 대한 정리.
 
+### 프론트와 백엔드
+https://frontendmasters.com/books/front-end-handbook/2018/what-is-a-FD.html 에서 이미지를 참조할 것!
+
 ### 웹 서버 (Web Server)
 __Web server__ is a stack of software that works altogether to respond to web requests
 - 웹 서버의 구성
