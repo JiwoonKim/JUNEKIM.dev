@@ -10,4 +10,5 @@ tags: ['개발', '토픽']
 
 - net neutrality
 - personal information
+- ??? (copyright and copyleft)
 - sex trafficking

@@ -9,6 +9,8 @@ tags: ['웹개발', '프론트엔드']
 > how the internet and web work
 
 [reference](https://frontendmasters.com/books/front-end-handbook/2018/learning/internet.html)
+[best explanation for how Internet works - protocol-wise](http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm)
+[great video explanation of how Internet works - hardware to ](https://www.khanacademy.org/partner-content/code-org/internet-works)
 
 ### Internet
 - a global system of interconnected computer networks that use the Internet protocol suite (TCP/IP) to link billions of devices worldwide.
@@ -23,9 +25,11 @@ tags: ['웹개발', '프론트엔드']
     - telphony
     - peer-to-peer networks for file-sharing
 - it is the backbone of the Web; __the technical infrastructure that makes the Web possible__
+- most importantly, it is more than merely hardware but actually a __design philosophy__!
 
-#### how the internet looks like
-- the internet is not a cloud, it is a __wire__!
+#### how the internet looks like (hardware-wise)
+- the internet is not something merely in the clouds, it is actually constructed of  __wire__!
+    - using 
 - __network__
     - for computers to communicate, they must be linked, either physically (with a Ethernet cable) or wirelessly (WiFi or Bluetooth systems)
     - since connecting every computer directly to every other computer makes connections complicated, __routers__ are used instead as center system to act as a traffic signaler; it makes sure the message is sent to th right destination computer
@@ -36,7 +40,7 @@ tags: ['웹개발', '프론트엔드']
         - _ISP_: a company that mangages some special routers which are all linked together and can also access other ISPs' routers. 
         - _modem_: turns the information from out network into information manageable by the telephone infrastructure and vice-versa
 
-#### how the Internet works
+#### how the Internet works (protocol-wise)
 - as the Internet is a global network of computers, each computer connected to the Internet must have a unique address; following the Internet Protocol, _each computer has an IP address_ (ex. IP4 or IP6)
 - ways of being connected to the Internet: ISP ? LAN ? DHCP ?
 - data is transmitted from one computer to another computer over the phone line via a protocol stack (ex. __TCP/IP protocol__)
