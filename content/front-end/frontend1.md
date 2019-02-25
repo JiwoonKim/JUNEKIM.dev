@@ -47,13 +47,13 @@ tags: ['웹개발', '프론트엔드']
     - protocol stack [description and image](http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm)
 - cf) client and server relationships
     - the client is a computer indirectly connected to the internet via a ISP (Internet Service Provider)
-    - the server is a computer directly connected to the internet
+    - the server is a computer directly connected to the internet (w/o ISP)
 
 ### Web (World Wide Web)
 - 
 
 #### how the web works
-- 
+- [demonstration](https://www.eventedmind.com/classes/how-the-web-works-7f40254c/introduction-how-the-web-works-fd9f78b1)
 - __client and server relationship__
     1. when web address is typed into browser, client computer asks DNS server for the real address (the IP address)
         - url = uniform resource locator; the address of a specific website or file on the Internet
