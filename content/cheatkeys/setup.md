@@ -37,6 +37,9 @@ tags: ['setup', '매뉴얼']
 3. vs code에서 c/c++ extension install/reload 하기
 4. cpp 파일 컴파일 시 `g++ -o name name.cpp` 사용하기
 
+### Node 설치
+https://nodejs.org/en/
+
 ### Python 설치
 1. add python to PATH 체크
 2. customize install location에서 C:\Python\Python37 설정

@@ -50,7 +50,7 @@ tags: ['웹개발', '프론트엔드']
     - the server is a computer directly connected to the internet (w/o ISP)
 
 ### Web (World Wide Web)
-- 
+- a way of accessing information resources, specifically component files to constitute web pages, via the Internet
 
 #### how the web works
 - [demonstration](https://www.eventedmind.com/classes/how-the-web-works-7f40254c/introduction-how-the-web-works-fd9f78b1)

@@ -10,6 +10,39 @@ tags: ['CS50', 'Web50', '강의노트', '웹개발', 'flask']
 
 ### Python
 
+#### basic syntax
+- indentation is important!
+```python
+print("Hello, world!")
+```
+```python
+name = input()
+print(f"Hello, {name}!)
+```
+```python
+if x > 0
+    print("+")
+elif x < 0
+    print("-")
+else
+    print("0")
+```
+
+#### data types
+- python = weakly typed language
+- `int`, `float`, `str`, `bool`, `None`
+
+#### data structures
+- sequences
+    - string (sequence of char): `name = "Alice"` (name[0]으로 접근 가능)
+    - tuple: `coord = (10.0, 20.0)` (coord[0]으로 접근 가능)
+    - list: `names = ["Alice", "Bob", "Charlie"]` (names[2]로 접근 가능)
+    - _if index out of range, IndexError is raised as an exception_
+- sets = unordered colection of unique elements
+    - cannot be indexed; 
+
+
+
 ### HTTP
 
 ### Flask
