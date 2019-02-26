@@ -3,7 +3,7 @@
 
 ## Developed With
 - ReactJS (client-side)
-- GatsbyJS (Server-side rendering)
+- [GatsbyJS](https://github.com/gatsbyjs/gatsby) (Server-side rendering)
 - PrismJS (code block syntax highlighting)
 
 ## 블로그 포스트 작성
