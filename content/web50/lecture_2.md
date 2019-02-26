@@ -39,7 +39,7 @@ else
     - list: `names = ["Alice", "Bob", "Charlie"]` (names[2]로 접근 가능)
     - _if index out of range, IndexError is raised as an exception_
 - sets = unordered colection of unique elements
-    - cannot be indexed; 
+    - cannot be indexed; 중복 item은 하나로 저장됨.
 
 
 
