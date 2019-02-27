@@ -24,6 +24,7 @@ tags: ['웹개발', '프론트엔드']
     - __TLD (Top-level Domain)__: provides the most generic information; tells users the general purpose of the service behind the domain name
         - ex. .com, .org, .net, .us, .kr
     - __label__: what follow the TLD (located on the right sides of the TLD). A domain can have many labels
+- domain name is a part of the url
 
 #### Name Server (DNS server)
 - a computer designated to __translate domain names into IP addresses__

@@ -27,6 +27,7 @@ tags: ['웹개발', '프론트엔드']
     - `.com/`: top-level domain
     - `search/`: a subpage, the path to a particular file or webpage of the domain
 - [infographic](https://www.helloitsliam.com/2014/12/20/how-the-internet-works-infographic/)
+- [detailed url explanation](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL)
 
 #### render web page
 - after receiving resources, the browser interprets and displays the resource according to the specifications by the W3C (World Wide Web Consortium) organization
