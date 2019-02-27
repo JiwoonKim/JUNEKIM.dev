@@ -12,8 +12,10 @@ tags: ['웹개발', '에듀']
 
 #### 디자인
 - color scheme like 
-    - [this](http://www.dontfeartheinternet.com/): 회색 배경 사용
+    - [this](http://www.dontfeartheinternet.com/): 회색 배경 사용 (on website page; skin)
     - [this](http://www.evolutionoftheweb.com/): color bands -> to represent each technology...html, css ..?
+    - [리아유 video](https://www.youtube.com/watch?v=ptBZdXl4P6c): each chapter(language) has specific color background throughout the series
+
 
 #### 섹션
 - 교육 섹션을 전반적으로, basic과 후드 아래 (under the hood)으로 나누어서 basic은 생활코딩처럼 기본적으로 알면 좋을 것들, 후드 아래는 좀 더 자세히 들어가는 nerdy bits으로 추가적으로 설명하는 부분으로.
