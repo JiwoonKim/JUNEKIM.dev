@@ -27,9 +27,15 @@ __Web server__ is a stack of software that works altogether to respond to web re
 - how is the process of serving (how CGI works and frameworks work on a web server)?
 
 ### [dynamic web page](https://en.wikipedia.org/wiki/Dynamic_web_page) 
-- server-side dynamic web page: web page whose construction is controlled by an __application server__ (??) processing server-side scripts (??)
+- server-side dynamic web page: web page whose construction is controlled by an __web application server__ (??) processing server-side scripts (??)
     - in server-side scripting, parameters determine how the assembly of every new web page proceeds
 - A program running on a web server (server-side scripting) is used to generate the web content on various web pages, manage user sessions, and control workflow. Server responses may be determined by such conditions as data in a posted HTML form, parameters in the URL, the type of browser being used, the passage of time, or a database or server state. 
-- Such web pages are often created with the help of server-side languages such as ASP, ColdFusion, Go, JavaScript, Perl, PHP, Ruby, Python, WebDNA and other languages, by a Support server that can run on the same hardware as the web server. These server-side languages often use the Common Gateway Interface (CGI) to produce dynamic web pages. Two notable exceptions are ASP.NET, and JSP, which reuse CGI concepts in their APIs but actually dispatch all web requests into a shared virtual machine
+- Such web pages are often created with the help of server-side languages such as ASP, ColdFusion, Go, JavaScript, Perl, PHP, Ruby, Python, WebDNA and other languages, by a Support server that can run on the same hardware as the web server. These server-side languages often use the _Common Gateway Interface (CGI)_ to produce dynamic web pages. Two notable exceptions are ASP.NET, and JSP, which reuse CGI concepts in their APIs but actually dispatch all web requests into a shared virtual machine
 - Using server-side scripting to change the supplied page source between pages, adjusting the sequence or reload of the web pages or web content supplied to the browser. Server responses may be determined by such conditions as data in a posted HTML form, parameters in the URL, the type of browser being used, the passage of time, or a database or server state
 - Using client-side scripting to change interface behaviors within a specific web page
+
+### web application server
+- [설명](https://dodo4513.github.io/2017/06/18/server_architecture/)
+- [완전 좋은 설명](https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html)
+- [구조 설명](https://www.nginx.com/resources/glossary/application-server-vs-web-server/)
+- [웹 서버와 was를 연결하는 wsgi](http://dveamer.github.io/backend/PythonWAS.html)
