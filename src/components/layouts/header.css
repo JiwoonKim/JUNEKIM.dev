@@ -6,3 +6,18 @@ header {
     margin-bottom: 1.45rem;
     font-family: 'NanumSquareRound', sans-serif;
 }
+
+.title {
+    padding: 1.45rem 1.0875rem;
+}
+@media (min-width: 870px) {
+    .title { 
+        width: 800px;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 869px) {
+    .title {
+        margin-left: 70px;
+    }
+}

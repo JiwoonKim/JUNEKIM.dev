@@ -10,13 +10,7 @@ const Header = ({ siteTitle }) => (
     <nav>
       <ToggleMenu />
     </nav>
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 800,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
+    <div className="title">
       <h1
         style={{
           margin: 0,
