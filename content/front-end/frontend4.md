@@ -16,6 +16,8 @@ tags: ['웹개발', '프론트엔드']
 
 [nitty gritty on HTTP](https://code.tutsplus.com/series/http-succinctly--net-33683)
 
+[CORS explanation](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+
 ### HTTP (Hypertext Transfer Protocol)
 - an application protocol for distributed, collaborative, hypermedia information systems.
 - it was designed for communication between web browsers and web servers; it is the foundation of data communication for the World Wide Web
@@ -53,6 +55,10 @@ tags: ['웹개발', '프론트엔드']
 
 ### CORS (Cross-origin resource sharing)
 - a mechanism that allows restricted resources (ex. fonts) on a web page to be requested from another domain outside the domain from which resource originated
+- at default, browsers restrict cross-origin HTTP requests initialed from within scripts (ex. XMLHttpRequest and Fetch API follow same-origin policy) for security reasons
+- CORS uses additional HTTP headers (a.k.a. __cross-origin HTTP request__ in form of OPTION method) to let a web application have permission to access resource from different origin (domain, protocol, and port)
+    - ex. web application served on http://domain-a.com uses XMLHttpRequest to make request for http://api.domain-b.com/data.json
 
 ### Web Sockets
 - a protocol providing full-duplex communication channels over a single TCP connection.
+- XMLHttpRequest을 여러번 하는 번거로움과 비효율성을 보완하기 위해 고안됨.

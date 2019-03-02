@@ -44,6 +44,7 @@ while (getline(cin, s)) { ... } // 마찬가지 with getline
 scanf("%1d", &x); // 12345에서 1자리씩 읽기
 scanf("%10s", s); // 문자열 길이 10씩 읽기
 ```
+
 - float나 double 출력시, `fixed`를 사용하여 원하는 방식대로 출력할 수 있다.
 ```cpp
 #include <iomanip>
@@ -56,7 +57,14 @@ cout << fixed << setprecision(3); // 3.14 (셋째자리에서 반올림)
 cout << setprecision(2); // 3.14
 ```
 
-### 최소값, 최대값
+### 숫자와 수학
+
+#### 올림, 내림, 반올림
+- `<cmath>` 헤더파일 포함시켜 사용하기
+```
+
+```
+#### 최소값 & 최대값
 - `<limits>` 헤더파일 포함시켜 사용하기.
 - 최소값 찾을 때: `numeric_limits<int>::max()`로 먼저 초기화하여 사용하기.
 - 최대값 찾을 때: `numeric_limits<int>:: min()`로 먼저 초기화하여 사용하기.
