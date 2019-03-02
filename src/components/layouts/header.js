@@ -7,13 +7,13 @@ import './header.css'
 
 const Header = ({ siteTitle }) => (
   <header>
-    <div>
+    <nav>
       <ToggleMenu />
-    </div>
+    </nav>
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
+        maxWidth: 800,
         padding: `1.45rem 1.0875rem`,
       }}
     >

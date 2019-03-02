@@ -1,5 +1,8 @@
+@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
+
 header {
     background: #F4D078;
     opacity: 1.0;
     margin-bottom: 1.45rem;
+    font-family: 'NanumSquareRound', sans-serif;
 }
