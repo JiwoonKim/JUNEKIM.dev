@@ -1,1 +1,0 @@
-{"data":{"markdownRemark":{"html":"<h3>시간복잡도</h3>\n<h3>입출력</h3>\n<pre><code class=\"language-C++\">    ios_base::sync_with_stdio(false);\n</code></pre>","frontmatter":{"path":"/algorithm/baekjoon/io","title":"백준 - 시간복잡도와 입출력","date":"2018-01-14","tags":["백준","알고리즘","C++"]}}},"pageContext":{}}
