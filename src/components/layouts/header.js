@@ -1,16 +1,12 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+
 import ToggleMenu from './menu'
+import './header.css'
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: `#F4D078`,
-      opacity: `1.0`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+  <header>
     <div>
       <ToggleMenu />
     </div>
@@ -38,7 +34,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
     </div>
-  </div>
+  </header>
 )
 
 Header.propTypes = {

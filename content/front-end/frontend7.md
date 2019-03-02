@@ -4,7 +4,7 @@ date: '2018-03-02'
 title: "Frontend Focus 05 - User Interface & Interaction Design"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드']
+tags: ['웹개발', '프론트엔드', '디자인']
 ---
 
 > 
@@ -45,7 +45,20 @@ tags: ['웹개발', '프론트엔드']
 
 #### Content principles
 - content is also a big sign of clutter
-- __less is more__: make it shorter, simplier, easy to read (well, actually skim)
+1. __less is more__: make it shorter, simplier, easy to read (well, actually skim)
     - parse big paragraphs into bullets
     - add boldings
     - add white space between bullets
+2. __headlines__: _short, sweet, and simple_
+    - talk benefits, not details
+        - ex. introduction to building web apps using python and django보다는 learn how to build a web app
+        - ex. download 보다는 send me free info
+    - keep it short
+    - use natural, friendly language; sound human, not a robot
+        - ex. email 보다는 add your email here
+
+#### Images and Imagery
+- stock photos usually look like stock photos
+- you can still accomplish a lot with __just type and screenshots__
+- remember to pay attention to file size
+- don't forget retina-quality images
