@@ -14,12 +14,12 @@ export default function Template({ data }) {
         <article className="post">
           <section className="post-title">
             <h1>{post.frontmatter.title}</h1>
-            <time>{post.frontmatter.date}</time> | 
-            <section className="tags">
+            <section className="post-title-flex">
+              <time>{post.frontmatter.date} | </time> 
               {post.frontmatter.tags.map(tag => (
                 <Link to="/" className="tag">{tag}</Link>
               ))}
-            </section>
+              </section>
           </section>
           <section className="post-content" 
             dangerouslySetInnerHTML={{ __html: post.html }} 
