@@ -1,9 +1,8 @@
 /* color and size for blog header (banner)
 */
 header {
-    background: #F4D078;
+    background: #CFE6E4;
     opacity: 1.0;
-    margin-bottom: 1.45rem;
     font-family: 'NanumSquareRound', sans-serif;
 }
 /* position for title block inside blog header
@@ -20,8 +19,10 @@ header {
 }
 .title > h1 {
     margin: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 .title-link {
     font-family: 'NanumSquareRound', sans-serif;
-    color: #fffce1;
+    color: #0B486B;
 }
