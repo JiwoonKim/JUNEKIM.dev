@@ -1,6 +1,7 @@
 /* define font for whole web blog
 */
 @import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo');
 html {
   font-family: 'NanumSquareRound', sans-serif;
 }
@@ -24,4 +25,29 @@ main {
 */
 a {
   text-decoration: none;
+}
+
+/* define style of post title within the article 
+*/
+.post-title {
+  margin-bottom: 2rem;
+}
+.post-title > h1 {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 1.8rem;
+  color: #373A47;
+}
+.post-title > time {
+  color: lightgrey;
+}
+.post-title > .tags {
+  display: inline-block;
+}
+/* define style of post content within the article
+*/
+.post-content {
+  line-height: 2rem;
+}
+.post-content > blockquote {
+  color: grey;
 }

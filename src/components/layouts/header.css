@@ -22,5 +22,6 @@ header {
     margin: 0;
 }
 .title-link {
+    font-family: 'NanumSquareRound', sans-serif;
     color: #fffce1;
 }
