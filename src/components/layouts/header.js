@@ -11,19 +11,8 @@ const Header = ({ siteTitle }) => (
       <ToggleMenu />
     </nav>
     <div className="title">
-      <h1
-        style={{
-          margin: 0,
-          display: `inline-block`,
-        }}
-      >
-        <Link
-          to="/"
-          style={{
-            color: `#fffce1`,
-            textDecoration: `none`,
-          }}
-        >
+      <h1>
+        <Link className="title-link" to="/">
           {siteTitle}
         </Link>
       </h1>

@@ -6,7 +6,7 @@ header {
     margin-bottom: 1.45rem;
     font-family: 'NanumSquareRound', sans-serif;
 }
-/* position for blog title inside blog header
+/* position for title block inside blog header
 */
 .title {
     padding: 1.45rem 1.0875rem;
@@ -17,4 +17,10 @@ header {
         width: 800px;
         margin: 0 auto;
     }
+}
+h1 {
+    margin: 0;
+}
+.title-link {
+    color: #fffce1;
 }
