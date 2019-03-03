@@ -1,23 +1,20 @@
-@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
-
+/* color and size for blog header (banner)
+*/
 header {
     background: #F4D078;
     opacity: 1.0;
     margin-bottom: 1.45rem;
     font-family: 'NanumSquareRound', sans-serif;
 }
-
+/* position for blog title inside blog header
+*/
 .title {
     padding: 1.45rem 1.0875rem;
+    margin-left: 70px;
 }
-@media (min-width: 870px) {
+@media (min-width: 989px) {
     .title { 
         width: 800px;
         margin: 0 auto;
-    }
-}
-@media (max-width: 869px) {
-    .title {
-        margin-left: 70px;
     }
 }
