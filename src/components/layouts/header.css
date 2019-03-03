@@ -12,7 +12,7 @@ header {
     padding: 1.45rem 1.0875rem;
     margin-left: 70px;
 }
-@media (min-width: 989px) {
+@media (min-width: 998px) {
     .title { 
         width: 800px;
         margin: 0 auto;
