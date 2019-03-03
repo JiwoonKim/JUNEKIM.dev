@@ -1,4 +1,4 @@
-/* define font for whole web blog
+/* define fonts for whole web blog
 */
 @import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
 @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo');
@@ -24,6 +24,7 @@ main {
 /* no decoration around links
 */
 a {
+  color: #3B8686;
   text-decoration: none;
 }
 
@@ -43,6 +44,16 @@ a {
 .post-title > .tags {
   display: inline-block;
 }
+.post-title > .tags > a::before { 
+  content: "\f02b";
+}
+.post-title > .tags > .tag {
+  color: #484848;
+  background-color: #fdf6e3;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  margin: 0 0.3rem;
+}
 /* define style of post content within the article
 */
 .post-content {
@@ -50,4 +61,7 @@ a {
 }
 .post-content > blockquote {
   color: grey;
+  border-left-style: solid; 
+  margin: 2rem 0;
+  padding-left: 1rem;
 }
