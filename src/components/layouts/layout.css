@@ -1,10 +1,27 @@
+/* define font for whole web blog
+*/
 @import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
 html {
   font-family: 'NanumSquareRound', sans-serif;
 }
+/* set margin to 0 for no funky spaces in the page
+*/
 body {
   margin: 0;
 }
+/* set the size and margin for the main content in blog
+*/
+main {
+  margin: 2rem auto; 
+  max-width: 800px; 
+}
+@media (max-width: 878px) {
+  main {
+    margin: 2rem 30px;
+  }
+}
+/* no decoration around links
+*/
 a {
   text-decoration: none;
 }

@@ -11,15 +11,13 @@ export default function Template({ data }) {
     return (
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-        <div>
+        <article>
           <h1>{post.frontmatter.title}</h1>
-          <span style={{ color: `lightgrey` }}>{post.frontmatter.date}</span> | 
+          <time style={{ color: `lightgrey` }}>{post.frontmatter.date}</time> | 
           <span>{post.frontmatter.tags}</span>
-          <br />
-          <br />
           <hr />
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        </div>
+          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        </article>
       </Layout>
     )
 }
