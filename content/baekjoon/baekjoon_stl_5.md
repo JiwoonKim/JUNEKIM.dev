@@ -9,7 +9,7 @@ tags: ['백준', 'C++', '강의노트', 'STL']
 > Standard Template Library (STL)는 알고리즘, 컨테이너, 함수, 이터레이터로 이루어져 있으며 그 중 알고리즘을 정리.
 
 ### 알고리즘 (Algorithm)
-- [Count](#Count), [Find](#find), [Fill](#fill), [Reverse](#reverse), [Rotate](#rotate), [Swap](#Swap), [Unique](#unique), [Sort](#sort), Stable_sort, Binary_search, Lower_bound, Upper_bound, Min, Max, Min_element, Max_element, Next_permutation
+- [Count](#Count), [Find](#find), [Fill](#fill), [Reverse](#reverse), [Rotate](#rotate), [Swap](#Swap), [Unique](#unique), [Sort](#sort), [Stable_sort](#stable sort), [Binary_search](#binary_search), [Lower_bound, Upper_bound](#lower_bound___upper_bound), [Min, Max](#min___max), [Min_element, Max_element](#min_element___max_element), [Next_permutation](#next_permutation)
 
 #### Count
 - `count(begin, end, value)`: [begin, end)에 포함되어 있는 원소 중에서 value의 개수를 찾는다.
