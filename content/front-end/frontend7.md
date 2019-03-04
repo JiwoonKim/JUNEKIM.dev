@@ -86,3 +86,5 @@ __Good artists copy, Great artists steal__
     - just because you're doing it like this, doesn't mean you're a bad designer, you're just a designer
 - this is only the starting point!
 - __the more practice, the better designer you will become__
+- the __usability__ is more important than how it looks
+    - rely on data (quantitative) than just aesthetics
