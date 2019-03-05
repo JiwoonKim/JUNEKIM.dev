@@ -9,7 +9,7 @@ tags: ['백준', 'C++', '강의노트', 'STL']
 > Standard Template Library (STL)는 알고리즘, 컨테이너, 함수, 이터레이터로 이루어져 있으며 그 중 알고리즘을 정리.
 
 ### 알고리즘 (Algorithm)
-- [Count](#Count), [Find](#find), [Fill](#fill), [Reverse](#reverse), [Rotate](#rotate), [Swap](#Swap), [Unique](#unique), [Sort](#sort), [Stable_sort](#stable sort), [Binary_search](#binary_search), [Lower_bound, Upper_bound](#lower_bound___upper_bound), [Min, Max](#min___max), [Min_element, Max_element](#min_element___max_element), [Next_permutation](#next_permutation)
+- [Count](#count), [Find](#find), [Fill](#fill), [Reverse](#reverse), [Rotate](#rotate), [Swap](sSwap), [Unique](#unique), [Sort](#sort), [Stable_sort](#stable_sort), [Binary_search](#binary_search), [Lower_bound, Upper_bound](#lower_bound___upper_bound), [Min, Max](#min___max), [Min_element, Max_element](#min_element___max_element), [Next_permutation](#next_permutation)
 
 #### Count
 - `count(begin, end, value)`: [begin, end)에 포함되어 있는 원소 중에서 value의 개수를 찾는다.
@@ -164,10 +164,11 @@ for (int i = 1; i <= 5; i++) {
 - `binary_search(begin, end, value, cmp)`: [begin, end) 범위 내에서 value의 값을 cmp의 기준으로, 찾으면 true, 못 찾으면 false를 반환한다.
 
 #### Lower_bound & Upper_bound
-- `lower_bound(begin, end, value)`: [begin, end) 범위 내에서 value 보다 작지 않은 첫번째 이터레이터를 반환한다.
-- `upper_bound(begin, end, value)`: [begin, end) 범위 내에서 value 보다 큰 첫번째 이터레이터를 반환한다.
-- _정렬_ 된 상태에서 사용해야 효과가 있다!
-- binary_search를 통해 구현이 되어 있어, 어떤 값의 _위치_ 를 알고 싶을 때 사용한다.
+- `lower_bound(begin, end, value)`: [begin, end) 범위 내에서 __value 보다 작지 않은 첫번째 이터레이터를 반환__ 한다.
+- `upper_bound(begin, end, value)`: [begin, end) 범위 내에서 __value 보다 큰 첫번째 이터레이터를 반환__ 한다.
+- 범위 내에 찾는 값(모두 값보다 작을 경우)이 __존재하지 않는다면, end 값을 반환__ 한다
+- __정렬 된 상태에서 사용__해야 효과가 있다!
+- __binary_search를 통해 구현__ 이 되어 있어, 어떤 값의 _)위치(by 이터레이터)__ 를 알고 싶을 때 사용한다.
 ```cpp
 #include <vector>
 #include <algorithm>

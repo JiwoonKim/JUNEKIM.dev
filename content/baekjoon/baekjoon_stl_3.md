@@ -8,9 +8,9 @@ tags: ['백준', 'C++', '강의노트']
 ---
 > Standard Template Library (STL)는 알고리즘, 컨테이너, 함수, 이터레이터로 이루어져 있으며 그 중 컨테이너를 정리.
 
-- [순차 컨테이너](#순차 컨테이너 (Sequential Container)): vector, list, deque
-- [연관 컨테이너](#연관 컨테이너 (Associative Containers)): set, map
-- [컨테이너 어댑터](컨테이너 어댑터 (Container Adaptors)): stack, queue, priority_queuq
+- [순차 컨테이너](#순차-컨테이너-sequential-container): vector, list, deque
+- [연관 컨테이너](#연관-컨테이너-associative-containers): set, map
+- [컨테이너 어댑터](#컨테이너-어댑터-container-adaptors): stack, queue, priority_queu
 
 ### 컨테이너 (Container)
 - Pair, Tuple, Vector, Deque, List, Set, Map, Stack, Queue, Priority Queue, Bitset 등이 존재한다.
