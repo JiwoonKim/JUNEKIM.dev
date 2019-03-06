@@ -12,7 +12,7 @@ tags: ['html', '치트키']
 ### HTML
 - Hyper-text Markup Language의 약자
 - __DOM (Document Object Model)__: 페이지의 __구조__ 를 만드는 것이 HTML의 중요 포인트
-- <html> 내의 내용을 <head>와 <body>로 페이지 나누어 구성
+- < html> 내의 내용을 < head>와 < body>로 페이지 나누어 구성
 
 #### 자주 사용되는 tag 종류 
 - `<head></head>`: content 보다는 data 및 __특정정보__ 를 담는다
@@ -24,7 +24,7 @@ tags: ['html', '치트키']
 
 - `<body></body>`: 페이지의 __content__ 를 담는다
   - __텍스트__: `<h{숫자}></h{숫자}>`, `<p></p>`, `<div></div>`, `<span></span>`, `<br>` 
-  - __그룹화__: `<div></div>`, `<span></span>`
+  - __컨테이너__: `<div></div>`, `<span></span>`
     - __semantic HTML 사용하기__
   - __도표__: `<table></table>`, `<th></th>`, `<tr></tr>`, `<td></td>` 
   - __리스트__: `<ul></ul>`, `<ol></ol>`, `<li></li>`  
@@ -34,7 +34,12 @@ tags: ['html', '치트키']
 
 #### 의미론적 HTML (semantic HTML)
 - HTML5 새 tag: https://www.w3schools.com/html/html5_new_elements.asp 
-- 의미가 없는 <div>나 <span> 대신 의미를 부여하여 새로운 tag들 사용하기
+- 의미가 없는 < div>나 < span> 대신 의미를 부여하여 새로운 tag들 사용하기
+- 강조:
+  - `<em>` instead of < i>
+  -  `<strong>` instead of < b>
+- 긋기:
+  - `<ins>` and `<del>` instead of text-decoration: line-through;
 
 ### 참고자료
 - https://opentutorials.org/course/3084 (생활코딩 html)
