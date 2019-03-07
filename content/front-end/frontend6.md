@@ -36,6 +36,13 @@ tags: ['웹개발', '프론트엔드', 'html']
 - `html lang='en'`: to define the __language of the document's content__
 - `meta charset='UTF-8'`: defines __how the character letters are rendered__
 
+#### HTML entity
+special character that can't be represented as plain text in an HTML document
+- __reserved character__: <, >, and &
+    - represented by `&lt;`, `&gt;`, `&amp;` respectively
+- __characters not on the keyboard__: begin w/ `&` and end with `;` to interpret as a symbol of something
+    - [more information](https://dev.w3.org/html5/html-author/charref)
+
 #### Images (`<img>`)
 - Image Formats
     1. __JPG__: _photos and images_ w/ a lot of gradients in them
@@ -49,13 +56,6 @@ tags: ['웹개발', '프론트엔드', 'html']
 - `alt` attribute: defines __text alternative__ to image being displayed
     - impact on search engines
     - impace on users with text-only browser (text-to-speech)
-
-#### HTML entity
-special character that can't be represented as plain text in an HTML document
-- __reserved character__: <, >, and &
-    - represented by `&lt;`, `&gt;`, `&amp;` respectively
-- __characters not on the keyboard__: begin w/ `&` and end with `;` to interpret as a symbol of something
-    - [more information](https://dev.w3.org/html5/html-author/charref)
 
 #### HTML forms (`<form>`)
 - let you __collect input from users__
@@ -85,7 +85,6 @@ special character that can't be represented as plain text in an HTML document
     <input id='full-name' name='full-name' type='text' />
 </form>
 ```
-
 
 
 #### Semantic HTML
