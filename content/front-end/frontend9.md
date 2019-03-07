@@ -11,6 +11,10 @@ tags: ['웹개발', '프론트엔드', 'responsive design']
 
 - [reference](https://internetingishard.com/)
 
+when a designer hands you a mockup to implement, your first task is to draw a bunch of boxes on it and determine how they're supposed to stack, stretch, and shrink to achieve the desired design
+
+and then code
+
 ### Responsive Design
 
 ### Responsive Images
