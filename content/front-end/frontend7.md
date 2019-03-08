@@ -29,7 +29,7 @@ in rendering order: the lower orders override previous ones
     - by far the __most versatile__ and come w/ the least amount of drawbacks
     - standard naming convention to use _all lowercase and hyphens_
 - __id__: use `#id` attribute
-    - __can't reuse the styles at all__ so generally the use of it is frowned upon; use classes instead
+    - can't reuse the styles at all so generally the use of it is frowned upon; __use classes instead for styles__
 - __pseudo-class__: use stateful information
     - ex. `:link`, `:visited`, `:hover`, `:active`, `:last-of-type`
 
@@ -148,6 +148,7 @@ __flexbox__ is an alternative to Floats for defining the layout
     - beware that the direction changes:
     - flex direction alignment 관련 이미지 추가 from [here](https://internetingishard.com/html-and-css/flexbox/)
     - very __useful for responsive design__
+
 ```css
 /* flexbox containing grid centers grid on page */
 .grid-container {
@@ -176,6 +177,37 @@ __flexbox__ is an alternative to Floats for defining the layout
 - __dividing flex items in a container__: `margin: auto`
     - alternative to an extra < div> when aligning a group of items to left/right of a container
 
-the flexbox layout should not be used to gently tweaking element positions or preventing them from interacting with the rest of the page (which follows to advanced positioning techniques)
-
 ### Advanced Positioning
+to _gently tweak element positions_ or _animate a UI component w/o messing up the rest of the page_
+- __static positioning__: _normal flow_ of page
+    - box model, floats, and flexbox
+- __other positioning schemes__: use `position` property
+    - _relative_
+    - _absolute_
+    - _fixed_
+
+#### Relative positioning 
+- `relative`: _relative to an element's own normal position_
+    - useful to _nudge boxes_ around when the default flow is just a little bit off
+    - also used as an _anchor for absolutely positioned elements_
+- use:
+    - implement `position: relative` to element
+    - __define offset__: `top`, `bottom`, `left`, `right` or use _negative values_
+
+#### Absolute positioning
+- `absolute`: _relative to entire browser window_
+    - if __closest container is relatively positioned__, the absolute positioned element is relative to that instead of the browser window
+- use:
+    - implement `position: absolute` to element
+    - no need for defining offsets
+
+#### Fixed positioning
+- `fixed`: _relative to the entire browser window_ but __doesn't change position even when scrolled__
+    - useful for navigation bars or pop-up banners to always stay on the screen
+- use:
+    - implement `position: fixed` to element
+    - __define offset__: `top`, `bottom`, `left`, `right` or use _negative values_
+
+#### Positioned elements for Animation
+- animation is one of the primary use cases for relative and absolute positioning
+- combine css positioning and javascript
