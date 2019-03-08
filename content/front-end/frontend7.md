@@ -57,6 +57,9 @@ the fundamental task of laying out a page is just __moving a bunch of nested box
 - __flexbox__ (full control)
 - __advanced positioning__
 
+(when given a design mockup to implement, first __draw a bunch of boxes__, __determine how they're supposed to stack, stretch, and shrink__ to achieve the desired design
+, and __then code__)
+
 ### Box Model
 set of rules that determine the dimensions of __every element__ (_both inline and block_) in a web page
 - all elements have _border, margin, and padding_
