@@ -14,9 +14,11 @@ tags: ['웹개발', '에듀']
 - color scheme like 
     - [this](http://www.dontfeartheinternet.com/): 회색 배경 사용 (on website page; skin)
     - [this](http://www.evolutionoftheweb.com/): color bands -> to represent each technology...html, css ..?
+    - [great code block color scheme](https://30-seconds.github.io/30-seconds-of-css/)
     - [리아유 video](https://www.youtube.com/watch?v=ptBZdXl4P6c): each chapter(language) has specific color background throughout the series
 - design
     - [beautiful design layout and UI](https://internetingishard.com/)
+    
 
 
 #### 섹션
