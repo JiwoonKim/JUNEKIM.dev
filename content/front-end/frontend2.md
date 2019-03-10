@@ -1,7 +1,7 @@
 ---
 path: "/frontend/2"
 date: '2018-02-25'
-title: "Frontend Focus 02 - web browser"
+title: "Frontend Focus 02 - Web Browser"
 description: 
 image: ''
 tags: ['웹개발', '프론트엔드']

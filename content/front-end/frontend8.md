@@ -6,6 +6,7 @@ description:
 image: ''
 tags: ['웹개발', '프론트엔드', '디자인']
 ---
+> Basics Design Principles
 
 > [Design for Non-designers 비디오](https://www.youtube.com/watch?v=ZbrzdMaumNk&feature=youtu.be) 참고하여 내용 정리
 
