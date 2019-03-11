@@ -18,7 +18,7 @@ tags: ['웹개발', '에듀']
     - [리아유 video](https://www.youtube.com/watch?v=ptBZdXl4P6c): each chapter(language) has specific color background throughout the series
 - design
     - [beautiful design layout and UI](https://internetingishard.com/)
-    
+    - [깔끔 & 그림](https://joelglovier.com/writing/sitemaps-for-jekyll-sites)
 
 
 #### 섹션
