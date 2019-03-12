@@ -18,11 +18,7 @@ tags: ['웹개발', '프론트엔드', 'html']
 #### Web Development
 - mastering HTML, CSS, and JavaScript is only a __prerequisite__ for becoming a professional web developer
 - there are a bunch of other practical skills that you need to run a website (__setting up environments to build and deploy a website__):
-    - organizing HTML into reusable templates
-    - standing up a web server
-    - moving files from your local computer to your web server
-    - version control
-    - setting a domain name to point to your server
+    - organizing HTML into reusable templates, standing up a web server, moving files from your local computer to your web server, version control, setting a domain name to point to your server
 
 ### HTML
 - HTML markup should provide __semantic__ information about your content (not presentational information)

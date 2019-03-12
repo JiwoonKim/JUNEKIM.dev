@@ -23,10 +23,10 @@ tags: ['웹개발', '백엔드', '장고']
 
 #### gitignore
 
-#### split settings
+### split settings
 
-#### rest framework (?)
+### rest framework (?)
 
-#### api document
+### api document
 
 #### docker

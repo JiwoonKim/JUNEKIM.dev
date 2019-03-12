@@ -1,6 +1,6 @@
 ---
 path: "/web50/lecture_3"
-date: '2017-07-23'
+date: '2018-07-23'
 title: "Web50 lecture 3 - SQL"
 description: CS50 Web Programming with Javascript and Python lecture 3 정리
 image: ''

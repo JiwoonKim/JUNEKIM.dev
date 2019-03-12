@@ -1,6 +1,6 @@
 ---
 path: "/web50/lecture_4"
-date: '2017-08-10'
+date: '2018-08-10'
 title: "Web50 lecture 0 - ORM & APIs"
 description: CS50 Web Programming with Javascript and Python lecture 4 정리
 image: ''

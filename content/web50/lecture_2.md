@@ -1,6 +1,6 @@
 ---
 path: "/web50/lecture_2"
-date: '2017-07-21'
+date: '2018-07-21'
 title: "Web50 lecture 2 - Python & Flask"
 description: CS50 Web Programming with Javascript and Python lecture 2 정리
 image: ''

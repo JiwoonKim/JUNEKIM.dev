@@ -1,6 +1,6 @@
 ---
 path: "/web50/lecture_5"
-date: '2017-08-21'
+date: '2018-08-21'
 title: "Web50 lecture 5 - JavaScript & Web Sockets"
 description: CS50 Web Programming with Javascript and Python lecture 5 정리
 image: ''
