@@ -13,21 +13,22 @@ tags: ['CS50', 'Web50', '강의노트', '웹개발', 'html', 'css']
 - links: can direct to different file, to a different webpage, to a different place on the same webpage(specific #id)
 
 #### HTML5 new features (very useful!)
-- `<header>`, `<nav>`, `<section>`, `<footer>`, `<audio>`, `<video>`, `<datalist>`
+- new elements: `<header>`, `<nav>`, `<section>`, `<footer>`, `<audio>`, `<video>`, `<datalist>` (use w/ < input>)
+- new attributes: `contentedible`
 - but, browsers must support newer features to use (_older browsers may not support them_)
 
 ### CSS
-- CSS Selectors: tags, ids, classes 사용가능.
+- __CSS Selectors__: tags, ids, classes 사용가능.
 - specific ways of selecting:
-    - selecting descendants (all): 
+    - selecting __descendants__ (all): 
         - `ul li { color: red; }`: selects all descendants according to DOM
-    - selecting immediate children: 
+    - selecting __immediate children__: 
         - `ul > li { color: red; }`
-    - selecting by attributes: 
+    - selecting __by attributes__: 
         - `input[type=text] { color: red; }`: selects input types of text
-- select pseudo-wise:
-    - pseudo class (to select a certain state): `button: hover { color: red; }`
-    - pseudo element (to affect certain parts of an HTML element): 
+- select __pseudo-wise__:
+    - __pseudo class__ (to select a _certain state_): `button: hover { color: red; }`
+    - __pseudo element__ (to affect _certain parts of an HTML element_): 
         - `p::selection { color: red; }`: when highlighted (select and drag), the text color turns red
         - `a::before { content: "\21d2 Click here"; }`: prepend => before contents of links
 
