@@ -267,6 +267,19 @@ hi {
     animation-fill-mode: forwards
 }
 ```
+```css
+@keyframes move {
+    0% {
+        left: 0%;
+    }
+    50% {
+        left: 50%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+```
 - for more control, use JavaScript
     - `__.style.animationPlayState`
 ```js

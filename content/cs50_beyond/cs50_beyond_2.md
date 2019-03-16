@@ -4,7 +4,7 @@ date: '2019-03-12'
 title: "CS50 Beyond lecture 2 - JavaScript"
 description: CS50 Beyond lecture 2 정리
 image: ''
-tags: ['CS50', '강의노트', '웹개발', '']
+tags: ['CS50', '강의노트', '웹개발', 'JavaScript', '자바스크립트']
 ---
 > Harvard's CS50 Beyond lecture 2 정리
 
@@ -67,9 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 ```
     
-### ES6
-
-#### Arrow Functions
+### ES6: Arrow Functions
 - `() => {}`
 - __use w/ arrays__ by:
     - `forEach`:
@@ -77,6 +75,37 @@ document.addEventListener("DOMContentLoaded", function() {
     - `filter`
 
 ### Functional Programming
-JavaScript can pass functions as arguments (not immediately use them, but save for calling later)
-makes use of higher order functions (functions can be passed as argument values)
-the function being passed is called a callback function - called when the event being listened for occurs
+- JavaScript makes use of higher order functions 
+ - __function can be passed as argument values__
+- functions being passed is called __callback functions__
+    - called when the event being listened for occurs
+
+### Using an API in JavaScript
+- use `fetch`
+- use promises: `.then` and `.catch`
+
+#### Making an Ajax request
+```js
+// currency converter example
+document.addEventListener('DOMContentLoaded', () => {
+    const currency = document.querySelector('#currency').value;
+    // Make an HTTP request (Ajax request)
+    fetch(`https://api.exchangeratesapi.io/latest?base=USD&symbols=${currency}`)
+    // convert response to JSON format
+    .then(response => response.json())
+    // extract the information and plug in to HTML
+    .then(data => {
+        const content = `1 USD = ${data.rate[currency]} ${currency}`;
+        document.querySelector('#result').innerHTML = contents;    
+    })
+    // catch errors
+    .catch(() => {
+        document.querySelector('#result').innerHTML = 'error';
+    });
+    return false;
+});
+```
+
+### SVG Animation (using D3 library)
+- link script of d3 library in html file
+- 
