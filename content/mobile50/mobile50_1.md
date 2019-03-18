@@ -114,6 +114,21 @@ way to alleviate the callback hell problem
 - _usage_: way to use value you don't yet know what it will be
 - setting 'this' manually: `bind()`, `call()`, `apply()`
 
+### Classes
+- introduced in ES6
+- simplifies the defining of complex objects w/ __their own prototypes__
+- __classes__ (abstract form)
+    - define properties and methods
+    - define constructor method
+- __instances__:
+    - created by using `new` (to pass values) and a __constructor__
+    - methods: any function invoked on instances
+    - properties: any values associated w/ the instances
+    - static methods: not related to specific instance but overall classes
+- __inheritance__:
+    - `extends` a class to define a new class
+    - `super` refers to the class being extended
+
 ### Broswers and the DOM
 - HTML defines a tree-like structure
 - browsers render HTML to a webpage
