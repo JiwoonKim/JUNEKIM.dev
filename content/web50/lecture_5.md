@@ -29,10 +29,16 @@ programming language designed to run inside a browser that runs on __client-side
     - used to define __anonymous functions__ (w/o the word _function_)
 ```js
 x => x + 2;
+```
+```js
 x => { alert(x); }
+```
+```js
 () => { alert(Hello); }
+```
+```js
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector("h1").style.color = 'red';
+            document.querySelector("h1").style.color = 'red';
 });
 ```
 
@@ -40,52 +46,52 @@ document.addEventListener('DOMContentLoaded', () => {
 - To Do List
 ```js
 document.addEventListener('DOMContentLoaded', () => {
-    // when form is submitted, 
-    document.querySelector('#new-task').onsubmit = () => {
-        // create a list item element
-        const li = document.createElement('li');
-        // assign the input value into the content of the list item
-        li.textContent = document.querySelector('#task').value;
-        // append the list item to list
-        document.querySelector('#tasks').append(li)';
-        // reset the input value in form to blank
-        document.querySelector('#task').value = '';
-        // stop from from submitting
-        return false;
-    }
+        // when form is submitted, 
+        document.querySelector('#new-task').onsubmit = () => {
+            // create a list item element
+            const li = document.createElement('li');
+            // assign the input value into the content of the list item
+            li.textContent = document.querySelector('#task').value;
+            // append the list item to list
+            document.querySelector('#tasks').append(li)';
+            // reset the input value in form to blank
+            document.querySelector('#task').value = '';
+            // stop from from submitting
+            return false;
+        }
 });
 ```
 - Timer (increment count by 1s)
 ```js
 document.addEventListener('DOMContentLoaded', () => {
-    setInterval(count, 1000);
+        setInterval(count, 1000);
 });
 let counter = 0;
 function count() {
-    counter++;
-    document.querySelector('#counter').textContent = counter;
+        counter++;
+        document.querySelector('#counter').textContent = counter;
 }
-// problem is that counter would be reset everytime the web browser loads
+// problem: counter resets everytime the browser reloads
 ```
 - Timer (w/ local storage)
 ```js
 // if no counter, set as 0
 if (!localStorage.getItem('counter')) {
-    localStorage.setItem('counter', 0);
+        localStorage.setItem('counter', 0);
 }
 document.addEventListener('DOMContentLoaded', () => {
-    // set the counter content as counted before
-    document.querySelector('#counter').textContent = localStorage.getItem('counter');
-    // when button is clicked,
-    document.querySelector('button').onclick = () => {
-        // increment count
-        let counter = localStorage.getItem('counter');
-        coutner++;
-        // update counter content value
-        document.querySelector("#counter').textContent = counter;
-        // store updated value in local storage
-        localStorage.setItem('counter', counter);
-    }
+        // set the counter content as counted before
+        document.querySelector('#counter').textContent = localStorage.getItem('counter');
+        // when button is clicked,
+        document.querySelector('button').onclick = () => {
+            // increment count
+            let counter = localStorage.getItem('counter');
+            coutner++;
+            // update counter content value
+            document.querySelector("#counter').textContent = counter;
+            // store updated value in local storage
+            localStorage.setItem('counter', counter);
+        }
 });
 ```
 
@@ -100,14 +106,14 @@ document.addEventListener('DOMContentLoaded', () => {
 - __Web Sockets__
     - __based on event model__
     - __persistent connection__
-    - useful for when data is transferred frequently
+    - useful for __when data is transferred frequently__
         - data 양이 많아 매번 request를 일일이 매번 만드는 것이 inefficient하기에 web socket가 더 유용
 
 ### Ajax (Asynchronous JavaScript and XML)
 asynchronous way of getting data from server
 - used to __get more information from server w/o reloading__ an entirely new page
 - used on the client-side to create asynchronous web apps
-- 굳이 client-side, server-side 따지지 말기 (ajax is its own concept; bridge btw server & client)
+- _굳이 client-side, server-side 따지지 말기_ (__ajax is its own concept__; bridge btw server & client)
 
 #### Making an Ajax Call
 1. make a __request__: `const request = new XMLHttpRequest()`
@@ -119,35 +125,35 @@ asynchronous way of getting data from server
     - if post request, use w/ `const data = new FormData()` and _append object to it_
 ```js
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('#form').onsubmit = () => {
-        // create a request
-        const request = new XMLHttpRequest();
-        const currency = document.querySelector('#currency').value;
+            document.querySelector('#form').onsubmit = () => {
+                // create a request
+                const request = new XMLHttpRequest();
+                const currency = document.querySelector('#currency').value;
 
-        // set the method and route of the request
-        request.open('POST', '/convert');
+                // set the method and route of the request
+                request.open('POST', '/convert');
 
-        // callback function when request is completed
-        request.onload = () => {
-            const data = JSON.parse(request.responseText);
-            // if successfully received resonse, show content currency
-            if (data.success) {
-                const content = `1 usd = $ {data.rate} $ {currency}`;
-                document.querySelector('#results').textContent = content;
-            }
-            // else print error
-            else {
-                document.querySelector('#results').textContent = 'error';
-            }
-        };
-        // create an object to hold the user input in
-        const data = new FormData();
-        data.append('currency', currency);
+                // callback function when request is completed
+                request.onload = () => {
+                    const data = JSON.parse(request.responseText);
+                    // if successfully received resonse, show content currency
+                    if (data.success) {
+                        const content = `1 usd = $ {data.rate} $ {currency}`;
+                        document.querySelector('#results').textContent = content;
+                    }
+                    // else print error
+                    else {
+                        document.querySelector('#results').textContent = 'error';
+                    }
+                };
+                // create an object to hold the user input in
+                const data = new FormData();
+                data.append('currency', currency);
 
-        // 
-        request.send(data);
-        return false;
-    };
+                // send data
+                request.send(data);
+                return false;
+            };
 });
 ```
 
@@ -166,23 +172,23 @@ protocol that allows __full duplex communication__
     - `socket.on('announce vote', data => { ... }`
 ```js
 document.addEventListener('DOMContentLoaded', () => {
-    // create a socket connection
-    var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
-    socket.on('connect', () => {
-        // if button is clicked, emit a message to server
-        document.querySelectorAll('button').forEach(button => {
-            button.onclick = () => {
-                const selection = button.dataset.vote;
-                socket.emit('submit vote', {'selection': selection});
-            };
-        });
-    });
-    // when a message is received from server, display vote
-    socket.on('announce vote', data => {
-        const li = document.createElement('li');
-        li.textContent = `vote recorded: ${data.selection}`;
-        document.querySelector('#votes').append(li);
-    })
+            // create a socket connection
+            var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
+            socket.on('connect', () => {
+                // if button is clicked, emit a message to server
+                document.querySelectorAll('button').forEach(button => {
+                    button.onclick = () => {
+                        const selection = button.dataset.vote;
+                        socket.emit('submit vote', {'selection': selection});
+                    };
+                });
+            });
+            // when a message is received from server, display vote
+            socket.on('announce vote', data => {
+                const li = document.createElement('li');
+                li.textContent = `vote recorded: ${data.selection}`;
+                document.querySelector('#votes').append(li);
+            })
 });
 ```
 - enable sockets in server
@@ -192,14 +198,12 @@ import os
 import requests
 from flask import Flask, jsonify, render_template, 
 from flask_socketio import SocketIO, emit
-
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.getenv('SECRET_KET')
+# create socket
 socketio = SocketIO(app)
-
 # when server receives message, emit message to all (broadcast)
 @socketio.on("submit vote")
 def vote(data):
-    selection = data['selection']
-    emit("announce vote", {"selection": selection}, broadcast=True)
+        selection = data['selection']
+        emit("announce vote", {"selection": selection}, broadcast=True)
 ```

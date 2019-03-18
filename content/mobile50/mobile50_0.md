@@ -17,17 +17,17 @@ tags: ['웹개발', '프론트엔드', 'JavaScript', '자바스크립트'
 ### Types
 JavaScript has __dynamic typing__
 - variables are not associated w/ specific types
-- __primitive types__: no methods, _immutable_
-    - `undefined`: falsy value
-    - `null`: falsy value
-    - `boolean`: false = falsy value
-    - `number`: 0 = falsy value
+- __primitive types__: _no methods, immutable_
+    - `undefined`: _falsy_ value
+    - `null`: _falsy_ value
+    - `boolean`: false = _falsy_ value
+    - `number`: 0 = _falsy_ value
     - `string`
     - `symbol`
-- __objects__: everything else
+- __objects__: every other type is object
 
 #### Typecasting
-changing one type to another type (a.k.a coercion)
+changing one type to another type (a.k.a __coercion__)
 - _explicit coercion_: being explicit in changing types
     - ex. const string_x = String(x);
 - _implicit coercion_
@@ -77,7 +77,7 @@ const d = {
 ```js
 // o1 and o2 point to the same object
 const o1 = {
-    a: 'a',
+        a: 'a',
 }
 const o2 = o1 
 // o3 points to a completely different object
@@ -114,6 +114,3 @@ variable lifetime (how long a variable exists)
 - __all variables and functions__: _parameters and methods on the global object_
     - _Browser global object_ = __window object__
     - _Node.js global object_ = __global object__
-
-### Closures
-functions that refer to variables declared by parent function
