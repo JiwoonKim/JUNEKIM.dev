@@ -57,10 +57,14 @@ can take functions as arguments or return them
 - __JavaScript__: __synchronous__ and __single-threaded language__
     - a function may lock up the page (become unresponsive)
     - page may have to wait for a function to be over
-- but, JavaScript can also be __aynchronous__ (can use _asynchronous functions_)
-    - ex. `setTimeout(_function_, _seconds_)`
+- but, JavaScript can also be __aynchronous__: use _asynchronous functions_
+    - `setTimeout(_function_, _seconds_)`
+    - __http requests__: 
+        - `XMLHttpRequest()`, `fetch()`
+        - __jQuery__, __ajax__, 
+    - __database calls__
 
-#### Asynchronous JavaScript
+### Asynchronous JavaScript
 executes everything in the execution stack and then, checks the function queue (which is sent browser API) to execute
 - __Execution Stack__: _call stack_ for __synchronous functions__
 - __Browser APIs__: space of __asynchronous functions__ _tracked by the browser_
@@ -68,19 +72,51 @@ executes everything in the execution stack and then, checks the function queue (
     - functions are __sent to function queue__
     - ex. `setTimeout(_function_, _seconds_)`
 - __Function Queue__: _queue_ for __asynchrnous functions__
-- __Event Loop__: 
-    - 
+- __Event Loop__: __checks stack's status__
+    - when stack is empty, __moves function from queue to stack__
 
-### Overflow
+#### Callbacks
+functions passed as an _argument_ of a higher-order function
+- way to __control flow of asynchronous calls__
+    - makes sure certain code doesn't execute until other code has already finished execution
+        - ex. make program not able to use data from API until API data is fully loaded
+    - in other words, __execute code once asynchronous call returns value or completes__
+    - program __does not have to wait__ for a value
+    - can handle success and error cases
+- __problem__ _as calls become more nested_, the code becomes more difficult to manage
+    - __callback hell__ / __pyramid of doom__
 
-### Asynchronous Functions
+#### Promises
+way to alleviate the callback hell problem
+- an object assuming a value is eventually returned within a success function
+- use callback functions in chains via `.then` and `.catch`
+    - `.then` handles success cases
+    - `.catch` handles failure cases
+- can refactor nested callback function into promises
+- _use_:
+    - `fetch`: function that returns a promise
+    - `.then`: takes a callback
+    - `.catch`: takes a callback to handle errors proceeded in the .then statements (only need a single error handler)
 
-### Callbacks
-
-### Promises
-
-### Async/Await
+#### Async/Await
+- introduced in ES2017
+- allows ppl to write async code as if it were synchronous
+- can refactor promises/callbacks to async/await
+- _use_:
+    - use `async` keyword in front of higher-order function
+    - use `await` keyword in front of asynchronous functions
+    - use `try` and `catch` to handle errors
 
 ### this
+`this` points to the object that is set at the creation of a new execution context (function invocation)
+- in the global execution context, refers to the global object
+- if the function is called as a method of an object, 'this' is bound to the object the method is called on
+- _usage_: way to use value you don't yet know what it will be
+- setting 'this' manually: `bind()`, `call()`, `apply()`
 
 ### Broswers and the DOM
+- HTML defines a tree-like structure
+- browsers render HTML to a webpage
+    - construct the DOM tree in memory
+    - then, paint the page
+- DOM can be modified by using JavaScript
