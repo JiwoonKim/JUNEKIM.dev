@@ -1,6 +1,6 @@
 ---
 path: "/cs/fastcampus/cpp"
-date: '2018-01-25'
+date: '2019-01-25'
 title: "[패캠] 강의노트 02. C++"
 description: 패스트캠퍼스 컴퓨터공학 기초 C++ 정리
 image: ''

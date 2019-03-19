@@ -1,6 +1,6 @@
 ---
 path: "/algorithm/baekjoon_STL/cpp_basic"
-date: '2018-01-24'
+date: '2019-01-24'
 title: "[백준] 프로그래밍 대회에서 사용하는 C++ 언어"
 description: 백준 알고리즘 강의 STL 2강 정리
 image: ''

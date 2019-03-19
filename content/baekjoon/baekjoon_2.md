@@ -1,6 +1,6 @@
 ---
 path: "/algorithm/baekjoon_basic/data_structure_1"
-date: '2018-01-25'
+date: '2019-01-25'
 title: "[백준] 강의노트 02. 자료구조 1"
 description: 백준 알고리즘 강의 기초 2강 정리
 image: ''

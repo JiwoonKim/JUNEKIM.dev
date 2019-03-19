@@ -1,6 +1,6 @@
 ---
 path: "/my/edu_content"
-date: '2018-02-25'
+date: '2019-02-25'
 title: "Ideas for education content made by myself"
 description: 
 image: ''

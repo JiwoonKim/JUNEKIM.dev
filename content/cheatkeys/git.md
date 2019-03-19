@@ -1,6 +1,6 @@
 ---
 path: "/cheatkeys/git"
-date: '2018-01-30'
+date: '2019-01-30'
 title: "[Git] 치트키 정리"
 description: git 치트키 정리
 image: ''

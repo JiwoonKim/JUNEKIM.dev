@@ -1,6 +1,6 @@
 ---
 path: "/cheatkeys/math"
-date: '2018-02-05'
+date: '2019-02-05'
 title: "프로그래밍 대회 수학 공식 치트키"
 description: 수학 정리
 image: ''

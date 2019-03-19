@@ -1,6 +1,6 @@
 ---
 path: "/frontend/10"
-date: '2018-03-08'
+date: '2019-03-08'
 title: "Frontend Focus 10 - Images on the Web"
 description: 
 image: ''

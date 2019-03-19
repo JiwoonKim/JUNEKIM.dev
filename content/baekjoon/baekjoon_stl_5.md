@@ -1,6 +1,6 @@
 ---
 path: "/algorithm/baekjoon_STL/STL_algorithm"
-date: '2018-01-28'
+date: '2019-01-28'
 title: "[백준] 프로그래밍 대회에서 사용하는 C++ STL 알고리즘"
 description: 백준 알고리즘 강의 STL 6강 정리
 image: ''

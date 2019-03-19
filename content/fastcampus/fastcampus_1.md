@@ -1,6 +1,6 @@
 ---
 path: "/cs/fastcampus/c"
-date: '2018-01-16'
+date: '2019-01-16'
 title: "[패캠] 강의노트 01. C"
 description: 패스트캠퍼스 컴퓨터공학 기초 C 정리
 image: ''

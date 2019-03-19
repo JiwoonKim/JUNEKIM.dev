@@ -1,6 +1,6 @@
 ---
 path: "/frontend/3"
-date: '2018-02-26'
+date: '2019-02-26'
 title: "Frontend Focus 03 - DNS"
 description: 
 image: ''

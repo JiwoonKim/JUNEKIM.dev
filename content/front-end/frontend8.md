@@ -1,6 +1,6 @@
 ---
 path: "/frontend/8"
-date: '2018-03-02'
+date: '2019-03-02'
 title: "Frontend Focus 08 - User Interface & Interaction Design"
 description: 
 image: ''

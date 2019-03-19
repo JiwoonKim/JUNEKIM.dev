@@ -1,6 +1,6 @@
 ---
 path: "/cheatkeys/setup"
-date: '2018-02-24'
+date: '2019-02-24'
 title: "개발 환경 셋업 매뉴얼"
 description: 개발 환경 셋업 매뉴얼 정리
 image: ''
