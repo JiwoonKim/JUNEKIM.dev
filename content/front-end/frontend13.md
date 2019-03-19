@@ -1,7 +1,7 @@
 ---
 path: "/frontend/13"
 date: '2019-03-19'
-title: "Frontend Focus 13 - JavaScript Fundamentals (Syntax)"
+title: "Frontend Focus 13 - JavaScript Fundamentals"
 description: 
 image: ''
 tags: ['웹개발', '프론트엔드', 'JavaScript', '자바스크립트'
@@ -48,6 +48,7 @@ converting values to the appropriate data type
     - if a parameter(value) is __not provided in use__, it is __undefined__
     - can set __default values for arguments__
 - __a function can also be a value__
+    - can be assigned, copied, or declared
 
 #### Creating Functions
 1. __Function Declaration__
@@ -59,15 +60,16 @@ converting values to the appropriate data type
         - w/ (), the result of the function is stored into variable
         - w/o (), the function itself is stored
     - JavaScript engine creates function when assigned
+3. __Arrow Functions__: `=>`
+    - function created and __assigned to variable__ w/o name (anonymous) and __simpler than function expressions__
+    - _used in the same way as function expressions_
+    - usually takes the form as `() => {}`
 
 #### Callback Functions
 - __functions passed as arguments__ to higher-order functions
-    - can be passed by simply the __function's name (w/o () )__
-    - can be passed entire __function expressions__
+    - passed the __function's name (w/o () )__
+    - passed entire __function expressions__ or __arrow functions__
 - they are expected to be __called back later if necessary__
-
-#### Arrow Functions
-- 
 
 ### Browser Functions
 - `alert()`: opens modal window w/ text message
