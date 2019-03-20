@@ -8,13 +8,8 @@ tags: ['웹개발', '프론트엔드', 'JavaScript', '자바스크립트'
 ]
 ---
 > Understanding JavaScript
-
-- [detailed tutorial guide](http://javascript.info/)
-
-- debugging
-- coding style
-- automated testing
-- polyfills
+> - debugging, coding style, automated testing, polyfills
+> - based on [tutorial](http://javascript.info/)
 
 ### Debugging
 __finding and fixing errors__
