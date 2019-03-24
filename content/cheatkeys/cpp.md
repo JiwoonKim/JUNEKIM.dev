@@ -48,7 +48,7 @@ scanf("%10s", s); // 문자열 길이 10씩 읽기
 - float나 double 출력시, `fixed`를 사용하여 원하는 방식대로 출력할 수 있다.
 ```cpp
 #include <iomanip>
-// 값이 너무 클 때, scientific notation이 아닌 숫자 그대로 출력
+//값이 너무 클 때, scientific notation이 아닌 숫자 그대로 출력
 double d = 365808847; // 
 cout << fixed << d;
 // 실수의 특정 자리수를 지정하여 출력
@@ -57,10 +57,16 @@ cout << fixed << setprecision(3); // 3.14 (셋째자리에서 반올림)
 cout << setprecision(2); // 3.14
 ```
 
+### 문자열 <-> 숫자
+- 문자열 -> 숫자: `stoi()`, `stol`, `stof`, `stod`를 이용한다.
+    - 단 문자열의 원소 하나만을 변경하는 경우, `.substr(pos, 1)`을 이용한다.
+- 숫자 -> 문자열: `to_string()`를 이용한다.
+
+
 ### 숫자와 수학
 
 #### 올림, 내림, 반올림
-- `<cmath>` 헤더파일 포함시켜 사용하기
+- `<cmath>` 헤더파일 포함시키기
 ```
 
 ```
@@ -69,6 +75,11 @@ cout << setprecision(2); // 3.14
 - 최소값 찾을 때: `numeric_limits<int>::max()`로 먼저 초기화하여 사용하기.
 - 최대값 찾을 때: `numeric_limits<int>:: min()`로 먼저 초기화하여 사용하기.
 - 벡터 내에서 최소값 또는 최대값 찾을 때: `min_element()` 또는 `max_element()`으로 이터레이터 값 접근하여 사용하기.
+
+#### random 숫자 생성
+- `<cstlib>` 헤더파일 포함시켜 `rand()` 사용하기
+- a 부터 b까지의 숫자 range 중 랜덤으로 숫자 생성: `rand() % (range) + a
+    - a, b 포함
 
 ### 탐색
 - 벡터/배열 내에 존재하는지 여부 판단을 위한 방법 2 가지:

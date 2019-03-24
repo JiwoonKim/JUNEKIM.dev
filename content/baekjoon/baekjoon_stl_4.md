@@ -62,7 +62,7 @@ num = stoi(str); // 21 (숫자가 있는 부분까지만 읽어 바꿈)
 // 일단 입력된 값을 스트링 형태로 저장
 string str;
 string line;
-while (cin >> line) s+= line;
+while (cin >> line) s += line;
 // 스트림을 사용하여 문자열 파싱
 int num;
 istringstream sin(s); // 문자열 스트림을 생성
