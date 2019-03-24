@@ -1,7 +1,7 @@
 ---
-path: "/codejam"
+path: "/kickstart"
 date: '2019-03-24'
-title: "Google Kick Start CodeJam 후기"
+title: "Google Kick Start 2019 후기"
 description: C++ 치트키 정리
 image: ''
 tags: ['C++', '치트키']
