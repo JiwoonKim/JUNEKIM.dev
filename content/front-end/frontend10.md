@@ -1,7 +1,7 @@
 ---
 path: "/frontend/10"
 date: '2019-03-08'
-title: "Frontend Focus 10 - Images on the Web"
+title: "Frontend Focus 10 - Responisve Images"
 description: 
 image: ''
 tags: ['웹개발', '프론트엔드', '디자인'

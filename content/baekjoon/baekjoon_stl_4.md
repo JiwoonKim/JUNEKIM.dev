@@ -43,6 +43,7 @@ str.insert(10, "!"); // hello world! (10번째 index에 추가)
 
 #### 문자열 <-> 숫자
 - 문자열 -> 숫자: `stoi()`, `stol`, `stof`, `stod`를 이용한다.
+    - 0 ~ 9 한 자리수 문자열을 숫자로 변환시에는 `c - '0'` 도 사용 가능하다.
 - 숫자 -> 문자열: `to_string()`를 이용한다.
 ```cpp
 string str = "10";

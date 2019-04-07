@@ -30,12 +30,12 @@ generally, _mobile and tablet versions are fluid_ while the _desktop version is 
 it's always a good idea to __start w/ the mobile layout and work the way up to desktop version__ so that you can maximize the amount of css you can reuse across layours
 - __define base styles outsite media queries__ (and above them)
     - override them when implementing other specific layouts
-- use `flex-wrap` property for container to easily implement other layouts
+- __use `flex-wrap` property for container__ to easily implement other layouts
 
 #### Tablet Layout
 again, it doesn't matter what the exact width of the screen is (the layout will fluidly respond to any width in the range)
 - use `@media` with `min-width` and `max-width`
-    - generally _(min-width: 401px) and (max-width 960px)_ work
+    - generally __(min-width: 401px) and (max-width 960px)__ work
 - __adjust widths of the items within flex container__
     - percentage works well
     - flex-wrap will take care of the rest
@@ -43,7 +43,7 @@ again, it doesn't matter what the exact width of the screen is (the layout will 
 
 #### Desktop Layout
 - use `@media` with `min-width`
-    - generally (min-width: 961px) works well
+    - generally __(min-width: 961px)__ works well
 - give it a __fixed width__ and center it with __auto-margins__ so that the web page doesn't expand endlessly
 - __adjust widths of the items within flex container__
     - percentage works well
@@ -56,3 +56,13 @@ again, it doesn't matter what the exact width of the screen is (the layout will 
     content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 ```
 - bcuz mobile devices zoom out to fit the entire desktop layout into the small screen by default (prevents mobile layouts to be implemented)
+
+### Summary
+- __start from mobile sizes__ and then __use `@media` for larger screens__
+    - mobile: default
+    - tablet: __(min-width: 401px) and (max-width 960px)__
+    - larger: __(min-width: 961px)__
+- use `<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />`
+- utilize units:
+    - `vh`
+
