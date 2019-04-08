@@ -62,7 +62,7 @@ again, it doesn't matter what the exact width of the screen is (the layout will 
     - mobile: default
     - tablet: __(min-width: 401px) and (max-width 960px)__
     - larger: __(min-width: 961px)__
-- use `<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />`
-- utilize units:
-    - `vh`
+- __disable viewport__: `<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />`
+- utilize __units__:
+    - `vh` or `vw`
 

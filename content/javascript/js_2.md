@@ -1,7 +1,7 @@
 ---
-path: "/frontend/14"
+path: "/javascript/2"
 date: '2019-03-19'
-title: "Frontend Focus 14 - JavaScript Code Quality"
+title: "JavaScript 2 - Code Quality"
 description: 
 image: ''
 tags: ['웹개발', '프론트엔드', 'JavaScript', '자바스크립트'
