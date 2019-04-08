@@ -8,7 +8,7 @@ tags: ['웹개발', '프론트엔드', 'JavaScript', '자바스크립트'
 ]
 ---
 > Understanding JavaScript
-> - 
+> - numbers, 
 > - based on [tutorial](http://javascript.info/)
 
 ### 

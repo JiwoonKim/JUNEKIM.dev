@@ -179,6 +179,36 @@ __flexbox__ is an alternative to Floats for defining the layout
 - __dividing flex items in a container__: `margin: auto`
     - alternative to an extra < div> when aligning a group of items to left/right of a container
 
+### Grid
+
+#### Grid Container
+- set `display: grid` __to container__
+- __make columns__: `grid-template-columns` to container
+    - units: pixels, percentage, auto
+    - use `fr` unit to __specify ratio while making it responsive__
+        - ex. `grid-template-columns: 1fr 1fr 2fr`
+        - ex. `grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))`
+    - use `repeat()` to simplify specification
+        - ex. `grid-template-columns: repeat(3, 1fr)`
+- __make rows__: `grid-template-rows` to container
+- __set gap__: `grid gap`
+- __align items horizonally__: `jusitfy-items`
+- __align items vertically__: `align-items`
+- __push items to one side__: `grid-column-start` & `grid-column-end` (`grid-column`)
+```css
+.container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-rows: 30% 30% auto;
+    /* min 200 보다 작으면 그냥 1 item으로 가로채우고
+    1 item보다 크기가 크면 화면 크기 맞추어서 flexbox처럼 다른 item들 나열 */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* 균일한 grid가 아닌 둘쑥날쑥한 layout 원할 시에 */
+    grid-column-start: 1/3;
+    grid-column: span 2; /* 같은 효과 */
+}
+```
+
 ### Advanced Positioning
 to _gently tweak element positions_ or _animate a UI component w/o messing up the rest of the page_
 - __static positioning__: _normal flow_ of page
