@@ -1,13 +1,27 @@
 ---
 path: "/frontend/10"
 date: '2019-03-08'
-title: "Frontend Focus 10 - Responisve Images"
+title: "Frontend Focus 10 - Images on the Web"
 description: 
 image: ''
 tags: ['웹개발', '프론트엔드', '디자인'
 , 'responsive design']
 ---
 > Understanding Images on the Web
+
+### Images (`<img>`)
+- Image Formats
+    1. __JPG__: _photos and images_ w/ a lot of gradients in them
+        - designed for handling large color palettes w/o exorbitantly increasing file size, doesn't allow transparent pixels.
+    2. __GIF__: _simple animations_
+    3. __PNG__: _icons, technical diagrams, logos_, etc.
+        - great for anything else than photos or animations
+    4. __SVG__: same use cases as PNG, especially great for _responsive design_
+        - _vector-based graphics format_; can scale up or down to any dimension w/o losing quality
+        - potential issues: __need to convert any text fields__ to outlines using an image editor
+- `alt` attribute: defines __text alternative__ to image being displayed
+    - impact on search engines
+    - impace on users with text-only browser (text-to-speech)
 
 ### Responsive Images
 __display different images__ based on the __user's device__
@@ -20,7 +34,7 @@ __display different images__ based on the __user's device__
     2. the __image's dimension__
     3. device's __screen resolution__
 
-#### Make Images Responsive
+### Make Images Responsive
 - __use SVG__ (vector-based images)
     - can _avoid the screen resolution problem_
         - bcuz browsers _automatically scale up SVGs for retina devices_

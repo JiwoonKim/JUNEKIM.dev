@@ -1,13 +1,13 @@
 ---
 path: "/frontend/13"
 date: '2019-03-19'
-title: "Frontend Focus 13 - JavaScript Ecosystem"
+title: "Frontend Focus 13 - JavaScript Ecosystem (Frontend)"
 description: 
 image: ''
 tags: ['웹개발', '프론트엔드', 'JavaScript', '자바스크립트', 'ecosystem'
 ]
 ---
-> Understanding the JavaScript Ecosystem
+> Understanding the JavaScript Ecosystem for Frontend Development
 
 ### JavaScript
 - more at javascript section

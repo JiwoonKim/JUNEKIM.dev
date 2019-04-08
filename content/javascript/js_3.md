@@ -1,17 +1,21 @@
 ---
 path: "/javascript/3"
 date: '2019-03-20'
-title: "JavaScript 3 - Primitive Data Types"
+title: "JavaScript 3 - Data Types"
 description: 
 image: ''
 tags: ['웹개발', '프론트엔드', 'JavaScript', '자바스크립트'
 ]
 ---
 > Understanding JavaScript
-> - numbers, 
+> - 
 > - based on [tutorial](http://javascript.info/)
 
-### 
+### Numbers
+
+### Strings
+
+###
 
 ### Symbols
 primitive type for unique identifiers

@@ -1,12 +1,12 @@
 ---
-path: "/cheatkeys/html"
+path: "/html/1"
 date: '2019-01-30'
-title: "[HTML] 치트키 정리"
-description: HTML 치트키 정리
+title: "HTML 01 - Fundamentals"
+description: HTML 정리
 image: ''
-tags: ['html', '치트키']
+tags: ['html']
 ---
-> HTML 언어로 프로그래밍할 때 필요한 치트키들을 정리.
+> HTML 언어로 프로그래밍할 때 필요한 내용 정리.
 > 개인적인 자주 사용하는 문법을 반영하여 만든 치트키입니다.
 
 ### HTML
@@ -15,7 +15,7 @@ tags: ['html', '치트키']
 - < html> 내의 내용을 < head>와 < body>로 페이지 나누어 구성
 
 #### 자주 사용되는 tag 종류 
-- `<head></head>`: content 보다는 data 및 __특정정보__ 를 담는다
+- `<head></head>`: content 보다는 __meta data__ 를 담는다
   - `<title></title>`
   - `<meta charset=”utf-8”>`  
   - __css style 정의__: `<style></style>`
@@ -32,14 +32,16 @@ tags: ['html', '치트키']
   - __하이퍼링크__: `<a ref=”{링크}”>`  
   - __그외__: `<form></form>`, `<input></input>`, `<button></button>`  
 
-#### 의미론적 HTML (semantic HTML)
-- HTML5 새 tag: https://www.w3schools.com/html/html5_new_elements.asp 
-- 의미가 없는 < div>나 < span> 대신 의미를 부여하여 새로운 tag들 사용하기
-- 강조:
-  - `<em>` instead of < i>
-  -  `<strong>` instead of < b>
-- 긋기:
-  - `<ins>` and `<del>` instead of text-decoration: line-through;
+#### Language와 Encoding
+- `html lang='en'`: defineㄴ the __language of the document's content__
+- `meta charset='UTF-8'`: defines __how the character letters are rendered__
+
+#### HTML Entity
+special character that can't be represented as plain text in an HTML document
+- __reserved character__: <, >, and &
+    - represented by `&lt;`, `&gt;`, `&amp;` respectively
+- __characters not on the keyboard__: begin w/ `&` and end with `;` to interpret as a symbol of something
+    - [more information](https://dev.w3.org/html5/html-author/charref)
 
 ### 참고자료
 - https://opentutorials.org/course/3084 (생활코딩 html)
