@@ -1,34 +1,26 @@
 ---
 path: "/frontend/12"
-date: '2019-03-11'
-title: "Frontend Focus 12 - SEO"
+date: '2019-03-19'
+title: "Frontend Focus 12 - JavaScript Ecosystem (Frontend)"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', 'SEO'
+tags: ['웹개발', '프론트엔드', 'JavaScript', '자바스크립트', 'ecosystem'
 ]
 ---
-> Understanding Search Engine Optimization (SEO)
+> Understanding the JavaScript Ecosystem for Frontend Development
 
-### Search Engine Optimization (SEO)
-the process of __affecting the visibility__ of a website __for better search engine results__ (unpaid/organic results)
+### JavaScript
+- more at javascript section
+- [javascript cheetsheat](https://mbeaudru.github.io/modern-js-cheatsheet/)
+- [you don't know javascript](https://github.com/getify/You-Dont-Know-JS) to refine knowledge
 
-- [Google SEO Starter Guide](https://support.google.com/webmasters/answer/7451184?hl=en)
-- [How Google search works](https://support.google.com/webmasters/answer/70897)
-- [초보몽키 블로그 구글 검색 가능](https://wayhome25.github.io/etc/2017/02/20/google-search-sitemap-jekyll/)
+### DOM & BOM
 
-### How Google Search Works
-Google follows three basic steps to generate results from pages
+### Libraries vs. Frameworks
 
-#### Crawling
-discovering pages on the web
-- already known pages
-- following linksto a new page from a known page
-- received a list of pages (sitemap) to crawl
+#### jQuery
+- [you might not need jQuery](http://youmightnotneedjquery.com/)
 
-#### Indexing
-understanding what a page is about
-- analyzes the content of the page
-- catalogs images and video files embedded on the page
-- stores the information in database (Google index)
+#### JS Templates
 
-#### Serving (+ ranking)
+#### React

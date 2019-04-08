@@ -1,91 +1,68 @@
 ---
 path: "/frontend/8"
-date: '2019-03-02'
-title: "Frontend Focus 08 - User Interface & Interaction Design"
+date: '2019-03-08'
+title: "Frontend Focus 08 - Responsive Design"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', '디자인']
+tags: ['웹개발', '프론트엔드', '디자인'
+, 'responsive design']
 ---
-> Basics Design Principles
+> understanding Responsive Design and how to implement it
 
-> [Design for Non-designers 비디오](https://www.youtube.com/watch?v=ZbrzdMaumNk&feature=youtu.be) 참고하여 내용 정리
+- [reference](https://internetingishard.com/)
+- [responsive web design patters](https://developers.google.com/web/fundamentals/design-and-ux/responsive/patterns?hl=en)
 
-### Design (for developers)
-- making an `interface that works well`
-- you don't need to know @ golden rule, typography, etc.
+### Responsive Design
+the idea that your website should display equally well in everything from widescreen monitors to mobile phones
+- accomplished via css `@media` (__media queries__)
+    - way to conditionally apply CSS rules
+- __media type__: `only screen`, `print`
+- __media features__: `min-width`, `max-width`
 
-#### how can we create effective & basic designs?
-- `reduce visual clutter`, by
-    - keeping the number of fonts and colors low,
-    - add white space,
-    - and line things up
-- aim for `clean design`
+#### Layout Concepts
+generally, _mobile and tablet versions are fluid_ while the _desktop version is fixed-width_
+- __Fluid Layout__: stretches and shrinks to fill the width of the screen
+    - can __target a range__ of screen widths; not a company's device
+    - so __the exact pixel values (breakpoints) don't actually matter__
+- __Fixed-width Layout__: same width regardless of screen dimensions
 
-### Basic design principles (reduce clutter)
-1. `grid`: __line things up__ since pixel differences add to clutter are definitely unconsciously noticed
-2. `color`: keep your color complimentary
-    - use __mostly neutrals + one brighter color__ for important bits
-    - [shortcut templates](https://www.colourlovers.com/palettes/most-loved/all-time/meta)
-    - [a simple guide for colors](https://www.smashingmagazine.com/2016/04/web-developer-guide-color/)
-3. `fonts`: keep it simple
-    - __keep the number of fonts low__: 2 different fonts is usually a good rule of thumb
-    - __use fancy/display fonts sparingly__ since it is very cluttery; generally avoid them
-    - __instead, vary weights (bold), style (italics), and transforms (uppercase, etc.)__ to differentiate bit
-    - [shortcut to display fonts](https://beautifulwebtype.com/)
-    - [shortcut for curated fonts](https://www.typewolf.com/)
-4. `white space`: the ultimate clutter reducer!
+#### Mobile-first Development
+it's always a good idea to __start w/ the mobile layout and work the way up to desktop version__ so that you can maximize the amount of css you can reuse across layours
+- __define base styles outsite media queries__ (and above them)
+    - override them when implementing other specific layouts
+- __use `flex-wrap` property for container__ to easily implement other layouts
 
-### User experience principles
-- make the most important action on your design __easy to find and use__
-    - ex. make the important button stand out and clickable (with color)
-- __pay attention to__ your goals on __what you're designing__ and __how it's designed and used__
+#### Tablet Layout
+again, it doesn't matter what the exact width of the screen is (the layout will fluidly respond to any width in the range)
+- use `@media` with `min-width` and `max-width`
+    - generally __(min-width: 401px) and (max-width 960px)__ work
+- __adjust widths of the items within flex container__
+    - percentage works well
+    - flex-wrap will take care of the rest
+- __adjust the orders of the items__: flexbox's `order` property
 
-### Content principles
-content is also a big sign of clutter
-1. `less is more`: make it __shorter__, __simplier__, __easy to read__ (well, actually skim)
-    - parse big paragraphs into __bullets__
-    - add __boldings__
-    - add __white space__ between bullets
-2. `headlines`: __short__, __sweet__, and __simple__
-    - __talk benefits__, not details
-        - ex. introduction to building web apps using python and django < _learn how to build a web app_
-        - ex. download < _send me free info_
-    - __keep it short__
-    - use natural, friendly language; __sound human, not a robot__
-        - ex. email < _add your email here_
+#### Desktop Layout
+- use `@media` with `min-width`
+    - generally __(min-width: 961px)__ works well
+- give it a __fixed width__ and center it with __auto-margins__ so that the web page doesn't expand endlessly
+- __adjust widths of the items within flex container__
+    - percentage works well
+    - flex-wrap will take care of the rest
+- __adjust the orders of the items__: flexbox's `order` property
 
-### Images and Imagery
-- stock photos usually look like stock photos
-- you can still accomplish a lot with __just type and screenshots__
-- remember to pay attention to __file size__
-- don't forget retina-quality images
-- [copyright-free stock photos](https://unsplash.com/)
-- []
+#### Disabling Viewport Zooming
+```html
+<meta name='viewport'
+    content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+```
+- bcuz mobile devices zoom out to fit the entire desktop layout into the small screen by default (prevents mobile layouts to be implemented)
 
-### Design philosophy
-__Good artists copy, Great artists steal__
-- ex) starting design from scratch is like coding without stackoverflow
+### Summary
+- __start from mobile sizes__ and then __use `@media` for larger screens__
+    - mobile: default
+    - tablet: __(min-width: 401px) and (max-width 960px)__
+    - larger: __(min-width: 961px)__
+- __disable viewport__: `<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />`
+- utilize __units__:
+    - `vh` or `vw`
 
-#### Use Inspiration
-- look into other designs
-    - [Dribble for inspiration](https://dribbble.com/)
-- find what they have done well
-- implement it in your designs
-
-### Overview of design process
-1. _-collect inspiration__ and __sketch ideas__:
-    - pick out ideas from other designs
-    - sketch out ideas of your own (scribble)
-2. __mock-up__:
-    - don't have to be pixel perfect
-    - easier to move things and try
-3. __build it__
-4. __have someone use it__ (to see the user experience)
-
-#### philosophy
-- process: _crap, crap, crap, crap, crap, crap, crap, crap...maybe? yes!_
-    - just because you're doing it like this, doesn't mean you're a bad designer, you're just a designer
-- this is only the starting point!
-- __the more practice, the better designer you will become__
-- the __usability__ is more important than how it looks
-    - rely on data (quantitative) than just aesthetics

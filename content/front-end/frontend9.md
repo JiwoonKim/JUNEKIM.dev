@@ -1,68 +1,84 @@
 ---
 path: "/frontend/9"
 date: '2019-03-08'
-title: "Frontend Focus 09 - Responsive Design"
+title: "Frontend Focus 09 - Images on the Web"
 description: 
 image: ''
 tags: ['웹개발', '프론트엔드', '디자인'
 , 'responsive design']
 ---
-> understanding Responsive Design and how to implement it
+> Understanding Images on the Web
 
-- [reference](https://internetingishard.com/)
-- [responsive web design patters](https://developers.google.com/web/fundamentals/design-and-ux/responsive/patterns?hl=en)
+### Images (`<img>`)
+- Image Formats
+    1. __JPG__: _photos and images_ w/ a lot of gradients in them
+        - designed for handling large color palettes w/o exorbitantly increasing file size, doesn't allow transparent pixels.
+    2. __GIF__: _simple animations_
+    3. __PNG__: _icons, technical diagrams, logos_, etc.
+        - great for anything else than photos or animations
+    4. __SVG__: same use cases as PNG, especially great for _responsive design_
+        - _vector-based graphics format_; can scale up or down to any dimension w/o losing quality
+        - potential issues: __need to convert any text fields__ to outlines using an image editor
+- `alt` attribute: defines __text alternative__ to image being displayed
+    - impact on search engines
+    - impace on users with text-only browser (text-to-speech)
 
-### Responsive Design
-the idea that your website should display equally well in everything from widescreen monitors to mobile phones
-- accomplished via css `@media` (__media queries__)
-    - way to conditionally apply CSS rules
-- __media type__: `only screen`, `print`
-- __media features__: `min-width`, `max-width`
+### Responsive Images
+__display different images__ based on the __user's device__
+- __problem__: 
+    - images have inherent dimensions, therefore __cannot stretch__ beyond the width or length
+    - __retina screen__ displays require __high resolution/large images__
+    - sending high-resolution images to __standard displays and smaller devices__ is __unnecessary data__ and a __bad user experience__
+- __things to consider__:
+    1. the __device's dimension__
+    2. the __image's dimension__
+    3. device's __screen resolution__
 
-#### Layout Concepts
-generally, _mobile and tablet versions are fluid_ while the _desktop version is fixed-width_
-- __Fluid Layout__: stretches and shrinks to fill the width of the screen
-    - can __target a range__ of screen widths; not a company's device
-    - so __the exact pixel values (breakpoints) don't actually matter__
-- __Fixed-width Layout__: same width regardless of screen dimensions
-
-#### Mobile-first Development
-it's always a good idea to __start w/ the mobile layout and work the way up to desktop version__ so that you can maximize the amount of css you can reuse across layours
-- __define base styles outsite media queries__ (and above them)
-    - override them when implementing other specific layouts
-- __use `flex-wrap` property for container__ to easily implement other layouts
-
-#### Tablet Layout
-again, it doesn't matter what the exact width of the screen is (the layout will fluidly respond to any width in the range)
-- use `@media` with `min-width` and `max-width`
-    - generally __(min-width: 401px) and (max-width 960px)__ work
-- __adjust widths of the items within flex container__
-    - percentage works well
-    - flex-wrap will take care of the rest
-- __adjust the orders of the items__: flexbox's `order` property
-
-#### Desktop Layout
-- use `@media` with `min-width`
-    - generally __(min-width: 961px)__ works well
-- give it a __fixed width__ and center it with __auto-margins__ so that the web page doesn't expand endlessly
-- __adjust widths of the items within flex container__
-    - percentage works well
-    - flex-wrap will take care of the rest
-- __adjust the orders of the items__: flexbox's `order` property
-
-#### Disabling Viewport Zooming
+### Make Images Responsive
+- __use SVG__ (vector-based images)
+    - can _avoid the screen resolution problem_
+        - bcuz browsers _automatically scale up SVGs for retina devices_
+    - make it __fluid__:
+        - set `width: 100%`
+        - and set max-width inline
 ```html
-<meta name='viewport'
-    content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+ <img class='image' src='image.svg' style='max-width: 500px'/>
 ```
-- bcuz mobile devices zoom out to fit the entire desktop layout into the small screen by default (prevents mobile layouts to be implemented)
-
-### Summary
-- __start from mobile sizes__ and then __use `@media` for larger screens__
-    - mobile: default
-    - tablet: __(min-width: 401px) and (max-width 960px)__
-    - larger: __(min-width: 961px)__
-- __disable viewport__: `<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />`
-- utilize __units__:
-    - `vh` or `vw`
-
+- __Raster Images__ (PNG, GIF, JPG) __w/ Image Optimization__
+    1. list alternative image files via `srcset`
+        - use if image is __smaller than 600px wide__
+        - 1x: display for standard screens
+        - 2x: display retina screens
+        - older browser resort to `src`
+```html
+<img src='illustration-small.png'
+       srcset='images/illustration-small.png 1x,
+               images/illustration-big.png 2x'
+       style='max-width: 500px'/>
+```
+    2. specify a series of `sizes` of which images should be rendered
+        - use if image is __larger than 600px wide__
+        - use `media queries` and`w` to define inherent widths of the images
+        - this way, _can optimize data_ to _even mobile retina screens_ (which may only need standard images, rather than the retina images)
+```html
+<img src='photo-small.jpg'
+         srcset='photo-big.jpg 2000w,
+                 photo-small.jpg 1000w'
+         sizes='(min-width: 960px) 960px,
+                100vw'/>
+<!-- when the screen is larger than 960px wide, image is 960px -->
+<!-- otherwise, image is 100vw (100% of viewport width) -->
+```
+    3. change art direction w/ `<picture>` and `<source>`
+        - use if __feeling fancy__ w/ the designer
+        - use `<picture>` as a wrapper
+        - use `<source>` to conditionally load _differently cropped images_ based on _media queries_
+        - < img/> is only specified for older browsers to use
+        - but _loses retina optimization_
+```html
+<picture>
+      <source media='(min-width: 401px)' srcset='photo-big.jpg'/>
+      <source media='(max-width: 400px)' srcset='photo-tall.jpg'/>
+      <img src='photo-small.jpg'/>
+</picture>
+```
