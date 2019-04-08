@@ -7,12 +7,9 @@ image: ''
 tags: ['웹개발', '프론트엔드']
 ---
 > how the internet and web work
-
-- [reference](https://frontendmasters.com/books/front-end-handbook/2018/learning/internet.html)
-
-- [best explanation for how Internet works - protocol-wise](http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm)
-
-- [great video explanation of how Internet works - hardware to protocols](https://www.khanacademy.org/partner-content/code-org/internet-works)
+> - [references](https://frontendmasters.com/books/front-end-handbook/2018/learning/internet.html)
+> - [best explanation for how Internet works - protocol-wise](http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm)
+> - [great video explanation of how Internet works - hardware to protocols](https://www.khanacademy.org/partner-content/code-org/internet-works)
 
 ### Internet
 - a global system of interconnected computer networks that use the Internet protocol suite (TCP/IP) to link billions of devices worldwide.

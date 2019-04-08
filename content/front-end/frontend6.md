@@ -1,14 +1,13 @@
 ---
 path: "/frontend/6"
 date: '2019-03-04'
-title: "Frontend Focus 06 - HTML"
+title: "Frontend Focus 06 - HTML & CSS"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', 'html']
+tags: ['웹개발', '프론트엔드', 'html', 'css']
 ---
 > understanding general front-end development and HTML
-
-- [reference](https://internetingishard.com/)
+> - [reference](https://internetingishard.com/)
 
 ### the Languages that run the Web
 - __HTML__: adding __meaning__ to raw content by marking it up
@@ -27,4 +26,14 @@ tags: ['웹개발', '프론트엔드', 'html']
     - < br/> should not be abused; each one should convey __meaning__; not to add a bunch of space (CSS should do this)
 - HTML5 attempted to create a __clear separation between a document's structure and appearance__
 
+### CSS
+- provides __presentational information__ of how the content is presented to the user
+- it defines the __design__ of your page, determining things like font size, margins, colors, etc.
 
+#### CSS Hierarchy 
+in rendering order: the lower orders override previous ones
+- the browser's default stylesheet
+- user-defined stylesheets
+- external stylesheets (.css file)
+- page-specific styles (< style> within html)
+- inline styles

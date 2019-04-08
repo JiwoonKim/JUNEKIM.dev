@@ -7,8 +7,7 @@ image: ''
 tags: ['웹개발', '프론트엔드']
 ---
 > what web hosting is
-
-[reference & infographic](https://frontendmasters.com/books/front-end-handbook/2018/learning/hosting.html)
+> - [reference & infographic](https://frontendmasters.com/books/front-end-handbook/2018/learning/hosting.html)
 
 ### Web Hosting
 - web hosting service: a type of Internet hosting service that allows individuals and organizations to make their _website accessible via the World Wide Web_.

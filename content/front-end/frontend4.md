@@ -7,16 +7,11 @@ image: ''
 tags: ['웹개발', '프론트엔드']
 ---
 > what HTTP, CORS, and Web Sockets are
-
-[reference](https://frontendmasters.com/books/front-end-handbook/2018/learning/http-networks.html)
-
-[HTTP document](https://tools.ietf.org/html/rfc2616)
-
-[great explanation on how HTTP works](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
-
-[nitty gritty on HTTP](https://code.tutsplus.com/series/http-succinctly--net-33683)
-
-[CORS explanation](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+> - [references](https://frontendmasters.com/books/front-end-handbook/2018/learning/http-networks.html)
+> - [HTTP document](https://tools.ietf.org/html/rfc2616)
+> - [great explanation on how HTTP works](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+> - [nitty gritty on HTTP](https://code.tutsplus.com/series/http-succinctly--net-33683)
+> - [CORS explanation](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 
 ### HTTP (Hypertext Transfer Protocol)
 - an application protocol for distributed, collaborative, hypermedia information systems.

@@ -1,52 +1,13 @@
 ---
-path: "/frontend/7"
+path: "/css/3"
 date: '2019-03-05'
-title: "Frontend Focus 07 - CSS"
+title: "CSS 03 - 레이아웃 (Layouts)"
 description: 
 image: ''
 tags: ['웹개발', '프론트엔드', 'css']
 ---
 > understanding CSS
-
-- [reference](https://internetingishard.com/)
-
-### CSS
-- provides __presentational information__ of how the content is presented to the user
-- it defines the __design__ of your page, determining things like font size, margins, colors, etc.
-
-#### CSS Hierarchy 
-in rendering order: the lower orders override previous ones
-- the browser's default stylesheet
-- user-defined stylesheets
-- external stylesheets (.css file)
-- page-specific styles (< style> within html)
-- inline styles
-
-#### Selectors
-- __type selector__: specify the tag
-- __class__: use `.class` attribute
-    - by far the __most versatile__ and come w/ the least amount of drawbacks
-    - standard naming convention to use _all lowercase and hyphens_
-- __id__: use `#id` attribute
-    - can't reuse the styles at all so generally the use of it is frowned upon; __use classes instead for styles__
-- __pseudo-class__: use stateful information
-    - ex. `:link`, `:visited`, `:hover`, `:active`, `:last-of-type`
-
-#### CSS Specificity
-not all CSS selectors are created equal
-- __specificity order__ (the higher, it overrides others)
-    - id
-    - pseudo-class
-    - class
-    - type selector (tag)
-- [__BEM__](http://getbem.com/introduction/) : attempts to make CSS rules more resuable by making _everything a class selector_, which _eliminates potential for specificity issues_
-
-#### Units of Measurement
-- __px__(pixel): 
-    - for __spacing and layout__; not for font-size since it is not responsive
-- __em__: sizes _relative to parent_'s unit
-- __rem__: sizes _relative to root html_ element's unit
-    - use for font-size and spacing (margin and padding)
+> - [reference](https://internetingishard.com/)
 
 ### Layouts
 the fundamental task of laying out a page is just __moving a bunch of nested boxes around__
@@ -54,6 +15,7 @@ the fundamental task of laying out a page is just __moving a bunch of nested box
 - __block__ vs __inline__ elements
 - __floats__ (horizontal layout)
 - __flexbox__ (full control)
+- __grid__
 - __advanced positioning__
 
 (when given a design mockup to implement, first __draw a bunch of boxes__, __determine how they're supposed to stack, stretch, and shrink__ to achieve the desired design
@@ -76,15 +38,19 @@ set of rules that determine the dimensions of __every element__ (_both inline an
 ```
 
 ### Block & Inline elements
-- `Block`:
+`Block`:
     - __width__: automatically set to _width of parent container_
     - __height__: _based on the content_ it contains
-    - align: __floats__ _for left/right_, __auto-margins__ _for center_
+    - __align__: __floats__ _for left/right_, __auto-margins__ _for center_
+    - Default가 block display인 태그: `<div>`, `<h{숫자}>`, `<p>`, `<ul>`, `<ol>`, `<li>`, `<table>`, `<hr>`,  
+`<form>`, `<header>`, `<footer>`, `<main>`, `<section>`, `<nav>`
 - `Inline`:
     - __width__: _based on the content_ it contains
-    - height: __don't affect vertical spacing__
-    - align: use __text-align__
-- __Overriding default display__: set `display` property
+    - height: __don't affect vertical spacing__ (may vertically overlap)
+    - __align__: use __text-align__
+    - Default가 inline display인 태그: `<a>`, `<img>`, `<button>`, `<input>`, `<span>`, `<textarea>`, `<br>`
+- `Inline-block`:
+    - like inline but w/o vertically overlapping problem
 
 ### Floats
 `float` gives control over the __horizontal position__ of an element 
@@ -133,6 +99,7 @@ float-based layouts have mostly been __replaced w/ Flexbox in modern websites__
 __flexbox__ is an alternative to Floats for defining the layout
 - gives __complete control__ over _alignment, direction, order, and size of the boxes_
 - __use flexbox to layout as much as possible__, __reserving floats for__ when you need text to flow around a box (like a __magazine__)
+- [개구리 게임으로 연습하기](https://flexboxfroggy.com/#ko)
 
 #### Flex Container:
 - set `display: flex` __to container__
@@ -180,6 +147,8 @@ __flexbox__ is an alternative to Floats for defining the layout
     - alternative to an extra < div> when aligning a group of items to left/right of a container
 
 ### Grid
+- 
+- [그리드 가든 게임으로 연습하기](https://cssgridgarden.com/#ko)
 
 #### Grid Container
 - set `display: grid` __to container__
@@ -251,66 +220,3 @@ to _gently tweak element positions_ or _animate a UI component w/o messing up th
 #### Positioned elements for Animation
 - animation is one of the primary use cases for relative and absolute positioning
 - combine css positioning and javascript
-
-### Practice making a Menu
-
-#### Navigation Menu
-- should almost always be __marked up as a < ul> list__
-    - these semantics make the site's navigation much _more accessible to search engine_
-```html
-<ul class='menu'>
-            <li><a href='#'>Blog</a></li>
-            <li><a href='#'>About</a></li>
-            <li><a href='#'>Subscribe</a></li>
-</ul>
-```
-- set the __< li> items as inline boxes__: `display: inline`
-    - use child selectors `>` to only select the direct < li> items under the menu
-```css
-.menu > li {
-            display: inline;
-            margin-right: 0;
-}
-.menu > li:last-of-type {
-            margin-right: 0;
-}
-/* common technique for creating margins between items */
-/* (tweak margins when you can't use flexbox) */
-```
-
-#### Drop Menu
-- __create a nested list__
-    - _within a navigation menu_, drop menu lives
-    - this way Google can see the drop menu items associated w/ the < span> label
-- __add a `class` attribute and `< span>` for the dropdown < li>__ to _differentiate the label from the submenu_ (dropdowns) it reveals
-```html
-<ul class='menu'>
-    <!-- where other menu items are (part of navigation menu)-->
-        <li class='dropdown'><span>Categories ▾</span>
-            <ul class='categories-menu'>
-                <li><a href='#'>Travel</a></li>
-                <li><a href='#'>Lifestyle</a></li>
-                <li><a href='#'>Quotes</a></li>
-            </ul>
-        </li>
-    <!-- where other menu items are (part of navigation menu)-->
-</ul>
-```
-```css
-/* use hover pseudo-class to hide and show dropdown menu*/
-.categories-menu {
-    display: none;
-}
-.dropdown:hover .categories-menu {
-    display: flex;
-    flex-direction: column;
-}
-/* border to draw lines between items */
-.categories-menu li {
-    list-style: none;
-    border-bottom: 1px solid black;
-}
-.categories-menu li:last-of-type {
-    border-bottom: none;
-}
-```

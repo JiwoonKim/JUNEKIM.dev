@@ -7,12 +7,9 @@ image: ''
 tags: ['웹개발', '프론트엔드']
 ---
 > what is a domain name system
-
-[reference](https://frontendmasters.com/books/front-end-handbook/2018/learning/dns.html)
-
-[explanation of how dns works](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_domain_name)
-
-[how url works](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL)
+> - [references](https://frontendmasters.com/books/front-end-handbook/2018/learning/dns.html)
+> - [explanation of how dns works](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_domain_name)
+> - [how url works](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL)
 
 ### DNS (Domain Name System)
 - __a hierarchical distributed naming system__ for computers, services, or any resource connected to the Internet or a private network

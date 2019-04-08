@@ -7,10 +7,8 @@ image: ''
 tags: ['웹개발', '프론트엔드']
 ---
 > what is a web browser
-
-[reference](https://frontendmasters.com/books/front-end-handbook/2018/learning/browsers.html)
-
-[great explanation on rendering](https://hacks.mozilla.org/2017/05/quantum-up-close-what-is-a-browser-engine/)
+> - [references](https://frontendmasters.com/books/front-end-handbook/2018/learning/browsers.html)
+> - [great explanation on rendering](https://hacks.mozilla.org/2017/05/quantum-up-close-what-is-a-browser-engine/)
 
 ### Web Browser
 - a software application for retrieving, presenting, and traversing information resources on the World Wide Web.
