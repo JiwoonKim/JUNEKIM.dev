@@ -29,11 +29,3 @@ tags: ['웹개발', '프론트엔드', 'html', 'css']
 ### CSS
 - provides __presentational information__ of how the content is presented to the user
 - it defines the __design__ of your page, determining things like font size, margins, colors, etc.
-
-#### CSS Hierarchy 
-in rendering order: the lower orders override previous ones
-- the browser's default stylesheet
-- user-defined stylesheets
-- external stylesheets (.css file)
-- page-specific styles (< style> within html)
-- inline styles

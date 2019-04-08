@@ -13,7 +13,7 @@ tags: ['웹개발', '프론트엔드', 'css']
 - Cascading Style Sheet의 약자
 - html 태그에 __스타일__ 을 입히는 것이 CSS의 중요 포인트
 
-#### CSS 적용 방법
+#### Setting up CSS
 점점 코드를 분리해나가면서 불필요한 중복을 피하고 수정 시 더 효율적임
 1. __In-line style__: html 태그 내에 일일히 스타일 명시
 ```html
@@ -33,6 +33,14 @@ tags: ['웹개발', '프론트엔드', 'css']
 ```css
 h1, h2, p { color: red; }
 ```
+
+#### CSS Hierarchy 
+in rendering order: the lower orders override previous ones
+- the browser's default stylesheet
+- user-defined stylesheets
+- external stylesheets (.css file)
+- page-specific styles (< style> within html)
+- inline styles
 
 ### Selectors
 - __type selector__: specify the tag
