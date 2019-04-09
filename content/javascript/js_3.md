@@ -1,17 +1,26 @@
 ---
 path: "/javascript/3"
 date: '2019-03-20'
-title: "JavaScript 3 - Data Types"
+title: "JavaScript 3 - Primitive Data Types"
 description: 
 image: ''
 tags: ['웹개발', '프론트엔드', 'JavaScript', '자바스크립트'
 ]
 ---
 > Understanding JavaScript
-> - 
 > - based on [tutorial](http://javascript.info/)
 
+### Primitive Data Types
+single valued data types
+- 6 types: __numbers__, __strings__, __boolean__, __null__, __undefined__, and __symbols__
+
+#### Primitive Methods
+- JavaScript creates __object wrappers__ when __numbers, strings, booleans and symbols__ are accessed by `.` to allow extra functionalities such as __methods and properties__
+- the wrapper (a.k.a String, Number, Boolean, Symbol) is different for each primitive type; provide different methods
+- the wrapper is destroyed right after it is used
+
 ### Numbers
+
 
 ### Strings
 
