@@ -26,3 +26,15 @@ tags: ['JavaScript','자바스크립트', '치트키']
 
 ### Functions
 avoid side effects, keep functional purity (de)
+
+### Debugging
+- use `debugger` keyword in code
+
+### How JavaScript Works
+JavaScript is a __single-threaded__ language that can be __non-blocking__
+- __single-threaded__: one call stack
+    - (_cf. multi-threaded = multiple call stacks but deadlock issues_)
+    - thus, JavaScript is __synchronous programming__ (one statement executed at a time)
+- __non-blocking__: __asynchronous execution__ so that a single very long function does not block other functions (wait)
+    - use web api -> callback queue 
+    - checked by event loop
