@@ -27,7 +27,9 @@ let milli = 1e-3; // 0.001
 ```
 
 #### Conversion
-- `.toString()`: method to convert number to string type
+- __to Number__: `+` or `Number()`, 
+    - `parseInt()` & `parseFloat()`: to convert and parse
+- __from Number__: `.toString()`
 ```js
 let num = 255;
 num.toString();  // "255"
@@ -36,15 +38,36 @@ num.toString(2); // "11111111"
 ```
 
 #### Rounding
-- `Math.floor()`: rounds __down__ to integer value
-- `Math.ceil()`: rounds __up__ to integer value
-- `Math.round()`: rounds to __nearest__ integer value
-- `Math.trunc()`: __removes decimal values__
+- Rounding to __Integers__: `Math.floor()`, `Math.ceil()`, `Math.round()`, `Math.trunc()`
+- Rounding to __Floating-point values__:
+```js
+let num = 3.145;
+// rounds to n digits after the point, returns string
+// then, must convert it back to number type
++num.toFixed(2); // 3.145 -> "3.14" -> 3.14
+```
     
+#### Imprecison
+since floating-point values are actually represented as endless fractions in binary form, they produce imprecise calculations. __So Beware!__ 
+- can use `.toFixed()` to round result into desired outcome and lose imprecise calculations
+
+#### Other Math Functions
+- `Math.random()`: returns random number from 0 to 1
+- `Math.max()` & `Math.min()`: returns max/min from number or arguments
+- `**`: returns n^power
 
 ### Strings
+textual data encoded in UTF-16
+- `.length`: return length of string
+- `.toLowerCase()` & `.toUpperCase()`: convert to lower/uppercase
 
-###
+#### Substrings
+- find position of substring: `.indexOf()`
+- checks containing of substring: `.includes()`, `.startsWith()`, `.endsWith()`
+- return a substring: `.slice()`, `.substring()`
+
+#### Comparison
+- use `localeCompare`, otherwise they are compared by character codes
 
 ### Symbols
 primitive type for unique identifiers
