@@ -100,7 +100,7 @@ class Counter extends React.Component {
         this.setState(state => {
             count: state.count + 1
             // the other states remain the same
-        })
+        });
     }
 }
 ```

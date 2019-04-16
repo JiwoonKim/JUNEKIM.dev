@@ -20,7 +20,27 @@ single valued data types
 - the wrapper is destroyed right after it is used
 
 ### Numbers
+- use `e` to specify zero count
+```js
+let million = 1e6; // 1000,000
+let milli = 1e-3; // 0.001
+```
 
+#### Conversion
+- `.toString()`: method to convert number to string type
+```js
+let num = 255;
+num.toString();  // "255"
+num.toString(2); // "11111111"
+100..toString(); (100).toString(); // to use directly on value
+```
+
+#### Rounding
+- `Math.floor()`: rounds __down__ to integer value
+- `Math.ceil()`: rounds __up__ to integer value
+- `Math.round()`: rounds to __nearest__ integer value
+- `Math.trunc()`: __removes decimal values__
+    
 
 ### Strings
 
