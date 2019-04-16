@@ -19,7 +19,7 @@ single valued data types
 - the wrapper (a.k.a String, Number, Boolean, Symbol) is different for each primitive type; provide different methods
 - the wrapper is destroyed right after it is used
 
-### Numbers
+### 1. Numbers
 - use `e` to specify zero count
 ```js
 let million = 1e6; // 1000,000
@@ -56,7 +56,7 @@ since floating-point values are actually represented as endless fractions in bin
 - `Math.max()` & `Math.min()`: returns max/min from number or arguments
 - `**`: returns n^power
 
-### Strings
+### 2. Strings
 textual data encoded in UTF-16
 - `.length`: return length of string
 - `.toLowerCase()` & `.toUpperCase()`: convert to lower/uppercase
@@ -69,7 +69,18 @@ textual data encoded in UTF-16
 #### Comparison
 - use `localeCompare`, otherwise they are compared by character codes
 
-### Symbols
+### 3. Boolean
+`true` or `false`
+
+### 4. Null
+__nothing, empty, value unknown__
+- `null`:used to assign an empty or unkown value to variable
+
+### 5. Undefined
+__value is not assigned__
+- `undefined`: used to check if variable has been assigned a value
+
+### 6. Symbols
 primitive type for unique identifiers
 ```js
 let s = Symbol();
