@@ -4,7 +4,7 @@ date: '2019-02-25'
 title: "Interesting Topics I would like to know more of"
 description: 
 image: ''
-tags: ['개발', '토픽']
+tags: ['토픽', 'topics']
 ---
 > a collection of topics that I am interested in and would like to research more about
 
