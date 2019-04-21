@@ -10,7 +10,7 @@ tags: ['백준', 'C++', '강의노트']
 
 - [순차 컨테이너](#순차-컨테이너-sequential-container): vector, list, deque
 - [연관 컨테이너](#연관-컨테이너-associative-containers): set, map
-- [컨테이너 어댑터](#컨테이너-어댑터-container-adaptors): stack, queue, priority_queu
+- [컨테이너 어댑터](#컨테이너-어댑터-container-adaptors): stack, queue, priority_queue
 
 ### 컨테이너 (Container)
 - Pair, Tuple, Vector, Deque, List, Set, Map, Stack, Queue, Priority Queue, Bitset 등이 존재한다.
