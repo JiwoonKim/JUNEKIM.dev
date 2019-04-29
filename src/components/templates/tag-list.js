@@ -5,14 +5,22 @@ import Layout from '../layouts/layout'
 
 export default function TagsTemplate(props) {
 
-    const post = props.data.markdownRemark;
-    console.log(post);
+    const posts = props.data.allMarkdownRemark.edges;
     const { tag } = props.pageContext;
 
     return (
         <Layout>
             <h1>{`Available posts  in ${tag}`}</h1>
             <div className="tags">
+                {
+                    posts.map(({ node }, i) => (
+                        <div>
+                            <Link to={`${node.frontmatter.path}`} key={i} >
+                                {node.frontmatter.title}
+                            </Link>
+                        </div>
+                    ))
+                }
             </div>
         </Layout>
     )
@@ -20,13 +28,16 @@ export default function TagsTemplate(props) {
 }
 
 export const tagQuery = graphql`
-  query TagPostByPath($tag: String!) {
-    markdownRemark(frontmatter: { tags: { eq: $tag } }) {
-      frontmatter {
-        path
-        title
-        date
+query($tag: String) {
+    allMarkdownRemark(filter: { frontmatter: { tags: { in: [$tag] } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
+          }
+        }
       }
     }
   }
+
 `
