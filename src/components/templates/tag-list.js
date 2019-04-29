@@ -34,6 +34,7 @@ query($tag: String) {
         node {
           frontmatter {
             title
+            path
           }
         }
       }
