@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: "/babydragon",
   siteMetadata: {
-    title: `리자몽의 개발공부 로그`,
+    title: `지운이의 개발공부 로그`,
     description: `공부한 내용을 정리하는 개발 로그입니다`,
     author: `김지운`,
   },
