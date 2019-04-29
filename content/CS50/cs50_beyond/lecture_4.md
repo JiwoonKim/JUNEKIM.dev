@@ -221,3 +221,4 @@ const list2 = [...list1, 6];
 // make a copy with some removal
 list1.splice(3, 1); // splice off one at 3rd index
 ```
+
