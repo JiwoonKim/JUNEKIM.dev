@@ -49,27 +49,27 @@ component-based framework for front-end development
 #### Props
 - __attributes__ given to a component
 ```jsx
-class Hello extends React.Component {
-    render() {
-        return (
-            // define where props are used
-            <h1>Hello {this.props.name}!</h1>
-        );
+    class Hello extends React.Component {
+        render() {
+            return (
+                // define where props are used
+                <h1>Hello {this.props.name}!</h1>
+            );
+        }
     }
-}
 //
-class App extends React.Component {
-    render() {
-        return (
-            <div>
-                // pass attribute values as props
-                <Hello name="Alice" />
-                <Hello name="Bob" />
-            </div>
-        );
+    class App extends React.Component {
+        render() {
+            return (
+                <div>
+                    // pass attribute values as props
+                    <Hello name="Alice" />
+                    <Hello name="Bob" />
+                </div>
+            );
+        }
     }
-}
-ReactDOM.render(<App />, document.querySelector("#app"));
+    ReactDOM.render(<App />, document.querySelector("#app"));
 ```
 
 #### State
@@ -79,30 +79,30 @@ ReactDOM.render(<App />, document.querySelector("#app"));
     - good practice to __use w/ arrow function__ to modify state than using direcly changing {this.state.stateName} for security issues (avoid race conditions)
 - using states __makes sure data and user interface are in sync__
 ```jsx
-class Counter extends React.Component {
-    constructor(props) {
-        super(props);
-        // the state of this component
-        this.state = {
-            count: 0;
+    class Counter extends React.Component {
+        constructor(props) {
+            super(props);
+            // the state of this component
+            this.state = {
+                count: 0;
+            }
+        }
+        render() {
+            return {
+                <div>
+                    <h1> {this.state.count} </h1>
+                    <button onclick={this.increment}>Increment</button> 
+                </div>
+            };
+        }
+        increment = () => {
+            // use setState and arrow function to modify state
+            this.setState(state => {
+                count: state.count + 1
+                // the other states remain the same
+            });
         }
     }
-    render() {
-        return {
-            <div>
-                <h1> {this.state.count} </h1>
-                <button onclick={this.increment}>Increment</button> 
-            </div>
-        };
-    }
-    increment = () => {
-        // use setState and arrow function to modify state
-        this.setState(state => {
-            count: state.count + 1
-            // the other states remain the same
-        });
-    }
-}
 ```
 
 #### Props vs. States
@@ -159,27 +159,27 @@ ReactDOM.render(<App />, document.querySelector("#app"));
 ```
 
 #### Conditional Rendering
-- can render different things on the page depending on certain conditions
+can render different things on the page depending on certain conditions
 ```jsx
 // within component class
 ...
-render() {
-    if (this.state.score >= 10) {
-        return this.renderWin();
-    } else {
-        return this.renderProblem();
+    render() {
+        if (this.state.score >= 10) {
+            return this.renderWin();
+        } else {
+            return this.renderProblem();
+        }
     }
-}
-renderProblem() {
-    return (
-        // same as above code's render function
-    )
-}
-renderWin() {
-    return (
-        <h1>You won!</h1>
-    )
-}
+    renderProblem() {
+        return (
+            // same as above code's render function
+        )
+    }
+    renderWin() {
+        return (
+            <h1>You won!</h1>
+        )
+    }
 ```
 
 #### Adding Class Styles
