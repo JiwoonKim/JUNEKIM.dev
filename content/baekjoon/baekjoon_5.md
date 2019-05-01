@@ -149,11 +149,38 @@ struct Point {
 - __cmp 함수__ 를 조건에 맞춰 따로 정의한 후 `sort(start, end, cmp)`을 사용
 ```cpp
 sort(v.begin(), v.end(), cmp);
-bool cmp(const int u, const int v) {
+bool cmp(const int &u, const int &v) {
     return u < v;
 }
 // u < v가 true인 경우, u가 v보다 앞에 옴
 // false인 경우 (u > v), u가 v보다 뒤에 옴
 ```
+- 람다함수를 정의하여 바로 사용도 가능
+```cpp
+sort(v.begin(), v.end(), [](int &u, int &v) {
+    return u < v;
+});
+```
 
-### 
+#### 조건이 여러 개 중첩되는 경우
+- if 조건문을 여러번 중첩시킬 경우, 실수할 확률이 커지기 때문에
+- 대신, __cmp 함수내에 pair나 tuple을 사용__ 하여 간단하게 정렬
+    - `make_tuple() < make_tuple()`을 return 하는 방식 
+    - 증가하는 경우를 위해 `<`로 비교
+    - 감소하는 경우를 위해 tuple 내의 field 변수에 `-`를 양쪽에 추가
+- 이렇게 하면 __한번에 비교를 하기 용이__ 하다.
+```cpp
+// age는 감소하는 순서대로, score는 증가하는 순서대로 정렬
+bool cmp(const Person &u, const Person &v) {
+    return make_tuple(-u.age, u.score) < make_tuple(-v.age, v.score);
+}
+```
+
+### 안정 정렬 (Stable Sorting)
+- __같은 것이 있는 경우에 정렬하기 전의 순서가 유지되는 정렬 알고리즘__
+- __병합정렬(Merge Sort)__ 와 __버블 소트(Bubble Sort)__ 가 정렬 알고리즘에 해당
+- STL에는 `stable_sort` 알고리즘을 사용
+```cpp
+stable_sort(v.begin(), v.end(), cmp);
+```
+
