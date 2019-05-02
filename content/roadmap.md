@@ -32,3 +32,9 @@ tags: ['웹개발', '로드맵']
 #### 비즈니스
 - 수익모델 공부: 광고? 유료화?
 - __교육 콘텐츠 만들기__
+
+#### 머신러닝, 인공지능
+natural language processing, image processing, ai and emotional intelligence 등의 분야에 대해 더 깊이 공부해 보고 싶다
+- udacity facebook challenge
+- udacity deep learning course
+- udacity computer vision course

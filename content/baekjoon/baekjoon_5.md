@@ -184,3 +184,17 @@ bool cmp(const Person &u, const Person &v) {
 stable_sort(v.begin(), v.end(), cmp);
 ```
 
+### 정렬 알고리즘 응용하기
+정렬 알고리즘을 응용해서 문제를 푸는 방법
+
+#### [카드](https://www.acmicpc.net/problem/11652)
+- 문제: 
+- 풀이:
+
+#### [k번째 수]()
+- 문제: 
+- 풀이:
+
+#### [버블 소트]()
+- 문제:
+- 풀이:
