@@ -89,7 +89,7 @@ a[i].push_back(num);
 - i번 정점과 연결된 간선은 cnt[i-1]부터 (cnt[i] - 1)까지 구하면 된다.
 
 ### 그래프 탐색
-- 목적: __모든 정점을 한 번씩 방문하는 것!__
+- 목적: __모든 정점을 한 번씩만 방문하는 것!__
 - DFS는 최대한 깊숙히 많이 가는 방법이고, BFS는 최대한 넓게 가는 방법이다.
 - DFS는 스택을 사용하고 BFS는 큐를 사용한다.
 
@@ -104,7 +104,7 @@ a[i].push_back(num);
     - 스택에 비어질 때까지 pop를 하고 모든 check 배열이 방문으로 체크되었는지를 확인
 - __구현__: 재귀함수를 사용하여 구현
         - bcuz 이미 스택을 활용하기 때문에 사용하기 용이함
-- 인접 행렬을 이용한 구현: 
+- __인접 행렬을 이용한 구현__: O(V^2)
 ```cpp
 // x를 방문
 void dfs(int x) {
@@ -113,7 +113,7 @@ void dfs(int x) {
     // 경로 출력
     printf("%d", x);
     // 방문하지 않은 정점으로 이동할 수 있다면 (간선 존재),
-    for (int i  = 0; i < n; i++) {
+    for (int i  = 1; i <= n; i++) {
         if (a[x][i] == 1 && check[i] == false) {
             // 다음 정점으로 이동
             dfs(i);
@@ -123,22 +123,74 @@ void dfs(int x) {
 // 인접 행렬을 사용하였기 때문에 
 // a[x][i]는 간선 (x, i)의 존재여부를 나타냄
 ```
-- 인접 리스트를 이용한 구현:
+- __인접 리스트를 이용한 구현__: O(V + E)
 ```cpp
 void dfs(int x) {
+    // 방문을 체크
     check[x] = true;
+    // 경로 출력
     printf("%d", x);
+    // 해당 정점과 연결된 모든 간선에서
     for (int i = 0; i < a[x].size(); i++) {
         int y = a[x][i];
+        // 방문하지 않은 정점으로 이어지면
         if (check[y] == false) {
+            // 다음 정점으로 이동
             dfs(y);
         }
     }
 }
-
 ```
 
 ### BFS
 너비 우선 탐색
 - __큐를 사용__ 한다.
 - 모든 가중치가 1인 경우, 최단거리를 찾는 문제에서 주로 사용한다.
+- 방법:
+    - 현재 정점에서 갈 수 있는 모든 정점을 큐에 push하면서 check 배열에 방문으로 체크
+    - 그 다음, 큐에서 다음 정점으로 이동하고 또 거기서 갈 수 있는 모든 정점을 또 큐에 push
+    - 방문하지 않은 정점이 없다면 큐에서 해당 정점을 pop하고 큐의 다음 정점으로 이동
+- 구현: 재귀함수보다는 __루프를 사용하여 반복적으로 구현__
+- __인접 행렬을 이용한 구현__: O(V^2)
+```cpp
+// 큐 선언
+queue<int> q;
+// 시작 정점부터 큐에 push하고 체크
+q.push(start);
+check[start] = true;
+// 큐가 빌 때까지,
+while (!q.empty()) {
+    // 제일 앞의 정점을 pop하고
+    int x = q.front(); 
+    q.pop()
+    printf("%d", x);
+    // 방문하지 않은 모든 연결된 정점을 push 및 체크
+    for (int i = 1; i <= n; i++) {
+        if (a[x][i] == 1 && check[i] == false) {
+            check[i] = true;
+            q.push(i);
+        }
+    }
+}
+```
+- __인접리스트를 이용한 구현__: O(V + E)
+```cpp
+queue<int> q;
+// 시작 정점부터 큐에 push하고 체크
+q.push(start);
+check[start] = true;
+// 큐가 빌 때까지, 
+while (!q.empty) {
+    int x = q.front();
+    q.pop();
+    printf("%d", x);
+    // 방문하지 않은 모든 연결된 정점을 push 및 체크
+    for (int i = 0; i < a[x].size(); i++) {
+        int y = a[x][i];
+        if (check[y] == false) {
+            q.push(y);
+            check[y] = true;
+        }
+    }
+}
+```
