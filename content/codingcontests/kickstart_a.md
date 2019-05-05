@@ -2,9 +2,9 @@
 path: "/kickstart/a"
 date: '2019-03-24'
 title: "Google Kick Start 2019 - Round A"
-description: C++ 치트키 정리
+description: Google Kick Start 2019 round A 후기
 image: ''
-tags: ['알고리즘', '대회']
+tags: ['대회', '알고리즘']
 ---
 > Kick Start 2019 대회 후기
 

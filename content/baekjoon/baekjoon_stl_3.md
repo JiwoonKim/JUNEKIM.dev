@@ -67,7 +67,7 @@ vector<int> v = {1, 2} // list를 이용한 벡터 선언
 // 삽입
 v.insert(인덱스, 값) // 인덱스에 값 추가
 v.insert(인덱스, 개수, 값) // 인덱스에 값 개수만큼 추가
-vv.insert(인덱스, v.begin(), v.end()) // 인덱스에 v 벡터의 값들을 모두 삽입
+v.insert(인덱스, v.begin(), v.end()) // 인덱스에 v 벡터의 값들을 모두 삽입
 // 삭제
 v.erase(v.begin() + 인덱스) // 인덱스 + 1 자리 제거
 v.erase(v.begin() + 인덱스, v.begin() + 끝자리) // 인덱스 + 1부터 끝자리 바로 전까지 제거
