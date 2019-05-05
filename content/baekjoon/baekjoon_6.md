@@ -74,8 +74,9 @@ Simple Path & Simple Cycle
 - 공간 복잡도: O(E)
 ```cpp
 // vector<int> a를 총 n개 선언; 이차원 배열
-vector<int> a[n];
-a[i].push_back(num);
+vector<int> edges[n + 1];
+edges[v1].push_back(v2); // (v1, v2) 저장
+edges[v2].push_back(v1); // (v2, v1) 저장
 ```
 
 #### 간선 리스트 (Edge List)
