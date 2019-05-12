@@ -9,18 +9,23 @@ tags: ['InterviewCake', '자료구조']
 > [Interview Cake의 Data Structure 파트](https://www.interviewcake.com/article/cpp/data-structures-coding-interview?course=fc1&section=algorithmic-thinking) 정리
 
 ### Random Access Memory (RAM)
-a.k.a memory
+__where variables are stored__ (a.k.a memory)
 - 그림
-- __where variables are stored__
-    - (so that computers can keep track of variables (numbers, strings, arrays, etc.) to run code)
-- think of really __tall bookcase w/ billions of shelves__
+- computers keep track of variables (numbers, strings, arrays, etc.) to run code
+- structured like __tall bookcase w/ billions of shelves__
     - each shelf holds 1 byte (8 bits)
     - shelf number = address
-- cf) RAM (memory) <-> Disc (storage)
-    - memory: faster but less space
-    - storage: slower but more space
+- processors access variables via the __memory controller which has direct access to each shelf (by indexing the address)__
+- processors also __use cache to speed the access time__
+    - cache = storing nearby content of recently accessed addresses
+    - this makes reading sequential memory faster than jumping around addresses
+
+#### RAM (memory) <-> Disc (storage)
+- memory: faster but less space, direct access (by indexing address)
+- storage: slower but more space, no direct access (have to use head on disc)
 
 ### Binary Numbers
+the number system computers use
 
 ### Fixed-width Integers
 

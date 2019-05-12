@@ -2,7 +2,7 @@
 path: "/cheatkeys/problem_solving"
 date: '2019-04-09'
 title: "Problem Solving 치트키"
-description: JavaScript 치트키 정리
+description: Problem Solving 치트키 정리
 image: ''
 tags: ['치트키']
 ---
