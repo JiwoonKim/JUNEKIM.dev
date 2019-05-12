@@ -13,3 +13,4 @@ tags: ['치트키']
     - arrays can only be declared with constant size (strictly speaking)
     - cannot use variables to initialize the size of an array
     - use `vector< vector<int> > v(rows, vector<int>(columns))` instead
+    - or use `memset(v, 0, sizeof(v))` for initializing chars or -1 or 0 (not for other numbers)
