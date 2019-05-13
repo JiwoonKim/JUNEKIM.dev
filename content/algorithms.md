@@ -27,13 +27,16 @@ __where variables are stored__ (a.k.a memory)
 ### Binary Numbers
 the number system computers use
 
-### Fixed-width Integers
+#### Fixed-width Integers
+- integer overflow 있을 수 있음
+- takes constant space O(1)
+- simple operations take constant time O(1)
 
 ### Arrays
 
 ### Strings
 
-### Pointers
+#### Pointers
 
 ### Dynamic Arrays
 
