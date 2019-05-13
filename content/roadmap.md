@@ -37,6 +37,7 @@ natural language processing, image processing, ai and emotional intelligence 등
 
 #### Ethics in technology
 specifially focusing on the study of ethics for AI
+- [AI 기본 설명](https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html)
 - [MIT Media Lab - Ethics and Governance of AI course](https://www.media.mit.edu/courses/the-ethics-and-governance-of-artificial-intelligence/)
 - [Oxford's Digital Ethics Lab](https://digitalethicslab.oii.ox.ac.uk/)
 

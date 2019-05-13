@@ -33,12 +33,22 @@ the number system computers use
 - simple operations take constant time O(1)
 
 ### Arrays
+- storing same data type in sequential order in memory
+- access time: O(1), cachable
+- constraints: same data type, must be stored in sequenctial order
 
 ### Strings
+- storing series of chars
 
 #### Pointers
+- storing address of data
+- ex. array of strings (= array of arrays)
+    - problem: each string may have different length
+    - solution: store each string in any given space (don't need huge amount of space) then, store the first address of each string in array
+    - constraints: not cachable
 
 ### Dynamic Arrays
+- problem w/ arrays: have to pre-determine their size
 
 ### Linked Lists
 
