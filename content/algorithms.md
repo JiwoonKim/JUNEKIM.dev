@@ -49,7 +49,14 @@ the number system computers use
 
 ### Dynamic Arrays
 - problem w/ arrays: have to pre-determine their size
+- dynamic arrays resize arrays when more space is necessary
 
 ### Linked Lists
+- faster prepends/appends than dynamic arrays
+- but slower lookups
 
 ### Hash Tables
+- 배열 인덱스 숫자를 통해 값에 접근하는 것처럼
+- 특정 숫자, 단어 등을 인덱스 (키 값)로 값에 접근할 수 있는 배열처럼 생각하면 됨
+- 특정 숫자, 단어 등의 키 값을 인덱스로 변환하는 과정을 hash function이라고 함
+- hash collision 문제 해결 필요
