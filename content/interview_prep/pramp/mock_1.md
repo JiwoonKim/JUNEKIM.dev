@@ -1,12 +1,12 @@
 ---
-path: "/interviewprep/pramp/mock/0"
+path: "/interviewprep/pramp/1"
 date: '2019-05-15'
 title: "Pramp Mock Interview - Q 01"
 description: Pramp Mock Interview
 image: ''
 tags: ['인터뷰']
 ---
-> 2019년 5월 10일 Pramp 인터뷰 Question (Q I asked)
+> 2019년 5월 10일 Pramp 인터뷰 Question (what I asked)
 
 ### Shifted Array Search
 Given a sorted array shiftArr (that is shifted to the left by an unknown offset) and a num, find the index of the number within the array. (if number doesn't exist within array, return -1)
