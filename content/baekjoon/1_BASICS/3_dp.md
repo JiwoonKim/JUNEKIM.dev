@@ -1,10 +1,10 @@
 ---
 path: "/algorithm/baekjoon_basic/dynamic_programming"
 date: '2019-02-03'
-title: "[백준] 강의노트 03. 다이나믹 프로그래밍 1"
+title: "[백준] 기초 03. 다이나믹 프로그래밍 1"
 description: 백준 알고리즘 강의 기초 3강 정리
 image: ''
-tags: ['백준', '알고리즘', 'C++', '강의노트', '다이나믹 프로그래밍']
+tags: ['백준', '알고리즘', 'C++', '다이나믹 프로그래밍']
 ---
 
 ### 다이나믹 프로그래밍 (Dynamic Programming)

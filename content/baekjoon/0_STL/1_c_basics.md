@@ -1,10 +1,10 @@
 ---
 path: "/algorithm/baekjoon_STL/c_basic"
 date: '2019-01-24'
-title: "[백준] 프로그래밍 대회에서 사용하는 C 언어"
+title: "[백준] STL 01. C 언어"
 description: 백준 알고리즘 강의 STL 1강 정리
 image: ''
-tags: ['백준', 'C', '강의노트']
+tags: ['백준', 'C',]
 ---
 
 #### 입출력 포맷 문자열

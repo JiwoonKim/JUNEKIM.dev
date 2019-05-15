@@ -1,10 +1,10 @@
 ---
 path: "/algorithm/baekjoon_STL/STL_algorithm"
 date: '2019-01-28'
-title: "[백준] 프로그래밍 대회에서 사용하는 C++ STL 알고리즘"
+title: "[백준] STL 05. 알고리즘"
 description: 백준 알고리즘 강의 STL 6강 정리
 image: ''
-tags: ['백준', 'C++', '강의노트', 'STL']
+tags: ['백준', 'C++', 'STL']
 ---
 > Standard Template Library (STL)는 알고리즘, 컨테이너, 함수, 이터레이터로 이루어져 있으며 그 중 알고리즘을 정리.
 
@@ -16,16 +16,16 @@ tags: ['백준', 'C++', '강의노트', 'STL']
 - `count_if(begin, end, p)`: [begin, end)에 포함되어 있는 원소 중에서 조건 p에 해당하는 것에 개수를 찾는다.
 - 시간복잡도: O(N)
 ```cpp
-#include <vector>
-#include <algorithm>
-vector<int> v = {1, 2, 2, 3, 4, 5};
-for (int i = 1; i <= 5; i++) { 
-    cout << i << "의 개수: " << count(v.begin(), b.end(), i);
-}
-int even = count_if(v.begin(), b.end(), [](int x) {
-    return x % 2 == 0;
-});
-cout << "짝수의 개수: " << even;
+    #include <vector>
+    #include <algorithm>
+    vector<int> v = {1, 2, 2, 3, 4, 5};
+    for (int i = 1; i <= 5; i++) { 
+        cout << i << "의 개수: " << count(v.begin(), b.end(), i);
+    }
+    int even = count_if(v.begin(), b.end(), [](int x) {
+        return x % 2 == 0;
+    });
+    cout << "짝수의 개수: " << even;
 ```
 
 #### Find
@@ -34,22 +34,22 @@ cout << "짝수의 개수: " << even;
 - 찾는 것이 없는 경우에는 end를 반환한다.
 - 시간복잡도: O(N)
 ```cpp
-#include <vector>
-#include <algorithm>
-// find 함수 예시
-vector<int> v = {1, 2, 2, 3, 4, 5};
-auto it = find(v.begin(), v.end(), 2);
-if (auto == v.end()) {
-    cout << "찾을 수 없음\n"; // end()값과 같으면 벡터에 원소가 없음
-}
-else {
-    cout << (it - v.begin()); // 인덱스는 begin()값을 빼야지 계산 가능
-}
-// find_if 함수 예시 ()
-auto even = find_if(v.begin(), v.end() [](int x ) {
-    return x % 2 == 0;
-})
-cout << "첫 번째 짝수: " << (even - v.begin()) << "\n";
+    #include <vector>
+    #include <algorithm>
+    // find 함수 예시
+    vector<int> v = {1, 2, 2, 3, 4, 5};
+    auto it = find(v.begin(), v.end(), 2);
+    if (auto == v.end()) {
+        cout << "찾을 수 없음\n"; // end()값과 같으면 벡터에 원소가 없음
+    }
+    else {
+        cout << (it - v.begin()); // 인덱스는 begin()값을 빼야지 계산 가능
+    }
+    // find_if 함수 예시 ()
+    auto even = find_if(v.begin(), v.end() [](int x ) {
+        return x % 2 == 0;
+    });
+    cout << "첫 번째 짝수: " << (even - v.begin()) << "\n";
 ```
 
 #### Fill
@@ -76,14 +76,14 @@ reverse(v.begin(), v.end()); // {5, 4, 3, 2, 1}으로 바뀜
 - `rotate(begin, mid, end)`: [begin, end)를 mid를 기준으로 왼쪽으로 회전시킨다 (a.k.a shift: _mid 값이 begin에 들어가고_, 순서대로 end-1 값까지 들어간다)
 - 시간복잡도: O(N)
 ```cpp
-#include <vector>
-#include <algorithm>
-vector<int> v = {1, 2, 3, 4, 5};
-int n = v.size();
-for (int i = 0; i < n; i++) {
-    // 차례대로 {2, 3, 4, 5, 1}부터 다시 {1, 2, 3, 4, 5}까지 회전
-    rotate(v.begin(), v.begin()+1, v.end());
-}
+    #include <vector>
+    #include <algorithm>
+    vector<int> v = {1, 2, 3, 4, 5};
+    int n = v.size();
+    for (int i = 0; i < n; i++) {
+        // 차례대로 {2, 3, 4, 5, 1}부터 다시 {1, 2, 3, 4, 5}까지 회전
+        rotate(v.begin(), v.begin()+1, v.end());
+    }
 ```
 
 #### Swap
@@ -124,20 +124,20 @@ sort(v.begin(), v.end()); // {1, 2, 3, 4, 5}의 오름차순으로 정렬됨
 ```
 - `sort(begin, end, cmp)`: [begin, end)를 __cmp__ 비교함수를 만들어 그 기준으로 정렬한다.
 ```cpp
-#include <vector>
-#include <algorithm>
-vector<int> v = { 5, 3, 2, 1, 4};
-// 내림차순으로 정렬하는 다양한 방법: {5, 4, 3, 2, 1}
-sort(v.begin(), v, end(), greater<int>()); 
-// 비교함수를 만들어 정렬하기
-bool cmp(const int &u, const int &v) { // u가 앞에 v 앞에 있는 것이
-    return u > v;                      // u가 v보다 클 때만 허용이 됨을 의미
-}
-sort(v.begin(), v.end(), cmp);
-// 비교함수를 람다함수로 정의하여 정렬하기
-sort(v.begin(), v.end(), [](int u, int v) {
-    return u > v;
-});
+    #include <vector>
+    #include <algorithm>
+    vector<int> v = { 5, 3, 2, 1, 4};
+    // 내림차순으로 정렬하는 다양한 방법: {5, 4, 3, 2, 1}
+    sort(v.begin(), v, end(), greater<int>()); 
+    // 비교함수를 만들어 정렬하기
+    bool cmp(const int &u, const int &v) { // u가 앞에 v 앞에 있는 것이
+        return u > v;                      // u가 v보다 클 때만 허용이 됨을 의미
+    }
+    sort(v.begin(), v.end(), cmp);
+    // 비교함수를 람다함수로 정의하여 정렬하기
+    sort(v.begin(), v.end(), [](int u, int v) {
+        return u > v;
+    });
 ```
 - 백준 문제: 단어정렬, 좌료정렬하기 ... 
 - pair 또는 tuple로 만들어서 비교하는 것도 좋은 방법 (그러면 한번에 비교하여 정렬 가능)! (위 두 문제 참고)
@@ -153,13 +153,13 @@ sort(v.begin(), v.end(), [](int u, int v) {
     - _정렬된 상태_ 로 사용했을 때 효과가 있다.
     - 찾는 value의 인덱스 값은 알 수 없으며, _단순히 value가 존재하는지 안 하는지의 여부만 알 수 있다_. (위치는 lower_bound나 upper_bound를 사용하면 된다)
 ```cpp
-#include <vector>
-#include <algorithm>
-vector<int> v = {1, 2, 5};
-for (int i = 1; i <= 5; i++) {
-    // 있으면 true, 없으면 false 반환
-    cout << i << " : " << binary_search(v.begin, v.end(), i); 
-} 
+    #include <vector>
+    #include <algorithm>
+    vector<int> v = {1, 2, 5};
+    for (int i = 1; i <= 5; i++) {
+        // 있으면 true, 없으면 false 반환
+        cout << i << " : " << binary_search(v.begin, v.end(), i); 
+    } 
 ```
 - `binary_search(begin, end, value, cmp)`: [begin, end) 범위 내에서 value의 값을 cmp의 기준으로, 찾으면 true, 못 찾으면 false를 반환한다.
 
@@ -206,14 +206,14 @@ cout << min({a, b, c}) << max({a, b, c});
 ```
 - compare 함수를 정의하여 사용할 수도 있다.
 ```cpp
-string u = "long string";
-string v = "short";
-// 문자열의 최소값은 첫번째 값의 ascii 값 (사전순)으로 찾음
-cout << min(u, v); // 
-// 비교 함수를 정의하여 사용하면, 길이 비교하여 최소값 찾을 수 있음
-cout << min(u, v [](string u, string v) {
-    return u.size() < v.size();
-})
+    string u = "long string";
+    string v = "short";
+    // 문자열의 최소값은 첫번째 값의 ascii 값 (사전순)으로 찾음
+    cout << min(u, v); // 
+    // 비교 함수를 정의하여 사용하면, 길이 비교하여 최소값 찾을 수 있음
+    cout << min(u, v [](string u, string v) {
+        return u.size() < v.size();
+    })
 ```
 - `minmax(a, b)`, `minmax(a, b, cmp)`, `minmax(initializer_list)`, `minmax(initializer_list, cmp)` 사용을 통해 동시에 min과 max값을 구할 수 있다.
 
@@ -238,12 +238,12 @@ cout << *it << "의 위치는 " << it - v.begin();
 - `prev_permutation(begin, end)`: 사전 순으로 그 전에 오는 순열을 만든다.
 - `next_permutation(begin, end, cmp)`와 `prev_permutation(begin, end, cmp)`를 통해 비교 함수를 정의하여 사용할 수도 있다.
 ```cpp
-#include <vector>
-#include <algorithm>
-vector<int> v = {1, 2, 3};
-// false를 리턴하는 마지막 순열까지 출력
-while (next_permutation(v.begin(), v.end())) {
-    for (int x: v) cout << x;
-}
-// 차례대로 출력: 132, 213, 231, 312, 321
+    #include <vector>
+    #include <algorithm>
+    vector<int> v = {1, 2, 3};
+    // false를 리턴하는 마지막 순열까지 출력
+    while (next_permutation(v.begin(), v.end())) {
+        for (int x: v) cout << x;
+    }
+    // 차례대로 출력: 132, 213, 231, 312, 321
 ``

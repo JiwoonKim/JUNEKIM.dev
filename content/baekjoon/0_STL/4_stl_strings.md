@@ -1,12 +1,12 @@
 ---
 path: "/algorithm/baekjoon_STL/STL_string"
 date: '2019-01-28'
-title: "[백준] 프로그래밍 대회에서 사용하는 C++ STL string"
+title: "[백준] STL 04. 문자열"
 description: 백준 알고리즘 강의 STL 5강 정리
 image: ''
-tags: ['백준', 'C++', '강의노트', 'STL']
+tags: ['백준', 'C++', 'STL']
 ---
-> C와 C++의 문자열 정리.
+> C와 C++의 문자열 정리
 
 ### 문자열 (String)
 - C 문자열: `char c[]`로 선언을 한다.
@@ -67,5 +67,6 @@ while (cin >> line) s += line;
 // 스트림을 사용하여 문자열 파싱
 int num;
 istringstream sin(s); // 문자열 스트림을 생성
-while (getline(sin, num, ',')) {...}; // 문자열 스트림의 문자열을 ,로 구분하여 num에 저장
+while (getline(sin, num, ',')) {...}; 
+// 문자열 스트림의 문자열을 ,로 구분하여 num에 저장
 ```

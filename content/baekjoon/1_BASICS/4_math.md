@@ -1,41 +1,41 @@
 ---
 path: "/algorithm/baekjoon_basic/math"
 date: '2019-03-29'
-title: "[백준] 강의노트 04. 수학 1"
+title: "[백준] 기초 04. 수학 1"
 description: 백준 알고리즘 강의 기초 4강 정리
 image: ''
-tags: ['백준', '알고리즘', 'C++', '강의노트', '수학']
+tags: ['백준', '알고리즘', 'C++', '수학']
 ---
-
 > 알고리즘 문제를 풀 때 필요한 수학 공식들
 
 ### 나머지 연산
-(A + B) % C = [(A % C) + (B % C)] % C
+- (A + B) % C = __[(A % C) + (B % C)] % C__
 - 다이나믹 문제에서 주로 나온다
-    - 경우의 수를 구해야 할 때 그 수가 너무 커서 범위가 overflow 되지 않기 위해 결과값에 나머지를 연산하게끔 한다
+    - 경우의 수를 구할 때, 그 수가 __범위를 overflow 하지 않기 위해 결과값에 나머지를 연산하게끔 한다__
 
 ### 최대공약수 (GCD)
 Greatest Common Divisor
 1. 2부터 min(A, B)까지 모든 정수로 나누어보는 방법: O(N)
-2. __유클리드 알고리즘__ (Euclidean algorithm): __gcd(a, b) = gcd(b, a % b)__
+2. __유클리드 알고리즘__ (Euclidean algorithm): 
+    - __gcd(a, b) = gcd(b, a % b)__
 ```cpp
-// 재귀함수로 구현한 유클리드 알고리즘
-int gcd(int a, int b) {
-    if (b == 0) {
-        return a;
-    } else {
-        return gcd(b, a % b);
-    }
-}
-// 비 재귀방식으로 구현한 유클리드 알고리즘
-int gcd(int a, int b) {
-    while (b != 0) {
-        int r = a % b;
-        a = b;
-        b = r;
-    }
-    return a;
-}
+        // 재귀함수로 구현한 유클리드 알고리즘
+        int gcd(int a, int b) {
+            if (b == 0) {
+                return a;
+            } else {
+                return gcd(b, a % b);
+            }
+        }
+        // 비 재귀방식으로 구현한 유클리드 알고리즘
+        int gcd(int a, int b) {
+            while (b != 0) {
+                int r = a % b;
+                a = b;
+                b = r;
+            }
+            return a;
+        }
 ```
 - 최대공약수가 1인 두 수의 관계를 __서로소(Coprime)__라고 한다
 
@@ -46,43 +46,44 @@ Least Common Multiplier
 - 최소공배수를 구할 때는 항상 결과값의 __범위를 고려해서 자료형을 선언__ 해야 한다.
 
 ### 진법 변환 (Base Conversion)
-1. __10진법 -> n진법 바꾸기__
-    - 숫자가 __0이 될 때까지 나머지를 계속해서 구해 반대의 순서로 나열__ 하면 된다.
-    - ex. 11 -> 3진법: 102
-        - 11/3 = 3 ... 2 | 3/3 = 1 ... 0 | 1/3 = 0 ... 1 => 102
-    - 단, 숫자가 0일 경우는 예외로 처리해야 한다.
+
+#### 10진법 -> n진법 바꾸기
+- 숫자가 __0이 될 때까지 나머지를 계속해서 구해 반대의 순서로 나열__ 하면 된다.
+- ex. 11 -> 3진법: 102
+    - 11/3 = 3 ... 2 | 3/3 = 1 ... 0 | 1/3 = 0 ... 1 => 102
+- 단, 숫자가 0일 경우는 예외로 처리해야 한다.
 ```cpp 
-// 숫자가 0일 경우, 예외로 처리하여 0 바로 출력
-if (num == 0) {
-    result = 0;
-}
-string s;
-while (num > 0) {
-    s += to_string(num % n); // n 진법으로 변환
-    num /= n;
-}
-reverse(s.begin(), s.end()); // 반대의 순서로 나열
+    // 숫자가 0일 경우, 예외로 처리하여 0 바로 출력
+    if (num == 0) {
+        result = 0;
+    }
+    string s;
+    while (num > 0) {
+        s += to_string(num % n); // n 진법으로 변환
+        num /= n;
+    }
+    reverse(s.begin(), s.end()); // 반대의 순서로 나열
 ```
 
-2. __n진법 -> 10진법 바꾸기__
-    - _n진법으로 표현된 수의 k 자리의 수에 n^k을 곱하면서 더해_ 가면 된다.
-    - ex. 3진법 수 102 -> 11 (= 2 * (3^0) + 0 * (3^1) + 1 * (3^2) )
-    - 다만, 위의 방법으로 하면 n진법 수의 가장 끝자리 n-1부터 시작하여 0까지 거꾸로 더해야 하므로 불편한 단점이 있다.
-    - so instead, __n진법 수의 0자리부터 시작하여 매번 값에 n을 곱해주며 더해가면 된다__ (_k자리를 체크할 필요가 없음_)
+#### n진법 -> 10진법 바꾸기
+- __n진법으로 표현된 수의 k 자리의 수에 n^k을 곱하면서 더해__ 가면 된다.
+- ex. 3진법 수 102 -> 11 (= 2 * (3^0) + 0 * (3^1) + 1 * (3^2) )
+- 다만, 위의 방법으로 하면 n진법 수의 가장 끝자리 n-1부터 시작하여 0까지 거꾸로 더해야 하므로 불편한 단점이 있다.
+- so instead, __n진법 수의 0자리부터 시작하여 매번 값에 n을 곱해주며 더해가면 된다__ (__k자리를 체크할 필요가 없음__)
 ```cpp
-string N; int b; // 주어진 b진법의 수 N
-int result;
-// 
-for (int i = 0; i < s.size(); i++) {
-    // 매 자리마다 이미 더해진 값에 b 곱하기
-    result = result * b;
-    // 현재 자리의 값을 10진법으로 변환하여 더하기
-    if ('0' <= s[i] && s[i] <= '9) {
-        result += s[i] - '0';
-    } else {
-        result += s[i] - 'A' + 10;
+    string N; int b; // 주어진 b진법의 수 N
+    int result;
+    // 
+    for (int i = 0; i < s.size(); i++) {
+        // 매 자리마다 이미 더해진 값에 b 곱하기
+        result = result * b;
+        // 현재 자리의 값을 10진법으로 변환하여 더하기
+        if ('0' <= s[i] && s[i] <= '9) {
+            result += s[i] - '0';
+        } else {
+            result += s[i] - 'A' + 10;
+        }
     }
-}
 ```
 
 #### -N진수로 변환
@@ -103,15 +104,15 @@ for (int i = 0; i < s.size(); i++) {
 - 가장 효율적인 방법은 N이 K (__2 <= K <= 루트 N__; 자연수)로 __나누어 떨어지는지 체크__
 ```cpp
 // 소수 확인: O(루트 N)
-bool prime(int n) {
-    if (n < 2) {
-        return false;
+    bool prime(int n) {
+        if (n < 2) {
+            return false;
+        }
+        for (int i = 2; i*i <= n; i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
     }
-    for (int i = 2; i*i <= n; i++) {
-        if (n % i == 0) return false;
-    }
-    return true;
-}
 ```
 
 #### 에라토스테네스의 체
@@ -121,18 +122,18 @@ __범위 내__ 의 숫자들 중 모든 숫자를 구하는 방법
 - __남아있는 수가 모두 소수가 된다.__
 ```cpp
 // 범위 내에서 소수 찾기: O(N * loglogN)
-vector<int> prime;
-vector<bool> check(n + 1, true);
-for(int i = m; i*i <= n; i++) {
-    // 소수 저장
-    if (check[i] == true) {
-        prime.push_back(i);
-        // 소수의 배수를 모두 지우기
-        for (j = i * 2; j <= n; j += i) {
-            check[j] = false;
+    vector<int> prime;
+    vector<bool> check(n + 1, true);
+    for(int i = m; i*i <= n; i++) {
+        // 소수 저장
+        if (check[i] == true) {
+            prime.push_back(i);
+            // 소수의 배수를 모두 지우기
+            for (j = i * 2; j <= n; j += i) {
+                check[j] = false;
+            }
         }
     }
-}
 ```
 
 #### 골드바흐의 추측 (Goldbach's conjecture)
@@ -143,34 +144,34 @@ __아직 증명이 되지 않은 문제__
     - 10^18 이하에서는 참인 것이 증명되어 있다.
 - 그러므로 __에라토스테네스의 체를 응용해서 검증__ 가능: (N - 소수 == 소수)인지를 확인하면 된다.
 ```cpp
-// 에라토스테네스의 체를 통해 2부터 n까지 소수를 구하기
-vector<bool> check(n, true);
-vector<int> prime;
-...
-// 각 소수에 대해 N - prime[i]를 했을 때 소수인지 확인
-for (auto it = prime.begin(); it !+ prime.end(); it++) {
-    if (check[N - *it] == true) {
-        break;
+    // 에라토스테네스의 체를 통해 2부터 n까지 소수를 구하기
+    vector<bool> check(n, true);
+    vector<int> prime;
+    ...
+    // 각 소수에 대해 N - prime[i]를 했을 때 소수인지 확인
+    for (auto it = prime.begin(); it !+ prime.end(); it++) {
+        if (check[N - *it] == true) {
+            break;
+        }
     }
-}
 ```
 
 #### 소인수분해 (Prime Factorization)
 - 소수를 구해야 할 필요가 없다.
 - 그저 2부터 루트 N 값까지 루프를 돌며 나누어지면 출력하게끔 하면 된다.
 ```cpp
-// 2부터 루트 N의 값까지 소인수분해하기
-for (int i = 2; i*i <= n; i++) {
-    // 반복된 값으로 소인수분해를 할 수도 있음
-    while (n % i == 0) {
-        printf("%d\n", i);
-        n /= i;
+    // 2부터 루트 N의 값까지 소인수분해하기
+    for (int i = 2; i*i <= n; i++) {
+        // 반복된 값으로 소인수분해를 할 수도 있음
+        while (n % i == 0) {
+            printf("%d\n", i);
+            n /= i;
+        }
     }
-}
-// 남는 값이 루트 N보다 큰 경우, 소수이므로 그대로 출력
-if (n > 1) {
-    printf("%d\n", n);
-}
+    // 남는 값이 루트 N보다 큰 경우, 소수이므로 그대로 출력
+    if (n > 1) {
+        printf("%d\n", n);
+    }
 ```
 
 #### 소인수분해한 개수 세기
@@ -179,15 +180,15 @@ if (n > 1) {
 - 다만, 위의 방법대로 일일이 하나하나를 소인수분해를 할 경우, O(N + a)의 시간복잡도가 걸리므로 N의 크기가 크면 비효율적일 수 있다.
 - 그러므로, 대신 __구하려는 개수의 소수값인 k의 값을 제곱시키면서 N / k 을 계산__ 하는 방법이 효율적이다.
 ```cpp
-int n, int num_two, num_five;
-// N!을 소인수분해했을 때 2의 개수 세기
-for (int i = 2; i <= n; i *= 2) {
-    num_two += n / i; 
-}
-// N!을 소인수분해했을 때 5의 개수 세기
-for (int i = 5; i <= n; i *= 5) {
-    num_five += n / i; 
-}
+    int n, int num_two, num_five;
+    // N!을 소인수분해했을 때 2의 개수 세기
+    for (int i = 2; i <= n; i *= 2) {
+        num_two += n / i; 
+    }
+    // N!을 소인수분해했을 때 5의 개수 세기
+    for (int i = 5; i <= n; i *= 5) {
+        num_five += n / i; 
+    }
 ```
     - ex. n = 100, 100!을 소인수분해했을 때 5의 개수 세기
     - 1) 1~100 중에서 5를 포함한 숫자의 개수: n / 5 = 20개

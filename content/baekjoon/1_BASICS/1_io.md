@@ -1,10 +1,10 @@
 ---
 path: "/algorithm/baekjoon_basic/algorithm_and_io"
 date: '2019-01-14'
-title: "[백준] 강의노트 01. 시간복잡도와 입출력"
+title: "[백준] 기초 01. 시간복잡도와 입출력"
 description: 백준 알고리즘 강의 기초 1강 정리
 image: ''
-tags: ['백준','알고리즘','C++', '강의노트']
+tags: ['백준','알고리즘','C++']
 ---
 
 ### 알고리즘 (Algorithm)
@@ -24,7 +24,6 @@ tags: ['백준','알고리즘','C++', '강의노트']
 | O(N^3) | 3중 for문 | 500 |
 | O(2^N) | 크기가 N인 집합의 부분집합 | 20 |
 | O(N!) | 크기가 N인 순열 | 10 |
-
 
 ### C++ 입출력
 - `ios_base::sync_with_stdio(false);`를 cin, cout 전에 사용하면 scanf, printf와 비슷한 속도로 입출력을 실행할 수 있다.
