@@ -1,5 +1,5 @@
 ---
-path: "/algorithm/baekjoon_basic/sort"
+path: "/baekjoon/basic/sort"
 date: '2019-04-21'
 title: "[백준] 기초 05. 정렬"
 description: 백준 알고리즘 강의 기초 5강 정리

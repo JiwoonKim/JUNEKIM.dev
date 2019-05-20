@@ -1,5 +1,5 @@
 ---
-path: "/algorithm/baekjoon_STL/STL_string"
+path: "/baekjoon/STL/STL_string"
 date: '2019-01-28'
 title: "[백준] STL 04. 문자열"
 description: 백준 알고리즘 강의 STL 5강 정리

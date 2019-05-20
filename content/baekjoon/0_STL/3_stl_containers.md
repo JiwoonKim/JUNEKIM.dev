@@ -1,5 +1,5 @@
 ---
-path: "/algorithm/baekjoon_STL/STL_container"
+path: "/baekjoon/STL/STL_container"
 date: '2019-01-27'
 title: "[백준] STL 03. 컨테이너"
 description: 백준 알고리즘 강의 STL 3강과 4강 정리

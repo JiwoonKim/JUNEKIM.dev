@@ -1,5 +1,5 @@
 ---
-path: "/algorithm/baekjoon_basic/math"
+path: "/baekjoon/basic/math"
 date: '2019-03-29'
 title: "[백준] 기초 04. 수학 1"
 description: 백준 알고리즘 강의 기초 4강 정리

@@ -1,5 +1,5 @@
 ---
-path: "/algorithm/baekjoon_STL/c_basic"
+path: "/baekjoon/STL/c_basic"
 date: '2019-01-24'
 title: "[백준] STL 01. C 언어"
 description: 백준 알고리즘 강의 STL 1강 정리

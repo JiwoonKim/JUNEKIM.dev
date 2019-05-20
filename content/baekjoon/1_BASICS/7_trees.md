@@ -1,5 +1,5 @@
 ---
-path: "/algorithm/baekjoon_basic/tree"
+path: "/baekjoon/basic/tree"
 date: '2019-05-13'
 title: "[백준] 기초 07. 트리 1"
 description: 백준 알고리즘 강의 기초 7강 정리

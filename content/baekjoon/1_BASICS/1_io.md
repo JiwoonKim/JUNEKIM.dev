@@ -1,5 +1,5 @@
 ---
-path: "/algorithm/baekjoon_basic/algorithm_and_io"
+path: "/baekjoon/basic/algorithm_and_io"
 date: '2019-01-14'
 title: "[백준] 기초 01. 시간복잡도와 입출력"
 description: 백준 알고리즘 강의 기초 1강 정리

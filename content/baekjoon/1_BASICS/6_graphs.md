@@ -1,5 +1,5 @@
 ---
-path: "/algorithm/baekjoon_basic/graph"
+path: "/baekjoon/basic/graph"
 date: '2019-05-03'
 title: "[백준] 기초 06. 그래프 1"
 description: 백준 알고리즘 강의 기초 6강 정리
