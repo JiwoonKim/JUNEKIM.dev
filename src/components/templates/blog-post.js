@@ -5,6 +5,10 @@ import Layout from '../layouts/layout'
 import Image from '../image'
 import SEO from '../seo'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTag } from '@fortawesome/free-solid-svg-icons'
+
 export default function Template({ data }) {
     const post = data.markdownRemark
 
@@ -17,7 +21,10 @@ export default function Template({ data }) {
             <section className="post-title-flex">
               <time>{post.frontmatter.date} | </time> 
               {post.frontmatter.tags.map(tag => (
-                <Link to="/" className="tag">{tag}</Link>
+                <Link to="/" className="tag">
+                  <FontAwesomeIcon icon="tag" /> 
+                  <span>{tag}</span>
+                </Link>
               ))}
               </section>
           </section>
@@ -43,3 +50,4 @@ export const postQuery = graphql`
   }
 `
 
+library.add(faTag);
