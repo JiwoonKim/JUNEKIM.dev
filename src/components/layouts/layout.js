@@ -9,10 +9,11 @@ import './layout.css'
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
+      query SiteQuery {
         site {
           siteMetadata {
-            title
+            title,
+            author
           }
         }
       }
@@ -23,7 +24,7 @@ const Layout = ({ children }) => (
         <main>
           {children}
         </main>
-        <Footer />
+        <Footer author={data.site.siteMetadata.author} />
       </>
     )}
   />

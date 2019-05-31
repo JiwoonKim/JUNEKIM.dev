@@ -11,7 +11,7 @@ html {
 
 /* set margin to 0 for no funky spaces in the page
 */
-body {
+html, body {
   margin: 0;
 }
 
@@ -68,7 +68,7 @@ a {
 */
 .post-content {
   line-height: 2rem;
-  font-family: 'Jeju Gothic', 'NanumSquareRound' ,sans-serif;
+  font-family: 'Jeju Gothic', 'NanumSquareRound', sans-serif;
 }
 .post-content > blockquote {
   color: grey;

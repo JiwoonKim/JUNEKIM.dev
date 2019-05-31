@@ -9,13 +9,14 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTag } from '@fortawesome/free-solid-svg-icons'
 
-export default function Template({ data }) {
+const Template = ({ data }) => {
     const post = data.markdownRemark
 
     return (
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <article className="post">
+
           <section className="post-title">
             <h1>{post.frontmatter.title}</h1>
             <section className="post-title-flex">
@@ -26,8 +27,9 @@ export default function Template({ data }) {
                   <span>{tag}</span>
                 </Link>
               ))}
-              </section>
+            </section>
           </section>
+
           <section className="post-content" 
             dangerouslySetInnerHTML={{ __html: post.html }} 
           />
@@ -50,4 +52,6 @@ export const postQuery = graphql`
   }
 `
 
-library.add(faTag);
+library.add(faTag)
+
+export default Template

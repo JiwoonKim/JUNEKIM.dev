@@ -1,0 +1,22 @@
+footer {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    background-color: #252627;
+}
+footer > h1 {
+    width: 58%; 
+    margin: 0 auto;
+    color: white;
+    font-family: 'Hanna', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+footer > h1 > a {
+    font-weight: 300;
+    color: #08fdd8;
+}
+.footer-github-link {
+    color: white;
+}
