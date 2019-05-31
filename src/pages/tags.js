@@ -12,11 +12,13 @@ const TagsPage = (props) => {
             <h1>All Tags</h1>
             {
                 data.map(tag => (
-                    <div>
+                    <ul>
+                      <li>
                         <Link to={`tags/${tag.fieldValue.toLowerCase()}`}>
-                        {tag.fieldValue} {`(${tag.totalCount})`}
+                          {tag.fieldValue} {`( ${tag.totalCount} )`}
                         </Link>
-                    </div>
+                      </li>
+                    </ul>
             ))}
         </section>
         </Layout>

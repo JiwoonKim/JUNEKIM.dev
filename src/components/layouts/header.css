@@ -1,28 +1,48 @@
-/* color and size for blog header (banner)
+@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore&display=swap');
+
+/* background color and size for header (banner)
 */
 header {
-    background: #CFE6E4;
+    background: #252627;
     opacity: 1.0;
-    font-family: 'NanumSquareRound', sans-serif;
+    font-family: 'hanna', 'NanumSquareRound', sans-serif;
+    height: 100vh;    
 }
-/* position for title block inside blog header
+
+/* style for container around title and meta data
 */
-.title {
-    padding: 1.45rem 1.0875rem;
-    margin-left: 70px;
+.banner-container {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
-@media (min-width: 998px) {
-    .title { 
-        width: 800px;
-        margin: 0 auto;
+/* style for title
+*/
+.banner-title-container {
+    display: flex;
+    justify-content: center;
+}
+@media (min-width: 960px) {
+    .banner-title-container {
+        width: 70vw;
     }
 }
-.title > h1 {
-    margin: 0;
-    padding-top: 4px;
-    padding-bottom: 4px;
+.tag-decoration {
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 2rem;
+    color: grey;
+    height: 100%;
+    margin: auto 1rem;
+    padding: 2rem 0 0 0;
 }
-.title-link {
-    font-family: 'NanumSquareRound', sans-serif;
-    color: #0B486B;
+.banner-title {
+    font-family: 'Hanna', sans-serif;
+    font-weight: 300;
+    color: #08fdd8;
+    font-size: 5rem;
 }
+/*
+*/

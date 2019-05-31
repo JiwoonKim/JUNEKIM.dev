@@ -1,9 +1,12 @@
 /* define fonts for whole web blog
 */
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 @import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
 @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo');
 html {
-  font-family: 'NanumSquareRound', sans-serif;
+  font-family: 'Hanna', 'NanumSquareRound', sans-serif;
+  font-weight: 300;
 }
 
 /* set margin to 0 for no funky spaces in the page
@@ -65,6 +68,7 @@ a {
 */
 .post-content {
   line-height: 2rem;
+  font-family: 'Jeju Gothic', 'NanumSquareRound' ,sans-serif;
 }
 .post-content > blockquote {
   color: grey;
