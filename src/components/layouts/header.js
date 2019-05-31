@@ -36,7 +36,7 @@ const HeaderTitle = ({title, metaDataType}) => (
 )
 
 const TitleSting = ({title, metaDataType}) => {
-  if (metaDataType === 'blog-post') {
+  if (metaDataType === 'blog-post' || metaDataType === 'all') {
     return (<h1 className="banner-title">{title}</h1>)
   }
   else {
@@ -96,8 +96,8 @@ const BlogPostMetaData = ({metaData}) => (
 const PostListMetaData = ({metaData}) => (
   <div className="header-meta-data">
     <span>
-      <FontAwesomeIcon icon="search" /> 
-      <span></span>
+      <FontAwesomeIcon className="meta-data-icon" icon="search" /> 
+      <span className="header-posts-count">{metaData}</span>
       <span>matching articles</span>
     </span>
   </div>

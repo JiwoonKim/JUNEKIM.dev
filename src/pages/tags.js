@@ -7,18 +7,16 @@ const TagsPage = (props) => {
 
     const data = props.data.allMarkdownRemark.group;
     return (
-        <Layout>
+        <Layout title="모든 태그" metaDataType='all'>
         <section>
-            <h1>All Tags</h1>
-            {
-                data.map(tag => (
-                    <ul>
-                      <li>
-                        <Link to={`tags/${tag.fieldValue.toLowerCase()}`}>
-                          {tag.fieldValue} {`( ${tag.totalCount} )`}
-                        </Link>
-                      </li>
-                    </ul>
+            {data.map(tag => (
+              <ul>
+                <li>
+                  <Link to={`tags/${tag.fieldValue.toLowerCase()}`}>
+                    {tag.fieldValue} {`( ${tag.totalCount} )`}
+                  </Link>
+                </li>
+              </ul>
             ))}
         </section>
         </Layout>

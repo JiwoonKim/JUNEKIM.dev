@@ -42,8 +42,8 @@ header {
 .tag-decoration-left {
     justify-self: end;
     align-self: start;
-    padding-top: 5.2rem;
-    padding-right: 1rem;
+    padding-top: 5.1rem;
+    padding-right: 1.2rem;
 }
 .tag-decoration-right {
     justify-self: start;
@@ -76,4 +76,8 @@ header {
 }
 .header-meta-data > span > a {
     color: rgb(95, 127, 146);
+}
+.header-meta-data > span > .header-posts-count {
+    color: #08fdd8;
+    margin-right: 0.5rem;
 }

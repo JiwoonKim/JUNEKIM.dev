@@ -1,8 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Header from '../components/layouts/header'
-import Footer from '../components/layouts/footer'
+import Layout from '../components/layouts/layout'
 
 const IndexPage = () => (
   <StaticQuery
@@ -16,13 +15,11 @@ const IndexPage = () => (
       }
     `}
     render={data => (
-      <>
-        <Header title={data.site.siteMetadata.title} />
+      <Layout title={data.site.siteMetadata.title} metaDataType='all'>
         <main>
           
         </main>
-        <Footer />
-      </>
+      </Layout>
     )}
   />
 )

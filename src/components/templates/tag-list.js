@@ -7,10 +7,10 @@ export default function TagsTemplate(props) {
 
     const posts = props.data.allMarkdownRemark.edges;
     const { tag } = props.pageContext;
+    const count = props.data.allMarkdownRemark.totalCount;
 
     return (
-        <Layout title={tag} metaDataType metaData>
-            <h1>{`Available posts in ${tag}`}</h1>
+        <Layout title={tag} metaDataType='post-list' metaData={count}>
             <div className="tags">
                 {
                     posts.map(({ node }, i) => (
@@ -38,7 +38,7 @@ query($tag: String) {
           }
         }
       }
+      totalCount
     }
   }
-
 `
