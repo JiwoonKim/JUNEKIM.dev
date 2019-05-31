@@ -4,7 +4,7 @@ date: '2019-01-28'
 title: "[백준] STL 04. 문자열"
 description: 백준 알고리즘 강의 STL 5강 정리
 image: ''
-tags: ['백준', 'C++', 'STL']
+tags: ['백준', 'Cpp', 'STL']
 ---
 > C와 C++의 문자열 정리
 

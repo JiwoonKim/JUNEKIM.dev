@@ -4,7 +4,7 @@ date: '2019-01-28'
 title: "[백준] STL 05. 알고리즘"
 description: 백준 알고리즘 강의 STL 6강 정리
 image: ''
-tags: ['백준', 'C++', 'STL']
+tags: ['백준', 'Cpp', 'STL']
 ---
 > Standard Template Library (STL)는 알고리즘, 컨테이너, 함수, 이터레이터로 이루어져 있으며 그 중 알고리즘을 정리.
 

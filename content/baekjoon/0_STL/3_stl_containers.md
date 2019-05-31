@@ -4,7 +4,7 @@ date: '2019-01-27'
 title: "[백준] STL 03. 컨테이너"
 description: 백준 알고리즘 강의 STL 3강과 4강 정리
 image: ''
-tags: ['백준', 'C++']
+tags: ['백준', 'Cpp']
 ---
 > Standard Template Library (STL)는 알고리즘, 컨테이너, 함수, 이터레이터로 이루어져 있으며 그 중 컨테이너를 정리
 
