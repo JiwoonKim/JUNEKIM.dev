@@ -2,11 +2,9 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layouts/layout'
-import SEO from '../components/seo'
 
 const PostListPage = ({data}) => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <h1>태그</h1>
     <hr />
     <h1>최근 글</h1>
