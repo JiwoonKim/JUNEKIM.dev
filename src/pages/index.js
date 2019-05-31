@@ -1,8 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Layout from '../components/layouts/layout'
+import Header from '../components/layouts/header'
+import Footer from '../components/layouts/footer'
 
 const IndexPage = () => (
   <StaticQuery
@@ -10,16 +10,19 @@ const IndexPage = () => (
       query SiteTitleQuery {
         site {
           siteMetadata {
-            title,
-            author
+            title
           }
         }
       }
     `}
     render={data => (
-      <Layout>
-
-      </Layout>
+      <>
+        <Header title={data.site.siteMetadata.title} />
+        <main>
+          
+        </main>
+        <Footer />
+      </>
     )}
   />
 )
