@@ -6,27 +6,14 @@ import Header from './header'
 import Footer from './footer'
 import './layout.css'
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteQuery {
-        site {
-          siteMetadata {
-            author
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Header title={data.site.siteMetadata.title} />
-        <main>
-          {children}
-        </main>
-        <Footer />
-      </>
-    )}
-  />
+const Layout = ({ title, metaDataType, metaData, children }) => (
+  <>
+    <Header title={title} metaDataType={metaDataType} metaData={metaData} />
+    <main>
+      {children}
+    </main>
+    <Footer />
+  </>
 )
 
 Layout.propTypes = {

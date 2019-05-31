@@ -4,10 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/layouts/layout'
 
 const PostListPage = ({data}) => (
-  <Layout>
-    <h1>태그</h1>
-    <hr />
-    <h1>최근 글</h1>
+  <Layout title="모든 글">
     {data.allMarkdownRemark.edges.map(post => (
       <div key={post.node.id}>
         <Link to={post.node.frontmatter.path}>

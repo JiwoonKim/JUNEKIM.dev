@@ -3,37 +3,22 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../layouts/layout'
 import Image from '../image'
-import SEO from '../seo'
-
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTag } from '@fortawesome/free-solid-svg-icons'
 
 const Template = ({ data }) => {
     const post = data.markdownRemark
 
     return (
-      <Layout>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <Layout 
+        title={post.frontmatter.title} 
+        metaDataType={'blog-post'}
+        metaData={post.frontmatter} >
+
         <article className="post">
-
-          <section className="post-title">
-            <h1>{post.frontmatter.title}</h1>
-            <section className="post-title-flex">
-              <time>{post.frontmatter.date} | </time> 
-              {post.frontmatter.tags.map(tag => (
-                <Link to="/" className="tag">
-                  <FontAwesomeIcon icon="tag" /> 
-                  <span>{tag}</span>
-                </Link>
-              ))}
-            </section>
-          </section>
-
           <section className="post-content" 
             dangerouslySetInnerHTML={{ __html: post.html }} 
           />
         </article>
+
       </Layout>
     )
 }
@@ -51,7 +36,5 @@ export const postQuery = graphql`
     }
   }
 `
-
-library.add(faTag)
 
 export default Template
