@@ -9,8 +9,8 @@ export default function TagsTemplate(props) {
     const { tag } = props.pageContext;
 
     return (
-        <Layout>
-            <h1>{`Available posts  in ${tag}`}</h1>
+        <Layout title={tag} metaDataType metaData>
+            <h1>{`Available posts in ${tag}`}</h1>
             <div className="tags">
                 {
                     posts.map(({ node }, i) => (

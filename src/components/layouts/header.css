@@ -57,6 +57,11 @@ header {
     color: #08fdd8;
     font-size: 5rem;
 }
+.banner-title-include-string {
+    color: grey;
+    font-size: 3rem;
+    margin-left: 1rem;
+}
 /* style for meta data block in header
 */
 .header-meta-data {

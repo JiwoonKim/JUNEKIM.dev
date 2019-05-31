@@ -16,26 +16,37 @@ const Header = ({ title, metaDataType, metaData }) => (
       <ToggleMenu />
     </nav>
     <div className="banner-container">
-      <HeaderTitle title={title}/>
+      <HeaderTitle title={title} metaDataType={metaDataType}/>
       <MetaData metaDataType={metaDataType} metaData={metaData}/>
     </div>
   </header>
 )
 
 // title portion of header component
-const HeaderTitle = ({title}) => (
+const HeaderTitle = ({title, metaDataType}) => (
   <div className="banner-title-container">
     <h1 className="tag-decoration tag-decoration-left">
       <span>&lt;h1&gt;</span>  
     </h1>
-    <h1 className="banner-title">
-      {title}
-    </h1>
+    <TitleSting title={title} metaDataType={metaDataType} />
     <h1 className="tag-decoration tag-decoration-right">
       <span>&lt;/h1&gt;</span>
     </h1>
   </div>
 )
+
+const TitleSting = ({title, metaDataType}) => {
+  if (metaDataType === 'blog-post') {
+    return (<h1 className="banner-title">{title}</h1>)
+  }
+  else {
+    return (
+      <h1 className="banner-title">
+        {title}
+        <span className="banner-title-include-string">에 해당하는 글</span>
+      </h1>)
+  }
+}
 
 /** meta data portion of header component
  *  (renders differently depending on type of post)
@@ -70,7 +81,7 @@ const BlogPostMetaData = ({metaData}) => (
     <span>
       <FontAwesomeIcon className="meta-data-icon" icon="tags" /> 
       {metaData.tags.map(tag => (
-        <Link to="/" className="tag">
+        <Link to={`tags/${tag.toLowerCase()}`} className="tag">
           <span>{tag}</span>
           <span>&#183;</span>
         </Link>
@@ -86,6 +97,8 @@ const PostListMetaData = ({metaData}) => (
   <div className="header-meta-data">
     <span>
       <FontAwesomeIcon icon="search" /> 
+      <span></span>
+      <span>matching articles</span>
     </span>
   </div>
 )
