@@ -37,19 +37,17 @@ header {
     font-family: 'La Belle Aurore', cursive;
     font-size: 2rem;
     color: grey;
-    margin: 0;
+    margin: 0 1rem;
 }
 .tag-decoration-left {
     justify-self: end;
     align-self: start;
     padding-top: 5.1rem;
-    padding-right: 1.2rem;
 }
 .tag-decoration-right {
     justify-self: start;
     align-self: end;
     padding-bottom: 2.8rem;
-    padding-left: 1rem;
 }
 .banner-title {
     font-family: 'Hanna', sans-serif;
