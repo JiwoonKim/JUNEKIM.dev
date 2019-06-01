@@ -9,7 +9,12 @@
 .list-item {
     font-family: 'Jeju Gothic', 'NanumSquareRound', sans-serif;
     margin: 5rem 0;
+    transition: transform 0.3s ease;
 }
+.list-item:hover {
+    transform: translateX(0.5rem);
+}
+
 
 /* style of post title
 */
