@@ -47,10 +47,11 @@ a {
   padding-left: 1rem;
 }
 .post-content h3 {
-  color: #f50404;
+  color: #f51c5d;
   margin-top: 3rem;
 }
 .post-content h4 {
+  color: rgb(104, 102, 102);
   margin-top: 2rem;
 }
 .post-content ul, li {

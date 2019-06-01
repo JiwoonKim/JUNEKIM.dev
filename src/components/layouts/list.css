@@ -1,0 +1,28 @@
+/* style of unordered list
+*/
+.list-of-posts {
+    list-style: none;
+}
+
+/* style items in list
+*/
+.list-item {
+    font-family: 'Jeju Gothic', 'NanumSquareRound', sans-serif;
+    margin: 5rem 0;
+}
+
+/* style of post title
+*/
+.list-item > a > h2 {
+    color: #33517A;
+}
+
+/* style of date of post
+*/
+.list-item > a > small {
+    color: grey;
+    margin-left: 0.25rem;
+}
+.list-item-date {
+    margin-left: 0.5rem;
+}

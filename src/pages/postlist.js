@@ -2,17 +2,16 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layouts/layout'
+import ListPostItem from '../components/layouts/list'
+import '../components/layouts/list.css'
 
 const PostListPage = ({data}) => (
   <Layout title="모든 글" metaDataType='all'>
-    {data.allMarkdownRemark.edges.map(post => (
-      <div key={post.node.id}>
-        <Link to={post.node.frontmatter.path}>
-          <h4>{post.node.frontmatter.title}</h4>
-          <small>Posted on {post.node.frontmatter.date}</small>
-        </Link>
-      </div>
-    ))}
+    <ul className="list-of-posts">
+      {data.allMarkdownRemark.edges.map(post => (
+        <ListPostItem post={post.node.frontmatter} />
+      ))}
+    </ul>
   </Layout>
 )
 
