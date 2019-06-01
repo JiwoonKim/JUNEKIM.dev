@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../layouts/layout'
+import ListPostItem from '../layouts/list'
+import '../layouts/list.css'
 
 export default function TagsTemplate(props) {
 
@@ -11,17 +13,11 @@ export default function TagsTemplate(props) {
 
     return (
         <Layout title={tag} metaDataType='post-list' metaData={count}>
-            <div className="tags">
-                {
-                    posts.map(({ node }, i) => (
-                        <div>
-                            <Link to={`${node.frontmatter.path}`} key={i} >
-                                {node.frontmatter.title}
-                            </Link>
-                        </div>
-                    ))
-                }
-            </div>
+          <ul className="list-of-posts">
+            {posts.map(post => (
+              <ListPostItem post={post.node.frontmatter} />
+            ))}
+          </ul>
         </Layout>
     )
 
@@ -35,6 +31,7 @@ query($tag: String) {
           frontmatter {
             title
             path
+            date
           }
         }
       }
