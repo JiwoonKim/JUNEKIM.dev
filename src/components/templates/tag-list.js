@@ -5,7 +5,7 @@ import Layout from '../layouts/layout'
 import ListPostItem from '../layouts/list'
 import '../layouts/list.css'
 
-export default function TagsTemplate(props) {
+const TagsTemplate = (props) => {
 
     const posts = props.data.allMarkdownRemark.edges;
     const { tag } = props.pageContext;
@@ -39,3 +39,5 @@ query($tag: String) {
     }
   }
 `
+
+export default TagsTemplate
