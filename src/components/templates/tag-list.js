@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../layouts/layout'
+import BodyTagDecoratedLayout from '../layouts/decorated-layout'
 import ListPostItem from '../layouts/list'
 import '../layouts/list.css'
 
@@ -12,13 +12,13 @@ const TagsTemplate = (props) => {
     const count = props.data.allMarkdownRemark.totalCount;
 
     return (
-        <Layout title={tag} metaDataType='post-list' metaData={count}>
+        <BodyTagDecoratedLayout title={tag} metaDataType='post-list' metaData={count}>
           <ul className="list-of-posts">
             {posts.map(post => (
               <ListPostItem post={post.node.frontmatter} />
             ))}
           </ul>
-        </Layout>
+        </BodyTagDecoratedLayout>
     )
 
 }

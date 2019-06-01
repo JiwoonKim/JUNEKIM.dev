@@ -57,3 +57,31 @@ a {
 .post-content ul, li {
   margin-bottom: 8px;
 }
+
+/* define style of body content for list pages
+*/
+.body-container {
+  display: grid;
+  grid-template-columns: 1fr 800px 1fr;
+}
+.body-container > main {
+  margin: 0;
+}
+@media (max-width: 878px) {
+  .body-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 3rem 30px;
+  }
+}
+/* define style of tags for list pages
+*/
+.body-tag-left {
+  justify-self: center;
+  align-self: start;
+  margin: 2rem 1rem;
+}
+.body-tag-right {
+  justify-self: center;
+  align-self: end;
+  margin: 2rem 1rem;
+}

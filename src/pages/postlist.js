@@ -1,18 +1,18 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import Layout from '../components/layouts/layout'
+import BodyTagDecoratedLayout from '../components/layouts/decorated-layout'
 import ListPostItem from '../components/layouts/list'
 import '../components/layouts/list.css'
 
 const PostListPage = ({data}) => (
-  <Layout title="모든 글" metaDataType='all'>
+  <BodyTagDecoratedLayout title="모든 글" metaDataType='all'>
     <ul className="list-of-posts">
       {data.allMarkdownRemark.edges.map(post => (
         <ListPostItem post={post.node.frontmatter} />
       ))}
     </ul>
-  </Layout>
+  </BodyTagDecoratedLayout>
 )
 
 export const pageQuery = graphql`
