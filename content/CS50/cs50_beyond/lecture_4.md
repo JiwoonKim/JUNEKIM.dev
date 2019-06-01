@@ -4,7 +4,7 @@ date: '2019-04-12'
 title: "CS50 Beyond lecture 4 - React"
 description: CS50 Beyond lecture 4 정리
 image: ''
-tags: ['CS50', '강의노트', '웹개발', 'React', '리액트']
+tags: ['CS50', 'React']
 ---
 > Harvard's CS50 Beyond lecture 4 정리
 

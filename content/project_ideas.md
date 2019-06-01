@@ -4,7 +4,7 @@ date: '2019-05-17'
 title: "Project Ideas"
 description: 
 image: ''
-tags: ['ideas']
+tags: ['Ideas']
 ---
 > a collection of topics that I am interested in and would like to research more about
 

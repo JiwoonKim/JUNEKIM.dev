@@ -4,7 +4,7 @@ date: '2018-01-26'
 title: "Django - 기본 Setup"
 description: 백엔드 장고 프레임워크 Setup 가이드
 image: ''
-tags: ['웹개발', '백엔드', '장고']
+tags: ['웹개발', '백엔드', 'Django']
 ---
 > 장고 프레임워크를 사용하기 위한 기본적인 셋업을 정리.
 

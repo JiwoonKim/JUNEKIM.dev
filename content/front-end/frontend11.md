@@ -4,8 +4,7 @@ date: '2019-03-11'
 title: "Frontend Focus 11 - SEO"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', 'SEO'
-]
+tags: ['웹개발', '프론트엔드', 'SEO']
 ---
 > Understanding Search Engine Optimization (SEO)
 

@@ -4,7 +4,7 @@ date: '2019-03-12'
 title: "CS50 Beyond lecture 2 - JavaScript"
 description: CS50 Beyond lecture 2 정리
 image: ''
-tags: ['CS50', '강의노트', '웹개발', 'JavaScript', '자바스크립트']
+tags: ['CS50', 'Javascript']
 ---
 > Harvard's CS50 Beyond lecture 2 정리
 

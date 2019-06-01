@@ -4,8 +4,7 @@ date: '2019-04-16'
 title: "JavaScript 5 - Arrays"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', 'JavaScript', '자바스크립트'
-]
+tags: ['웹개발', '프론트엔드', 'Javascript']
 ---
 > Understanding JavaScript
 > - objects, primitive data types

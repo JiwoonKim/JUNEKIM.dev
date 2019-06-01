@@ -4,7 +4,7 @@ date: '2019-03-04'
 title: "HTML 03 - Semantic HTML"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', 'html']
+tags: ['프론트엔드', 'HTML']
 ---
 > understanding general front-end development and HTML
 > - [reference](https://internetingishard.com/)

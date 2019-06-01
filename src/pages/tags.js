@@ -7,7 +7,7 @@ const TagsPage = (props) => {
 
     const data = props.data.allMarkdownRemark.group;
     return (
-        <Layout title="모든 태그" metaDataType='all'>
+        <Layout title="모든 태크" metaDataType='all'>
         <section>
             {data.map(tag => (
               <ul>

@@ -4,7 +4,7 @@ date: '2019-03-05'
 title: "CSS 03 - 레이아웃 (Layouts)"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', 'css']
+tags: ['프론트엔드', 'CSS']
 ---
 > understanding CSS
 > - [reference](https://internetingishard.com/)

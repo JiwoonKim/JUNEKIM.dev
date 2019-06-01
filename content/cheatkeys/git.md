@@ -4,7 +4,7 @@ date: '2019-01-30'
 title: "[Git] 치트키 정리"
 description: git 치트키 정리
 image: ''
-tags: ['git', '치트키']
+tags: ['Git', '치트키']
 ---
 > git와 github 사용에 필요한 치트키들을 정리.
 > 개인적인 자주 사용하는 커맨드들을 반영하여 만든 치트키입니다.

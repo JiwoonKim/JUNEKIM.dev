@@ -4,8 +4,7 @@ date: '2019-03-19'
 title: "JavaScript 2 - Code Quality"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', 'JavaScript', '자바스크립트'
-]
+tags: ['웹개발', '프론트엔드', 'Javascript']
 ---
 > Understanding JavaScript
 > - debugging, coding style, automated testing, polyfills

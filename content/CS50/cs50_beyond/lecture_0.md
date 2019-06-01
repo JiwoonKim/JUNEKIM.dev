@@ -4,7 +4,7 @@ date: '2019-03-12'
 title: "CS50 Beyond lecture 0 - HTML & CSS"
 description: CS50 Beyond lecture 0 정리
 image: ''
-tags: ['CS50', '강의노트', '웹개발', 'html', 'css', 'regex']
+tags: ['CS50', 'HTML', 'CSS', 'Regex']
 ---
 > Harvard's CS50 Beyond lecture 0 정리
 

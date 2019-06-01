@@ -4,8 +4,7 @@ date: '2019-03-08'
 title: "Frontend Focus 08 - Responsive Design"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', '디자인'
-, 'responsive design']
+tags: ['웹개발', '프론트엔드', '디자인', 'Responsivedesign']
 ---
 > understanding Responsive Design and how to implement it
 

@@ -4,7 +4,7 @@ date: '2019-03-04'
 title: "Frontend Focus 06 - HTML & CSS"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', 'html', 'css']
+tags: ['웹개발', '프론트엔드', 'HTML', 'CSS']
 ---
 > understanding general front-end development and HTML
 > - [reference](https://internetingishard.com/)

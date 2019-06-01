@@ -4,7 +4,7 @@ date: '2018-07-17'
 title: "Web50 lecture 0 - Git"
 description: CS50 Web Programming with Javascript and Python lecture 0 정리
 image: ''
-tags: ['CS50', 'Web50', '강의노트', '웹개발', 'git']
+tags: ['CS50', 'Web50', 'Git']
 ---
 > Harvard's Web Programming with Python and Javascript lecture 0 정리
 

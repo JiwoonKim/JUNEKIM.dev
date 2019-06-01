@@ -4,7 +4,7 @@ date: '2018-08-21'
 title: "Web50 lecture 5 - JavaScript & Web Sockets"
 description: CS50 Web Programming with Javascript and Python lecture 5 정리
 image: ''
-tags: ['CS50', 'Web50', '강의노트', '웹개발', 'JavaScript', '자바스크립트', '웹소켓']
+tags: ['CS50', 'Web50', 'Javascript', '웹소켓']
 ---
 > Harvard's Web Programming with Python and Javascript lecture 5 정리
 

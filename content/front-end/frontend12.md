@@ -4,8 +4,7 @@ date: '2019-03-19'
 title: "Frontend Focus 12 - JavaScript Ecosystem (Frontend)"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', 'JavaScript', '자바스크립트', 'ecosystem'
-]
+tags: ['웹개발', '프론트엔드', 'Javascript', 'Ecosystem']
 ---
 > Understanding the JavaScript Ecosystem for Frontend Development
 

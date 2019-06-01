@@ -4,7 +4,7 @@ date: '2019-01-30'
 title: "HTML 01 - Fundamentals"
 description: HTML 정리
 image: ''
-tags: ['html']
+tags: ['프론트엔드', 'HTML']
 ---
 > HTML 언어로 프로그래밍할 때 필요한 내용 정리.
 > 개인적인 자주 사용하는 문법을 반영하여 만든 치트키입니다.

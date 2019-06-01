@@ -4,8 +4,7 @@ date: '2019-03-10'
 title: "Frontend Focus 10 - Web Typography"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', '디자인'
-, '타이포그라피']
+tags: ['웹개발', '프론트엔드', '디자인', '타이포그라피']
 ---
 > Understanding Web Typography
 
