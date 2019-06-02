@@ -13,7 +13,8 @@ class ToggleMenu extends React.Component {
         return <Menu >
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
-            <Link to="/postlist">Category</Link>
+            <Link to="/tags">Category</Link>
+            <Link to="/postlist">All Posts</Link>
           </Menu>
     }
 }
