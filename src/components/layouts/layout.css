@@ -1,7 +1,7 @@
 /* define fonts for whole web blog
 */
-@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
-@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url('https://fonts.googleapis.com/earlyaccess/hanna.css');
+@import url('https://fonts.googleapis.com/earlyaccess/jejugothic.css');
 @import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
 @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo');
 html {
