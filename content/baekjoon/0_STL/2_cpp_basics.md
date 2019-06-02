@@ -4,7 +4,7 @@ date: '2019-01-24'
 title: "[백준] STL 02. C++ 언어"
 description: 백준 알고리즘 강의 STL 2강 정리
 image: ''
-tags: ['백준', 'Cpp']
+tags: ['백준', 'Cpp', 'STL']
 ---
 
 ### 입출력
