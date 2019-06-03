@@ -62,17 +62,12 @@ a {
 */
 .body-container {
   display: grid;
-  grid-template-columns: 1fr 800px 1fr;
+  grid-template-columns: minmax(85px, 1fr) 800px minmax(85px, 1fr);
 }
 .body-container > main {
   margin: 0;
 }
-@media (max-width: 878px) {
-  .body-container {
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 3rem 30px;
-  }
-}
+
 /* define style of tags for list pages
 */
 .body-tag-left {
@@ -84,4 +79,16 @@ a {
   justify-self: center;
   align-self: end;
   margin: 2rem 1rem;
+}
+
+/* style for mobile size
+*/
+@media (max-width: 399px) {
+  .body-container {
+    display: block;
+    margin: 3rem 30px;
+  }
+  .body-tag-right {
+    text-align: right;
+  }
 }

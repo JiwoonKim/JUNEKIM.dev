@@ -41,8 +41,8 @@ const TitleSting = ({title, metaDataType}) => {
   }
   else {
     return (
-      <h1 className="banner-title">
-        {title}
+      <h1>
+        <h1 className="banner-title">{title}</h1>
         <span className="banner-title-include-string">에 해당하는 글</span>
       </h1>)
   }

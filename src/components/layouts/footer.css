@@ -5,7 +5,7 @@ footer {
     background-color: #252627;
 }
 footer > h1 {
-    width: 58%; 
+    width: 52%; 
     margin: 0 auto;
     color: white;
     font-family: 'Hanna', sans-serif;
@@ -20,3 +20,12 @@ footer > h1 > a {
 .footer-github-link {
     color: white;
 }
+
+/* style for mobile size
+*/
+@media (max-width: 399px) {
+    footer > h1 {
+        width: 62%;
+        font-size: 1rem;
+    }
+  }
