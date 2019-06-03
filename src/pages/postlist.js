@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import BodyTagDecoratedLayout from '../components/layouts/decorated-layout'
 import ListPostItem from '../components/layouts/list'
@@ -8,8 +8,8 @@ import '../components/layouts/list.css'
 const PostListPage = ({data}) => (
   <BodyTagDecoratedLayout title="모든 글" metaDataType='all'>
     <ul className="list-of-posts">
-      {data.allMarkdownRemark.edges.map(post => (
-        <ListPostItem post={post.node.frontmatter} />
+      {data.allMarkdownRemark.edges.map((post, i) => (
+        <ListPostItem key ={i} post={post.node.frontmatter} />
       ))}
     </ul>
   </BodyTagDecoratedLayout>

@@ -9,10 +9,10 @@ const TagsPage = (props) => {
     return (
         <Layout title="모든 태크" metaDataType='all'>
         <section>
-            {data.map(tag => (
+            {data.map((tag, i) => (
               <ul>
                 <li>
-                  <Link to={`tags/${tag.fieldValue.toLowerCase()}`}>
+                  <Link key={i} to={`tags/${tag.fieldValue.toLowerCase()}`}>
                     {tag.fieldValue} {`( ${tag.totalCount} )`}
                   </Link>
                 </li>
