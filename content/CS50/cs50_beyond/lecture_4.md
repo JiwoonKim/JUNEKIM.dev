@@ -182,6 +182,27 @@ can render different things on the page depending on certain conditions
     }
 ```
 
+#### Retrieve Data from Specific Tag
+```jsx
+// use data attribute
+<li>
+    <span>{newTask}</span>
+    <button onClick={deleteTask}>Delete</button>
+</li>
+// use event target dataset value
+const deleteTask = (event) => {
+    const index = event.target.dataset.index;
+    // delete the task from tasks array using the index
+    this.setState(state => {
+        const tasks = [...state.tasks]
+        tasks.splice(index, 1);
+        return {
+            tasks: tasks
+        }
+    })
+}
+```
+
 #### Adding Class Styles
 ```html
 <!-- define a style for the class -->
