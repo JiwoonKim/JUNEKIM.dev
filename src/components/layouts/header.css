@@ -84,11 +84,14 @@ header {
 /*
 */
 @media (max-width: 399px) {
+    .tag-decoration {
+        font-size: 1rem;
+    }
     .tag-decoration-left {
-        padding-top: 3.5rem;
+        padding-top: 4.3rem;
     }
     .tag-decoration-right {
-        padding-bottom: 2.1rem;
+        padding-bottom: 3.1rem;
     }
     .banner-title {
         font-size: 4rem;
