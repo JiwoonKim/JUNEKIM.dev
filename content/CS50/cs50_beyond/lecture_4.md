@@ -109,11 +109,13 @@ component-based framework for front-end development
 - __Props__: component itself never changes props
 - __States__: component might change states
 
-### Flash Card Game (in React)
+### Quiz App (in React)
 ```jsx
+// container component
 class App extends React.Component {
     constructor(props) {
         super(props);
+        // question: num1 + num2
         this.state = {
             num1: 1,
             num2: 1,
@@ -125,29 +127,37 @@ class App extends React.Component {
         return (
             <div>
                 <h1>{this.state.num1} + {this.state.num2}</h1>
-                <input value={this.state.response} onChange={this.updateResponse} onKeyPress={this.inputKeyPressed} />
+                <input 
+                    value={this.state.response} 
+                    onChange={this.updateResponse} 
+                    onKeyPress={this.inputKeyPressed} 
+                />
                 <div>Score: {this.state.score}</div>
             </div>
         )
     }
+    // update response state from input value
     updateResponse = (event) => {
         this.setState({
             response: event.target.value
         });
     }
+    // submit response and check answer
     inputKeyPressed = (event) => {
         if (event.key === "Enter") {
             const answer = parseInt(this.state.response);
-            // if answer is right,
+            // if answer is right, 
             if (answer === this.state.answer) {
+                // update score and change nums to random numbers
                 this.setState(state => {
                     score: state.score + 1,
                     num1: Math.ceil(Math.random() * 10),
                     num2: Math.ceil(Math.random() * 10),
                     response: ""
                 });
-            // if answer is wrong
+            // if answer is wrong,
             } else {
+                // just reset input value
                 this.setState(state => {
                     response: "",
                 });
@@ -155,6 +165,7 @@ class App extends React.Component {
         }
     }
 }
+// render app component on page
 ReactDOM.render(<App />, document.querySelector("#app"));
 ```
 
@@ -242,4 +253,3 @@ const list2 = [...list1, 6];
 // make a copy with some removal
 list1.splice(3, 1); // splice off one at 3rd index
 ```
-

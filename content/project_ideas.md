@@ -8,8 +8,12 @@ tags: ['Ideas']
 ---
 > a collection of topics that I am interested in and would like to research more about
 
+#### flash card app
+
 #### Mylife Roadmap
 imposture syndrome을 방지하는 roadmap
+
+#### color picker chrome extension
 
 #### Web Developer Chatbot
 web developer chatbot (guidance)
