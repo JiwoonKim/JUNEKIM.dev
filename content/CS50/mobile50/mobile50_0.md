@@ -4,7 +4,7 @@ date: '2019-03-15'
 title: "Mobile50 lecture 0 - JavaScript"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', 'Javascript']
+tags: ['웹개발', '프론트엔드', 'JavaScript']
 ---
 > Understanding JavaScript
 

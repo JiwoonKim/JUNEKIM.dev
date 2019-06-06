@@ -4,7 +4,7 @@ date: '2019-03-19'
 title: "JavaScript 1 - Fundamentals"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', 'Javascript']
+tags: ['웹개발', '프론트엔드', 'JavaScript']
 ---
 > Understanding JavaScript
 > - variables, data types, functions, browser functions

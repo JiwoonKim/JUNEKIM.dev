@@ -4,7 +4,7 @@ date: '2019-03-18'
 title: "Mobile50 lecture 1 - ES6"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', 'Javascript']
+tags: ['웹개발', '프론트엔드', 'JavaScript']
 ---
 > Understanding JavaScript ES6 Standards
 

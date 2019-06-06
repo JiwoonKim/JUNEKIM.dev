@@ -4,7 +4,7 @@ date: '2019-05-10'
 title: "Interview Cake - Data Structures"
 description: Interview Cake - Data Structures 정리
 image: ''
-tags: ['Interviewcake', '자료구조']
+tags: ['Interview Cake', '자료구조']
 ---
 > [Interview Cake의 Data Structure 파트](https://www.interviewcake.com/article/cpp/data-structures-coding-interview?course=fc1&section=algorithmic-thinking) 정리
 

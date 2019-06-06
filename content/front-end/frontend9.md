@@ -4,7 +4,7 @@ date: '2019-03-08'
 title: "Frontend Focus 09 - Images on the Web"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', '디자인', 'Responsivedesign']
+tags: ['웹개발', '프론트엔드', '디자인', 'Responsive Design']
 ---
 > Understanding Images on the Web
 

@@ -4,7 +4,7 @@ date: '2019-03-20'
 title: "JavaScript 4 - Objects"
 description: 
 image: ''
-tags: ['웹개발', '프론트엔드', 'Javascript']
+tags: ['웹개발', '프론트엔드', 'JavaScript']
 ---
 > Understanding JavaScript
 > - objects, primitive data types

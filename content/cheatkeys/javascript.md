@@ -4,7 +4,7 @@ date: '2019-04-08'
 title: "JavaScript 치트키"
 description: JavaScript 치트키 정리
 image: ''
-tags: ['Javascript', '치트키']
+tags: ['JavaScript', '치트키']
 ---
 > JavaScript 언어로 프로그래밍할 때 필요한 치트키들을 정리.
 > 개인적인 자주 사용하는 문법을 반영하여 만든 치트키입니다.
