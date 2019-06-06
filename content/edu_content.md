@@ -17,6 +17,7 @@ tags: ['웹개발', '에듀']
     - [great code block color scheme](https://30-seconds.github.io/30-seconds-of-css/)
     - [리아유 video](https://www.youtube.com/watch?v=ptBZdXl4P6c): each chapter(language) has specific color background throughout the series
 - design
+    - educative.io
     - [beautiful design layout and UI](https://internetingishard.com/)
     - [깔끔 & 그림](https://joelglovier.com/writing/sitemaps-for-jekyll-sites)
 
@@ -25,7 +26,7 @@ tags: ['웹개발', '에듀']
 - 교육 섹션을 전반적으로, basic과 후드 아래 (under the hood)으로 나누어서 basic은 생활코딩처럼 기본적으로 알면 좋을 것들, 후드 아래는 좀 더 자세히 들어가는 nerdy bits으로 추가적으로 설명하는 부분으로.
 
 #### 캐릭터
-- 마스코트가 있으면 좋겠는데...역시 드래곤...?
+- 마스코트가 있으면 좋겠는데...
 - binary information 표현시, 바둑돌 캐릭터 (white & black)으로 표현하면 어떨까? 그냥 바둑돌에 눈만 띡띡 찍은 캐릭터 생각중
 
 ### frontend focus

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import 'lodash.kebabcase'
 
 import Layout from '../components/layouts/layout'
 
@@ -9,15 +10,19 @@ const TagsPage = (props) => {
     return (
         <Layout title="모든 태크" metaDataType='all'>
         <section>
-            {data.map((tag, i) => (
-              <ul>
-                <li>
-                  <Link key={i} to={`tags/${tag.fieldValue.toLowerCase()}`}>
-                    {tag.fieldValue} {`( ${tag.totalCount} )`}
-                  </Link>
-                </li>
-              </ul>
-            ))}
+            {data.map((tag, i) => {
+              var _ = require('lodash');
+              const tagPath = 'tags/' + _.kebabCase(tag.fieldValue);
+              return (
+                <ul>
+                  <li>
+                    <Link key={i} to={tagPath}>
+                      {tag.fieldValue} {`( ${tag.totalCount} )`}
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            )}
         </section>
         </Layout>
     )

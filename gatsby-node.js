@@ -57,7 +57,7 @@ exports.createPages = ({ actions, graphql }) => {
         // create page for each tag using tag-list template 
         allTags.forEach((tag, index) => {
           createPage({
-            path:  `tags/${_.kebabCase(tag)}/`,
+            path: `tags/${_.kebabCase(tag)}/`,
             component: tagListTemplate,
             context: {
               tag,
