@@ -85,6 +85,9 @@ header {
 /*
 */
 @media (max-width: 399px) {
+    header {
+        height: 90vh;
+    }
     .tag-decoration {
         font-size: 1rem;
     }
@@ -93,6 +96,9 @@ header {
     }
     .tag-decoration-right {
         padding-bottom: 3.1rem;
+    }
+    .banner-title-container {
+        margin-bottom: 2rem;
     }
     .banner-title {
         font-size: 4rem;
