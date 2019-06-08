@@ -12,6 +12,9 @@ tags: ['CS50', 'React']
 component-based framework for front-end development
 - need `react`, `reactDOM`, `babel` libraries
 - uses the JSX language and syntax
+- declarative programming: 
+    - deciding on how the components should look like
+    - change state for change instead of DOM manipulation
 
 ### Components
 - each component is defined by `class __name__ extends React.component`
