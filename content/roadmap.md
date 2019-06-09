@@ -35,6 +35,9 @@ natural language processing, image processing, ai and emotional intelligence 등
 - udacity deep learning course
 - udacity computer vision course
 
+### 로봇, 하드웨어
+johny-five (using node.js)
+
 #### Ethics in technology
 specifially focusing on the study of ethics for AI
 - [AI 기본 설명](https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html)
