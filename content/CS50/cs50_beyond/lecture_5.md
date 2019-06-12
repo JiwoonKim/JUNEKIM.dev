@@ -4,7 +4,7 @@ date: '2019-06-08'
 title: "CS50 Beyond lecture 5 - Thinking in React"
 description: CS50 Beyond lecture 5 정리
 image: ''
-tags: ['CS50', 'React']
+tags: ['CS50', 'CS50 Beyond', 'React']
 ---
 > Harvard's CS50 Beyond lecture 5 정리
 

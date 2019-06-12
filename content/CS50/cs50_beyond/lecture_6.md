@@ -4,7 +4,7 @@ date: '2019-06-09'
 title: "CS50 Beyond lecture 6 - Security & Scalability"
 description: CS50 Beyond lecture 6 정리
 image: ''
-tags: ['CS50', 'Security', 'Scalability']
+tags: ['CS50', 'CS50 Beyond', 'Security', 'Scalability']
 ---
 > Harvard's CS50 Beyond lecture 6 정리
 
