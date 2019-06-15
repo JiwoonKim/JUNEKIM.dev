@@ -1,7 +1,7 @@
 ---
 path: "/cs50/11"
 date: '2018-07-20'
-title: "CS50 lecture 11 - Wrap Up"
+title: "CS50 lecture 11 - The End"
 description: CS50 lecture 11 정리
 image: ''
 tags: ['CS50']
