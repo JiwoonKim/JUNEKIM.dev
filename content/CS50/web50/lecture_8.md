@@ -8,3 +8,6 @@ tags: ['CS50', 'Web50', 'Testing', 'CI/CD']
 ---
 > Harvard's Web Programming with Python and Javascript lecture 8 정리
 
+### Testing
+
+### Continous 
