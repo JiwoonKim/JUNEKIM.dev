@@ -8,4 +8,4 @@ tags: ['CS50', 'Web50', 'Django']
 ---
 > Harvard's Web Programming with Python and Javascript lecture 7 정리
 
-###
+### Django

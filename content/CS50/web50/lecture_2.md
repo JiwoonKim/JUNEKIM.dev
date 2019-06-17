@@ -161,3 +161,53 @@ templating language for flask's render_template
 {% endfor %}
 ```
 - __template inheritance__: __factor out commonalities into layout templates__ using `blocks`
+- __link__ different parts of your web app: use `{{ url_for( 'route_name' ) }}`
+```html
+<a href="{{ url_for( 'route_name' ) }}">link</a>
+```
+
+#### Forms
+- __forms__ w/ backend to store data
+```html
+<!-- hello.html -->
+<form action="/" method="post">
+    <input type="text" name="name">
+    <button>submit</button>
+</form>
+```
+```python
+# backend web server
+from flask import Flask, render_template, request
+@app.route("/")
+def hello():
+    name = request.form.get("name")
+    return render_template("hello.html", name=name)
+```
+
+#### Storing data in Web servers
+- __global variables__ in python: stores data as long as server is alive, but restarts when server is down (volatile)
+- __sessions__ (a.k.a cookies): stores data that pertains to a particular user, regardless of whether server is up or down (involatile)
+```python
+from flask import Flask, render_template, request, session
+from flask_session import Session
+app = Flask(__name__)
+# configure sessions
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
+# set route
+@app.route("/", methods=["GET, POST"])
+def index():
+    # if notes doesn't exist in sessions, initialize notes
+    if session.get("notes") is None:
+        session["notes"] = []
+    # if post request, store note data into sessions from form
+    if request.method == "POST":
+        note = request.form.get("note")
+        session["notes"].append(note)
+    # return template using notes data from sessions
+    # if get request, automatically fetch notes data
+    # if post request, update notes data and fetch that notes data
+    return render_template("index.html", notes=session["notes"])
+```
+- databases: for more complicated data (involatile)
