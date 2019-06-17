@@ -35,7 +35,7 @@ tags: ['CS50', 'Web50', 'HTML', 'CSS']
 ### Responsive Design
 the idea that a website should look good regardless of the platform it is viewed from
 
-__ways to make responsive design__
+#### Ways to make responsive design
 1. __media query__(`@media`): assigning CSS to a particular HTML element on a particular type of media
 ```css
 @media print {
