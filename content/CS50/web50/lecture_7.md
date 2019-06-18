@@ -71,6 +71,7 @@ urlpatterns = [
 ```
 
 #### Routes w/ Parameters
+add flight view page 
 - `views.py`: add function to use data in parameter
 ```python
 ...
@@ -83,7 +84,7 @@ def flight(request, flight_id):
         raise Http404("Flight does not exist")
     # return template w/ data
     context = {
-        "flight": flight
+        "flight": flight,
     }
     return render(request, "flights/flight.html", context)
 ```
@@ -94,6 +95,60 @@ urlpatterns = [
     path("<int:flight_id>, views.flight)
 ]
 ```
+
+#### Form
+add registration page for flights
+- create form to flight page (w/ dropdown of passengers)
+```html
+<!-- add form inside flight.html -->
+<h2>Add a passenger</h2>
+<form action="{% url 'book' flight.id %}" method="post">
+    {% csrf_token %}
+    <select name="passenger">
+        {% for passenger in non_passengers %}
+        <option value="{{ passenger.id }}">{{ passenger }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Book Flight" />
+</form>
+```
+- `views.py`: add function for users to register to flights
+```python
+...
+# add fields to context in flight function
+    context = {
+        ...
+        "passengers": flight.passengers.all(),
+        "non-passengers": Passenger.objects.exclude(flights=flight).all()
+    }
+...
+# define function to book flight
+def book(request, flight_id):
+    # retrieve passenger and flights
+    try:
+        passenger_id = int(request.POST["passenger"])
+        passenger = Passenger.objects.get(pk=passenger_id)
+        flight = Flight.objects.get(pk=flight_id)
+    except KeyError:
+        return render(request, "flights/error.html", {"message": "No selection made"})
+    except Passenger.DoesNotExist:
+        return render(request, "flights/error.html", {"message": "No passenger"})
+    except Flight.DoesNotExist:
+        return render(request, "flights/error.html", {"message": "No flight"})
+    # add flight to passenger's flights information
+    passenger.flights.add(flight)
+    # redirect to flight page
+    return HttpResponseRedirect(reverse("flight", args(flight_id, )))
+```
+- `flights/urls.py`: add book function to app's url
+```python
+urlpatterns = [
+    ...
+    path("<int:flight_id>/book, views.book, name="book")
+]
+```
+- __CSRF (Cross-site Request Forgery)__: potential security vulnerability in forms whereby someone could forge where the form is coming from -> Django built-in to protect from these attacks
+    - add `{% csrf-token %}` within form tag
 
 #### Link between URLS
 - __name urls__ in `flights/urls.py` so that can refer to route using name
@@ -147,9 +202,13 @@ def index(request):
 - create generic template
 ```html
 <!-- base.html -->
-<title> {% block title %}{% endblock %} </title>
-{% block body %}
-{% endblock %}
+<head>
+    <title> {% block title %}{% endblock %} </title>
+</head>
+<body>
+    {% block body %}
+    {% endblock %}
+</body>
 ```
 - extend generic template 
 ```html
@@ -188,7 +247,7 @@ class Flight(models.Model):
     def __str__(self):
         return f"{self.id} - {self.origin} to {self.destination}"
 ```
-- reference using `ForeignKey()`
+- reference to another class using `ForeignKey()`
 - specify `on_delete=models.CASCADE` to delete all flights w/ that airport when that airport instance is deleted from database
 - specify `related_name="key"` to use key to access only those specific cases (flights w/ key)
 
@@ -234,6 +293,36 @@ f.origin.code
 f.delete()
 ```
 
+#### Model Relationships
+__many-to-many relationships__
+- create an in-between table (to map between two relationships to allow many-to-many relationships)
+- `models.py`: define class using `ManyToManyField`
+```python
+...
+class Passenger(models.Model):
+    first = models.CharField(max_length=64)
+    second = models.CharField(max_length=64)
+    flights = models.ManyToManyField(Flight, blank=True, related_name="passengers")
+    def __str__(self):
+        return f"{self.first} {self.last}"
+```
+    - Django automatically creates in-between table when `ManyToManyField` is used
+- shell to interact w/ that model
+```python
+## implement code line-by-line in shell terminal
+from flights.models import Flight, Passenger
+# create passenger instance and save
+p = Passenger(first="Alice", last="Adams")
+p.save()
+# add flight to passenger's field
+f = Flight.objects.get(pk=1)
+p.flights.add(f)
+# query for passenger's flights
+p.flights.all()
+# query for flight's passengers
+f.passengers.all()
+```
+
 ### Admin
 __built-in app that makes it easy to manipulate data__ for the web page
 - `admin.py`: add models in app to be accessed/manipulated from admin app
@@ -243,10 +332,102 @@ from .models import Airport, Flight
 # register models to use in admin app
 admin.site.register(Airport)
 admin.site.register(Flight)
+admin.site.register(Passenger)
 ```
 - __register and login to admin__:
     - register: `python manage.py createsuperuser`
     - login: via admin site
-- runserver and go to `/admin` route: access user interface
+- runserver and go to `/admin` route to access user interface
 
-### 
+#### Extend Admin Interface
+extend admin interface to allow for custom behavior
+- `flights/admin.py`: add defining custom models
+```python
+from django.contrib import admin
+from .models import Airport, Flight, Passenger
+# customize admin interface
+class PassengerInline(admin.StackedInline):
+    # allow flight -> passenger modification at admin
+    model = Passenger.flights.through
+    extra = 1
+## extend admin models
+class FlightAdmin(admin.ModelAdmin):
+    # add that inline function for admin
+    inlines = [PassengerInline]
+# use special admin class
+class PassengerAdmin(admin.ModelAdmin):
+    # add easy way to move flights back and forth for a passenger
+    fliter_horizontal = ("flights",)
+# register models
+admin.site.register(Airport)
+admin.site.register(Flight, FlightAdmin)
+admin.site.register(Passenger, PassengerAdmin)
+```
+
+### Login and Authentication
+built-in app for authentication for users
+- create users app
+- `users/urls.py`: 
+```python
+urlpatterns = [
+    ...
+    path("", views.index, name="index")
+    path("login", views.login_view, name="login"),
+    path("logout", views.logout_view, name="logout")
+]
+```
+- `users/views.py`:
+```python
+# Django's built-in authentication library 
+from django contrib.auth import authenticate, login, logou
+# other Django libraries
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render
+from django.urls import reverse
+# create index view function
+def index(request):
+    # if request is not authenticated, return login page
+    if not request.user.is_authenticated:
+        return render(request, "users/login.html", {"message": None})
+    # if authenticated, return user page
+    context = {
+        "user": request.user
+    }
+    return render(request, "users/user.html", context)
+# create login view function
+def login_view(request):
+    username = request.POST["username"]
+    password = request.POST["password"]
+    user = authenticate(request, username=username, password=password)
+    # if user exists, redirect back to index
+    if user is not None:
+        login()
+        return HttpResponseRedirect(reverse("index"))
+    # if user does not exist, return login page again
+    else:
+        return render(request, "users/login.html", {"message": "Invalid credentials"})
+# create logout view function
+def logout_view(request):
+    logout(request)
+    return render(request, "users/login.html", {"message": "Logged out"})
+```
+- create users (using admin interface or shell)
+```python
+## implement code line-by-line in shell terminal
+from django.contrib.auth.models import User
+# create new user (firstname, email, password)
+user = User.objects.create_user("alice", "alice@something.com", "alice12345")
+# can modify user info
+user.first_name = "Alice"
+user.save()
+```
+
+### Static Files
+using external static files (`.css` or `.js` files)
+- need special Django syntax to use external static files
+```html
+{% load static %}
+<link rel="stylesheet" href="{% static 'flights/styles.css' %}" />
+```
+- __create `static` folder__:
+    - create `flights` __folder where static file will be stored__ (define as __namespace folder__)
