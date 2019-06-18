@@ -38,46 +38,46 @@ the idea that a website should look good regardless of the platform it is viewed
 #### Ways to make responsive design
 1. __media query__(`@media`): assigning CSS to a particular HTML element on a particular type of media
 ```css
-@media print {
-    #paragraph { display: none; }
-}
-// if printing, render that selector invisible
-```
-```css
-@media (min-width: 400px) {
-    body { background-color: blue; }
-}
-@media (max-width: 399px) {
-    body { background-color: red; }
-}
-// if display device larger than 400px, blue
-// else smaller, red
+    /* if printing, render that selector invisible */
+    @media print {
+        #paragraph { display: none; }
+    }
+    ```
+    ```css
+    /* if display device larger than 400px, blue
+    // else smaller, red */
+    @media (min-width: 400px) {
+        body { background-color: blue; }
+    }
+    @media (max-width: 399px) {
+        body { background-color: red; }
+    }
 ```
 
 2. __view port__: visiable area of the device
+```html
+<!-- the content matches the device size by setting the zoom level --> 
+<meta name="viewport" content="width=device width, initial-scale=1.0">
+```
     - commonly used in combination with media query!
     - w/o the viewport tag, the contents simply shrink by device size (text might be too small)
     - with the viewport tag, the contents match the device with consideration to user experience
-```html
-<meta name="viewport" content="width=device width, initial-scale=1.0">
-// the content matches the device size by setting the zoom level
-```
 
 3. __flexbox__: allows for the reorganization of content based on the size of the viewport
-    - 화면 크기에 따라 배치를 다르게 하는 방법, not changing the scale
 ```css
-#box { 
-    display: flex; 
-    flex-wrap: wrap;
-}
-// contents will be reorganized so that no contents are lost when screen is shrunk
+    /* contents will be reorganized so that no contents are lost when screen is shrunk */
+    #box { 
+        display: flex; 
+        flex-wrap: wrap;
+    }
 ```
+    - 화면 크기에 따라 배치를 다르게 하는 방법, not changing the scale
 4. __grid__:
 ```css
-#grid {
-    display: grid;
-    grid-template-columns: 200px 200px auto;
-}
+    #grid {
+        display: grid;
+        grid-template-columns: 200px 200px auto;
+    }
 ```
 
 __But__, these get complicated since every instances' style must be set
@@ -105,24 +105,24 @@ p { color: $color; }
 ```
     - enables nested selectors: more concise way to style elements
 ```scss
-div {
-    font-size: 18px;
-    p { 
-        color: blue; 
-    }
-    ul {
-        color: green;
-    }
-}
+        div {
+            font-size: 18px;
+            p { 
+                color: blue; 
+            }
+            ul {
+                color: green;
+            }
+        }
 ```
     - enables inheritance: general style + tweaking
 ```scss
-%message {
-    font-family: sans-serif;
-    font-size: 18px;
-}
-p {
-    @extend %message;
-    background-color: green;
-}
+        %message {
+            font-family: sans-serif;
+            font-size: 18px;
+        }
+        p {
+            @extend %message;
+            background-color: green;
+        }
 ```

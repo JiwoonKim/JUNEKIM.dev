@@ -22,26 +22,26 @@ print(f"Hello, {name}!)
 ```
 - if-else conditions
 ```python
-if x > 0
-    print("+")
-elif x < 0
-    print("-")
-else
-    print("0")
+    if x > 0
+        print("+")
+    elif x < 0
+        print("-")
+    else
+        print("0")
 ```
 - for loops
 ```python
 # iterate for 5 times
-for i in range(5):
-    ...
+    for i in range(5):
+        ...
 # iterate over collection
-for name in names:
-    ...
+    for name in names:
+        ...
 ```
 - functions
 ```python
-def function(x):
-    return x * x
+    def function(x):
+        return x * x
 ```
     - trying to call a function not defined, raises a __NameError__ as exception
 
@@ -66,10 +66,10 @@ __separate `.py` files of code__ (= __library__)
 - ex: `from functions import square`
 - to enable only certain functions to be called instead of entire code in the separated file, __must encapsulate entire code under `main` and include call to main function__
 ```python
-def main():
-    ...
-if __name__ == "__main__":
-    main()    
+    def main():
+        ...
+    if __name__ == "__main__":
+        main()    
 ```
 
 #### Classes
@@ -102,33 +102,34 @@ __python code for a back-end server__, listening for requests and returning some
 #### Flask App
 - a simple app
 ```python
-# use flask as micro-framework
-from flask import Flask
-app = Flask(__name__)
-# define function for route
-@app.route("/")
-def index():
-    return "hello, world!"
+    # use flask as micro-framework
+    from flask import Flask
+    app = Flask(__name__)
+    # define function for route
+    @app.route("/")
+    def index():
+        return "hello, world!"
 ```
 - __use data from url (get request)__
 ```python
-# when any string is entered in route, it will be stored as name and used in the function
-@app.route("/<string: name>")
-def hello(name):
-    # return inline html tags
-    return f"<h1>hello, {name}!</h1>"
+    # when any string is entered in route, 
+    # it will be stored as name and used in the function
+    @app.route("/<string: name>")
+    def hello(name):
+        # return inline html tags
+        return f"<h1>hello, {name}!</h1>"
 ```
 
 #### Rendering Templates
 __return html templates__, maybe plugged with data (instead of using inline html tags)
 - use: `from flask import render_template`
 ```python
-from flask import Flask, render_template
-app = Flask(__name__)
-# return index.html
-@app.route("/")
-def index():
-    return render_template("index.html")
+    from flask import Flask, render_template
+    app = Flask(__name__)
+    # return index.html
+    @app.route("/")
+    def index():
+        return render_template("index.html")
 ```
 - __template file should be stored in directory__ `templates`
 - can also __pass arguments__ to render_template: plug in data into templates
@@ -148,17 +149,17 @@ templating language for flask's render_template
 ```
 - conditions: `{% if %}`, `{% else %}`, `{% endif %}`
 ```html
-{% if  new_year %}
-    <h1> Happy New Year! </h1>
-{% else %}
-    <h1> Not Yet :( </h1>
-{% endif %}
+    {% if  new_year %}
+        <h1> Happy New Year! </h1>
+    {% else %}
+        <h1> Not Yet :( </h1>
+    {% endif %}
 ```
 - loops: `{% for %}`, `{% endfor %}`
 ```html
-{% for name in names %}
-    <li> {{ name }} </li>
-{% endfor %}
+    {% for name in names %}
+        <li> {{ name }} </li>
+    {% endfor %}
 ```
 - __template inheritance__: __factor out commonalities into layout templates__ using `blocks`
 - __link__ different parts of your web app: use `{{ url_for( 'route_name' ) }}`
@@ -169,45 +170,45 @@ templating language for flask's render_template
 #### Forms
 - __forms__ w/ backend to store data
 ```html
-<!-- hello.html -->
-<form action="/" method="post">
-    <input type="text" name="name">
-    <button>submit</button>
-</form>
+    <!-- hello.html -->
+    <form action="/" method="post">
+        <input type="text" name="name">
+        <button>submit</button>
+    </form>
 ```
 ```python
-# backend web server
-from flask import Flask, render_template, request
-@app.route("/")
-def hello():
-    name = request.form.get("name")
-    return render_template("hello.html", name=name)
+    # backend web server
+    from flask import Flask, render_template, request
+    @app.route("/")
+    def hello():
+        name = request.form.get("name")
+        return render_template("hello.html", name=name)
 ```
 
 #### Storing data in Web servers
 - __global variables__ in python: stores data as long as server is alive, but restarts when server is down (volatile)
 - __sessions__ (a.k.a cookies): stores data that pertains to a particular user, regardless of whether server is up or down (involatile)
 ```python
-from flask import Flask, render_template, request, session
-from flask_session import Session
-app = Flask(__name__)
-# configure sessions
-app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
-# set route
-@app.route("/", methods=["GET, POST"])
-def index():
-    # if notes doesn't exist in sessions, initialize notes
-    if session.get("notes") is None:
-        session["notes"] = []
-    # if post request, store note data into sessions from form
-    if request.method == "POST":
-        note = request.form.get("note")
-        session["notes"].append(note)
-    # return template using notes data from sessions
-    # if get request, automatically fetch notes data
-    # if post request, update notes data and fetch that notes data
-    return render_template("index.html", notes=session["notes"])
+    from flask import Flask, render_template, request, session
+    from flask_session import Session
+    app = Flask(__name__)
+    # configure sessions
+    app.config["SESSION_PERMANENT"] = False
+    app.config["SESSION_TYPE"] = "filesystem"
+    Session(app)
+    # set route
+    @app.route("/", methods=["GET, POST"])
+    def index():
+        # if notes doesn't exist in sessions, initialize notes
+        if session.get("notes") is None:
+            session["notes"] = []
+        # if post request, store note data into sessions from form
+        if request.method == "POST":
+            note = request.form.get("note")
+            session["notes"].append(note)
+        # return template using notes data from sessions
+        # if get request, automatically fetch notes data
+        # if post request, update notes data and fetch that notes data
+        return render_template("index.html", notes=session["notes"])
 ```
 - databases: for more complicated data (involatile)
