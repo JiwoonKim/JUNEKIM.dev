@@ -53,7 +53,7 @@ script: python manage.py test
 ```
 
 ### Virtualization 
-isolating an app and its dependencies into a self-contained unit so that they can run anywhere w/o compatibility issues
+isolating an app and its dependencies into a self-contained unit so that they can run anywhere w/o compatibility issues; abstracting the complexities of installing necessary dependencies for an app
 - __compatibility issues__: development environment <-> production environment
     - how to ensure the production environment will be identical to to development environment?
 - __solutions__:
@@ -75,6 +75,11 @@ RUN pip install -r requirements.txt
 # add all the contents of current directory to app directory
 ADD . /usr/src/app
 ```
+- __docker commands__:
+    - `docker ps`: list current docker containers
+    - `docker build {dir_to_build_image}`: build an  image from docker file (by following the instructions)
+    - `docker run {image_id}`: create container based on image and run it
+    - `docker exec -it {container_id} bash -l`: run bash interactively in docker's container
 - cf) `settings.py`: set database for project
 ```python
 ...
@@ -90,7 +95,7 @@ ADD . /usr/src/app
         }
     ]
 ```
-- `docker-compose.yml`: __define all of the different services that make up the app__; manage multiple containers
+- `docker-compose.yml`: __define all of the different services that make up the app__; compose multiple containers
 ```yml
 version: '3'
 services:
@@ -123,10 +128,9 @@ services:
             - db
             - migration
 ```
-    - run `docker-compose up`
-- __docker commands__:
-    - `docker ps`: list current docker containers
-    - `docker exec -it {container id} bash -l`: run bash interactively in docker's container
+- __docker-compose commands__:
+    - `docker-compose build`: build images based on yml file
+    - `docker-compose up`: build images and start containers
 
 ### CD (Continuous Delivery)
 a development strategy that revolves around continually and frequently delivering code to production
