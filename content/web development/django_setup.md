@@ -18,8 +18,8 @@ tags: ['웹개발', '백엔드', 'Django']
 - deactivate: 
 
 #### requirements.txt
-- 
-- 패키지 저장: pip freeze
+- 패키지 저장: `pip freeze > requirements.txt`
+- 패키지 설치: `pip install -r requirements.txt`
 
 #### gitignore
 
