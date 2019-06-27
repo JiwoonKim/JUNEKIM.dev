@@ -21,42 +21,42 @@ __where variables are stored__ (a.k.a memory)
     - this makes reading sequential memory faster than jumping around addresses
 
 #### RAM (memory) <-> Disc (storage)
-- memory: faster but less space, direct access (by indexing address)
-- storage: slower but more space, no direct access (have to use head on disc)
+- __Memory (RAM)__: faster but less space, direct access (by indexing address)
+- __Storage (Disk)__: slower but more space, no direct access (have to use head on disc)
 
 ### Binary Numbers
 the number system computers use
 
 #### Fixed-width Integers
-- integer overflow 있을 수 있음
-- takes constant space O(1)
-- simple operations take constant time O(1)
+- __integer overflow 있을 수 있음__
+- takes __constant space O(1)__
+- simple operations take __constant time O(1)__
 
 ### Arrays
 - storing same data type in sequential order in memory
-- access time: O(1), cachable
+- __access time: O(1)__, cachable
 - constraints: same data type, must be stored in sequenctial order
 
 ### Strings
 - storing series of chars
 
 #### Pointers
-- storing address of data
+- __storing address of data__
 - ex. array of strings (= array of arrays)
     - problem: each string may have different length
-    - solution: store each string in any given space (don't need huge amount of space) then, store the first address of each string in array
+    - solution: store each string in any given space (don't need huge amount of space) then, store the first address of each string in array => pointers
     - constraints: not cachable
 
 ### Dynamic Arrays
 - problem w/ arrays: have to pre-determine their size
-- dynamic arrays resize arrays when more space is necessary
+- dynamic arrays __resize arrays when more space is necessary__
 
 ### Linked Lists
-- faster prepends/appends than dynamic arrays
-- but slower lookups
+- __faster prepends/appends O(1)__ than dynamic arrays
+- but __slower lookups O(n)__
 
 ### Hash Tables
 - 배열 인덱스 숫자를 통해 값에 접근하는 것처럼
-- 특정 숫자, 단어 등을 인덱스 (키 값)로 값에 접근할 수 있는 배열처럼 생각하면 됨
-- 특정 숫자, 단어 등의 키 값을 인덱스로 변환하는 과정을 hash function이라고 함
-- hash collision 문제 해결 필요
+- 특정 숫자, 단어 등을 인덱스 __(키 값)__ 로 값에 접근할 수 있는 배열처럼 생각하면 됨
+- 특정 숫자, 단어 등의 키 값을 인덱스로 변환하는 과정을 __hash function__이라고 함
+- __hash collision 문제 해결 필요__

@@ -2,7 +2,7 @@
 path: "/web50/9"
 date: '2019-06-18'
 title: "Web50 lecture 9 - CI/CD"
-description: CS50 Web Programming with Javascript and Python lecture 8 정리
+description: CS50 Web Programming with Javascript and Python lecture 9 정리
 image: ''
 tags: ['CS50', 'Web50', 'CI/CD']
 ---

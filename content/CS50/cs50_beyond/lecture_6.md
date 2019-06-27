@@ -68,8 +68,8 @@ javascript opens a whole host of potential security vulnerabilites
 
 ### Scalability
 what we need to consider for having multiple people using the same application at the same time
-- vertical scaling: increase the size of the server
-- horizontal scaling: increase the number of servers
+- __vertical scaling__: increase the size of the server
+- __horizontal scaling__: increase the number of servers
     - use load balancing to handle which server the client should be directed to
 
 #### Benchmarking
