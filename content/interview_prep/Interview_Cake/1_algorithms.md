@@ -8,3 +8,20 @@ tags: ['Interview Cake', '알고리즘']
 ---
 > [Interview Cake의 Algorithms 정리
 
+### Brute Force
+
+### Search
+
+#### Binary Search
+
+#### BFS (Breadth-first Search)
+
+#### DFS (Depth-first Search)
+
+### Greedy
+
+### Bottom-up
+
+### Overlapping Subproblems
+
+### Memoization
