@@ -15,7 +15,7 @@ const TagsTemplate = (props) => {
         <BodyTagDecoratedLayout title={tag} metaDataType='post-list' metaData={count}>
           <ul className="list-of-posts">
             {posts.map(post => (
-              <ListPostItem post={post.node.frontmatter} />
+              <ListPostItem slug={post.node.fields.slug} frontmatter={post.node.frontmatter} />
             ))}
           </ul>
         </BodyTagDecoratedLayout>
@@ -28,9 +28,11 @@ query($tag: String) {
     allMarkdownRemark(filter: { frontmatter: { tags: { in: [$tag] } } }) {
       edges {
         node {
+          fields {
+            slug
+          }
           frontmatter {
             title
-            path
             date
           }
         }
