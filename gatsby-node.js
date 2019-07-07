@@ -1,16 +1,15 @@
 const path = require('path');
-const { createFilePath, createFileNode } = require(`gatsby-source-filesystem`);
+const { createFilePath } = require(`gatsby-source-filesystem`);
 const _ = require('lodash');
 
-// 마크다운 파일을 바탕으로 각 페이지 생성
+// create pages from markdown files
 exports.createPages = ({ actions, graphql }) => {
     const { createPage } = actions
 
-    // 템플릿 가져오기
     const postTemplate = path.resolve('src/components/templates/blog-post.js')
     const tagListTemplate = path.resolve('src/components/templates/tag-list.js')
 
-    // 마크다운 파일 데이터 모두 불러오기
+    // fetch markdown file data
     return graphql(`
     {
       allMarkdownRemark(
@@ -19,10 +18,11 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
+            fields {
+              slug
+            }
             html
-            id
             frontmatter {
-              path
               title
               date
               tags
@@ -32,34 +32,35 @@ exports.createPages = ({ actions, graphql }) => {
       }
     }
   `).then(res => {
-
-        // 예외 처리
         if (res.errors) {
             return Promise.reject(res.errors)
         }
         
-        /** blog-post template을 사용하여 각 마크다운 파일마다
-         *  페이지를 생성하여 명시한 패스에 렌더링하기
-        */
+        // create blog posts pages using blog-post template
         const posts = res.data.allMarkdownRemark.edges
+
         posts.forEach(({ node }) => {
             createPage({
-                path: node.frontmatter.path,
+                path: node.fields.slug,
                 component: postTemplate,
+                context: {
+                  slug: node.fields.slug,
+                }
             })
         })
 
-        // 마크다운 파일들의 태그를 모아 태그 모음 생성
+        // collect all the tags from markdown files
         let allTags = []
         _.each(posts, (edge) => {
           if (_.get(edge, 'node.frontmatter.tags')) {
             allTags = allTags.concat(edge.node.frontmatter.tags)
           }
         })
-        // 중복 태그 없애기
+
+        // eliminate duplicate tags
         allTags = _.uniq(allTags)
 
-        // tag-list template을 사용하여 각 태그마다 페이지 생성
+        // create list page for each tag using tag-list template
         allTags.forEach((tag, index) => {
           createPage({
             path: `tags/${_.kebabCase(tag)}/`,
@@ -71,4 +72,19 @@ exports.createPages = ({ actions, graphql }) => {
         })
 
     })
+}
+
+// create file path for each
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
 }
