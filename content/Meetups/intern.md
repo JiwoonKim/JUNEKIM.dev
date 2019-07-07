@@ -1,5 +1,4 @@
 ---
-path: "/intern"
 date: '2019-07-06'
 title: "슬기로운 인턴 생활"
 description: 슬기로운 인턴 생활

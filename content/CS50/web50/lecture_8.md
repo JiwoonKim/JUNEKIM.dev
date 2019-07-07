@@ -1,5 +1,4 @@
 ---
-path: "/web50/8"
 date: '2019-06-18'
 title: "Web50 lecture 8 - Testing"
 description: CS50 Web Programming with Javascript and Python lecture 8 정리

@@ -1,5 +1,4 @@
 ---
-path: "/my/interesting_topics"
 date: '2019-02-25'
 title: "Interesting Topics I would like to know more of"
 description: 

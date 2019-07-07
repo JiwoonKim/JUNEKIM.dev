@@ -1,5 +1,4 @@
 ---
-path: "/cs50/beyond/5"
 date: '2019-06-08'
 title: "CS50 Beyond lecture 5 - Thinking in React"
 description: CS50 Beyond lecture 5 정리

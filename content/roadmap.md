@@ -1,5 +1,4 @@
 ---
-path: "/my/roadmap"
 date: '2019-02-25'
 title: "A Roadmap of my career"
 description: 

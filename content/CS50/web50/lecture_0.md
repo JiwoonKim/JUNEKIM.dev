@@ -1,5 +1,4 @@
 ---
-path: "/web50/0"
 date: '2018-07-17'
 title: "Web50 lecture 0 - Git"
 description: CS50 Web Programming with Javascript and Python lecture 0 정리
@@ -46,7 +45,7 @@ tags: ['CS50', 'Web50', 'Git']
     - `git pull`: git fetch + git merge origin/master
 
 #### GitHub Flow
-- 사진 추가
+![](./githubflow.PNG)
 
 #### Branching
 - feature of Git that allows a project to move in multiple different directions simultaneously.

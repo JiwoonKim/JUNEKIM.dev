@@ -1,5 +1,4 @@
 ---
-path: "/web50/6"
 date: '2018-09-05'
 title: "Web50 lecture 6 - Front-end Development"
 description: CS50 Web Programming with Javascript and Python lecture 6 정리

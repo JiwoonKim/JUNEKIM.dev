@@ -1,5 +1,4 @@
 ---
-path: "/webdevelopment/backend/django/setup"
 date: '2018-01-26'
 title: "Django - 기본 Setup"
 description: 백엔드 장고 프레임워크 Setup 가이드

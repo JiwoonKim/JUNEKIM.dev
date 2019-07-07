@@ -1,5 +1,4 @@
 ---
-path: "/web50/7"
 date: '2019-06-17'
 title: "Web50 lecture 7 - Django"
 description: CS50 Web Programming with Javascript and Python lecture 7 정리

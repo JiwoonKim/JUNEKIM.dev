@@ -1,5 +1,4 @@
 ---
-path: "/webdevelopment/webserver"
 date: '2018-02-15'
 title: "웹 서버 구성"
 description: 웹 서버의 구성 및 벡엔드의 역할에 대한 정리
