@@ -1,5 +1,4 @@
 ---
-path: "/cs50/beyond/2"
 date: '2019-03-12'
 title: "CS50 Beyond lecture 2 - JavaScript"
 description: CS50 Beyond lecture 2 정리

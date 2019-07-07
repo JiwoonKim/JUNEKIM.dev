@@ -1,5 +1,4 @@
 ---
-path: "/web50/10"
 date: '2019-06-25'
 title: "Web50 lecture 10 - Scalability"
 description: CS50 Web Programming with Javascript and Python lecture 10 정리

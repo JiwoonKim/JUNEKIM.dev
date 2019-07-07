@@ -1,5 +1,4 @@
 ---
-path: "/gdg/frontendgame/2019"
 date: '2019-06-22'
 title: "Front Endgame 2019"
 description: Front Endgame 2019

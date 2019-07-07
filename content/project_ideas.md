@@ -1,5 +1,4 @@
 ---
-path: "/my/project/ideas"
 date: '2019-05-17'
 title: "Project Ideas"
 description: 

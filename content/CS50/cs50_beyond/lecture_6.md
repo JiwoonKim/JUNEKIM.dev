@@ -1,5 +1,4 @@
 ---
-path: "/cs50/beyond/6"
 date: '2019-06-09'
 title: "CS50 Beyond lecture 6 - Security & Scalability"
 description: CS50 Beyond lecture 6 정리

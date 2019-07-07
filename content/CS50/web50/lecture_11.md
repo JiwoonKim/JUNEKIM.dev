@@ -1,5 +1,4 @@
 ---
-path: "/web50/11"
 date: '2019-06-18'
 title: "Web50 lecture 11 - Security"
 description: CS50 Web Programming with Javascript and Python lecture 11 정리

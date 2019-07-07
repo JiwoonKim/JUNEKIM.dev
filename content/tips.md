@@ -1,5 +1,4 @@
 ---
-path: "/employment/advise"
 date: '2019-02-16'
 title: "취업을 위한 조언"
 description: 취직을 위한 간단한 메모

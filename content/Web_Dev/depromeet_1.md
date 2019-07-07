@@ -1,5 +1,4 @@
 ---
-path: "/webdevelopment/depromeet/projects/1"
 date: '2018-01-24'
 title: "디프만 - 5기 파이널 프로젝트"
 description: 디프만 5기 파이널 프로젝트 개발 후기
