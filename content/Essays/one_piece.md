@@ -2,7 +2,6 @@
 date: '2019-06-09'
 title: "원피스 회차 정리"
 description: 원피스 회차 정리
-image: ''
 tags: []
 ---
 > 원피스

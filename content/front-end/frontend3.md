@@ -1,9 +1,7 @@
 ---
-path: "/frontend/3"
 date: '2019-02-26'
 title: "Frontend Focus 03 - DNS"
 description: 
-image: ''
 tags: ['웹개발', '프론트엔드']
 ---
 > what is a domain name system

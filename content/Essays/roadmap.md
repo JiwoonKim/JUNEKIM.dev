@@ -2,17 +2,23 @@
 date: '2019-02-25'
 title: "A Roadmap of my career"
 description: 
-image: ''
-tags: ['웹개발', '로드맵']
+tags: ['로드맵']
 ---
 > a roadmap of how I want to excel in my career
 > start with Frontend, then design and backend, then maybe to business
 
-### 프론트엔드 개발
+### 프론트엔드 개발자 되기
+[ ] 자바스크립트와 리액트에 능숙한 개발자되기
+[ ] 노드와 DB를 쓸 줄 아는 개발자되기
+[ ] 성능 향상
+[ ] 
+
+### 강의목록
+
+#### 프론트엔드
 1. frontend focus 39 주제 학습 및 정리
 2. udemy - zero to complete web developer 학습 및 정리
 3. 복습 겸 심화 학습
-    - frontend masters - complete intro to web development v2 (복습 겸 정리)
     - javascript 30 day challenge
     - frontend masters - javascript: from fundamentals to functional JS, v2
 4. 프로젝트 개발 및 포토폴리오 build

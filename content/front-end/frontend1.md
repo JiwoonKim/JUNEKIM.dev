@@ -1,15 +1,19 @@
 ---
-path: "/frontend/1"
 date: '2019-02-18'
-title: "Frontend Focus 01 - the Internet & Web"
+title: "[프론트엔드 포커스] 01. 인터넷과 웹"
 description: 
-image: ''
 tags: ['웹개발', '프론트엔드']
 ---
-> how the internet and web work
-> - [references](https://frontendmasters.com/books/front-end-handbook/2018/learning/internet.html)
-> - [best explanation for how Internet works - protocol-wise](http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm)
-> - [great video explanation of how Internet works - hardware to protocols](https://www.khanacademy.org/partner-content/code-org/internet-works)
+
+### 인터넷과 웹
+인터넷과 웹은 자주 혼용되어 사용되지만, 엄연히 따지면 둘은 다른 
+
+### 인터넷
+인터넷은 `inter + net` 라는 사전적 정의 그대로 수없이 많은 네크워크들이 서로 연결된 커다란 네트워크이다. 즉, 네트워크들의 네트워크
+
+#### 작동방식
+
+#### 사용하는 이유
 
 ### Internet
 - a global system of interconnected computer networks that use the Internet protocol suite (TCP/IP) to link billions of devices worldwide.
@@ -63,3 +67,7 @@ tags: ['웹개발', '프론트엔드']
     3. server responds to client's request by sending a message with a status code (ex. 200 OK)
         - if the request is approved (200 OK), the server sends the website's component files (code files of HTML, CSS, JS + assets for images, music, video, documents, pdfs) in a series of data packages
     4. finally, the client receives the component files and the browser assembles them into a complete website and displays it
+
+> - [references](https://frontendmasters.com/books/front-end-handbook/2018/learning/internet.html)
+> - [best explanation for how Internet works - protocol-wise](http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm)
+> - [great video explanation of how Internet works - hardware to protocols](https://www.khanacademy.org/partner-content/code-org/internet-works)
