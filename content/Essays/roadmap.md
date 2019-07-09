@@ -7,8 +7,12 @@ tags: ['로드맵']
 > a roadmap of how I want to excel in my career
 > start with Frontend, then design and backend, then maybe to business
 
-### 프론트엔드 개발자 되기
+### 개발자로의 여정
+
+#### 프론트엔드 개발자 되기
 [ ] 자바스크립트와 리액트에 능숙한 개발자되기
+    - 자바스크립트 패턴 공부
+[ ] webpack, babel, eslint, webcomponent, polymer
 [ ] 노드와 DB를 쓸 줄 아는 개발자되기
 [ ] 성능 향상
 [ ] 

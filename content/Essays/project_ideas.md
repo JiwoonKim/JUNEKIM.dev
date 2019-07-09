@@ -1,8 +1,8 @@
 ---
 date: '2019-05-17'
-title: "Project Ideas"
+title: "프로젝트 아이디어"
 description: 
-tags: ['Ideas']
+tags: ['에세이']
 ---
 > a collection of topics that I am interested in and would like to research more about
 

@@ -2,7 +2,7 @@
 date: '2019-02-25'
 title: "Ideas for education content made by myself"
 description: 
-tags: ['컨텐츠', '교육']
+tags: ['에세이', '컨텐츠', '교육']
 ---
 > 가까운 미래에 만들고자 하는 개발 관련 컨텐츠에 대한 스케치
 
