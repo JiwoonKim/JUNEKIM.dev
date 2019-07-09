@@ -9,7 +9,7 @@ const PostListPage = ({data}) => (
   <BodyTagDecoratedLayout title="모든 글" metaDataType='all'>
     <ul className="list-of-posts">
       {data.allMarkdownRemark.edges.map((post, i) => (
-        <ListPostItem key ={i} post={post.node.frontmatter} />
+        <ListPostItem key={i} slug={post.node.fields.slug} frontmatter={post.node.frontmatter} />
       ))}
     </ul>
   </BodyTagDecoratedLayout>
@@ -20,9 +20,10 @@ export const pageQuery = graphql`
     allMarkdownRemark{
       edges{
         node{
-          id
+          fields {
+            slug
+          }
           frontmatter{
-            path
             title
             date
             tags
