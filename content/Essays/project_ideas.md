@@ -4,9 +4,20 @@ title: "프로젝트 아이디어"
 description: 
 tags: ['에세이']
 ---
-> a collection of topics that I am interested in and would like to research more about
+> 뭔가 만들어보고 싶은 애플리케이션 아이디어 메모장
+- 프로젝트의 시작은 항상 해결하고 싶은 문제에서 시작된다.
+- 해결하고 싶은 문제가 없는데 굳이 무언가를 만들 필요는 없다. :sunglasses:
+- 궁금한 것만 공부하고, 궁금하지 않은 것은 잠시 미루자
+- 궁금하거나 필요한 것만 만들고, 그렇지 않은 것은 만들지 말자
 
-#### flash card app
+#### 말투 이슈 모음
+내가 깃헙에 이슈를 등록하여 (문제, 해결방안)을 도출하는 것처럼
+말투나 성격에서 바꾸고 싶은 것도 기록해두고 해결하려고 하면 어떨까?
+그런 메모장같은 앱이 있으면 좋겠다 -> 모바일 앱?
+ex. 친구랑 약속 잡는데, 친구가 '오는 거 안 힘들겠냐'고 물을때 어떻게 하면 이쁘게 대답할 수 있을까
+
+#### 크앙크앙
+
 
 #### Mylife Roadmap
 imposture syndrome을 방지하는 roadmap
