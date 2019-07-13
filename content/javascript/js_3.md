@@ -1,9 +1,7 @@
 ---
-path: "/javascript/3"
 date: '2019-03-20'
 title: "JavaScript 3 - Primitive Data Types"
 description: 
-image: ''
 tags: ['웹개발', '프론트엔드', 'JavaScript']
 ---
 > Understanding JavaScript

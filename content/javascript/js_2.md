@@ -1,9 +1,7 @@
 ---
-path: "/javascript/2"
 date: '2019-03-19'
 title: "JavaScript 2 - Code Quality"
 description: 
-image: ''
 tags: ['웹개발', '프론트엔드', 'JavaScript']
 ---
 > Understanding JavaScript
