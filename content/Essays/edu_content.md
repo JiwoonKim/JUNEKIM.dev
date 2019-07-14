@@ -48,6 +48,9 @@ tags: ['에세이', '컨텐츠', '교육']
 #### 커뮤니티 형성하기
 커뮤니티가 있으면 완주율이 높아진다
 - ex. 생활코딩 공동공부 (엑셀)
+- coding challenges
+    - algorithm problems
+    - UI challenges
 
 ### 콘텐츠 
 
