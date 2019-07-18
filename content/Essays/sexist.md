@@ -1,9 +1,9 @@
 ---
 date: '2019-07-15'
 title: "Sexist Tech"
-description: 일일커밋
+description:
 image: ''
-tags: ['Sexist Tech','Discrimination']
+tags: ['Sexist Tech', 'Discrimination']
 ---
 
 ###
