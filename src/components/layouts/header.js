@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import 'lodash.kebabcase'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -80,17 +81,22 @@ const BlogPostMetaData = ({metaData}) => (
     </span>
     <span>
       <FontAwesomeIcon className="meta-data-icon" icon="tags" /> 
-      {metaData.tags.map(tag => (
-        <Link to={`tags/${tag.toLowerCase()}`} className="tag">
-          <span>{tag}</span>
-          <span>&#183;</span>
-        </Link>
-      ))}
+      {metaData.tags.map(tag => {
+
+        var _ = require('lodash');
+        const tagPath = 'tags/' + _.kebabCase(tag);
+        return (
+          <Link to={tagPath} className="tag">
+            <span>{tag}</span>
+            <span>&#183;</span>
+          </Link>
+        )
+      })}
     </span>
   </div>
 )
 
-/** for tag lists,
+/** for list pages (by tags),
  *  meta data: number of blog posts under tag category
  */
 const PostListMetaData = ({metaData}) => (
