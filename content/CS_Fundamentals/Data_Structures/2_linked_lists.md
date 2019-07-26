@@ -1,9 +1,7 @@
 ---
-path: "/cs/datastructure/linkedlists"
 date: '2019-06-07'
-title: "Data Structures 02 - Linked Lists"
+title: "[자료구조] 02. 링크드 리스트"
 description: Data Structures in C++ - Linked Lists 정리
-image: ''
 tags: ['자료구조', 'Cpp']
 ---
 > educative.io의 Data Structures in C++ 정리
