@@ -23,10 +23,11 @@ Greatest Common Divisor
         int gcd(int a, int b) {
             if (b == 0) {
                 return a;
-            } else {
-                return gcd(b, a % b);
             }
+            return gcd(b, a % b);
         }
+```
+```cpp
         // 비 재귀방식으로 구현한 유클리드 알고리즘
         int gcd(int a, int b) {
             while (b != 0) {
@@ -53,16 +54,18 @@ Least Common Multiplier
     - 11/3 = 3 ... 2 | 3/3 = 1 ... 0 | 1/3 = 0 ... 1 => 102
 - 단, 숫자가 0일 경우는 예외로 처리해야 한다.
 ```cpp 
-    // 숫자가 0일 경우, 예외로 처리하여 0 바로 출력
+    // 숫자 0은 예외처리
     if (num == 0) {
         result = 0;
     }
+    // 변환된 형태를 저장할 문자열
     string s;
     while (num > 0) {
         s += to_string(num % n); // n 진법으로 변환
         num /= n;
     }
-    reverse(s.begin(), s.end()); // 반대의 순서로 나열
+    // 순서 반대로 뒤집기
+    reverse(s.begin(), s.end()); 
 ```
 
 #### n진법 -> 10진법 바꾸기
@@ -72,10 +75,10 @@ Least Common Multiplier
 - so instead, __n진법 수의 0자리부터 시작하여 매번 값에 n을 곱해주며 더해가면 된다__ (__k자리를 체크할 필요가 없음__)
 ```cpp
     string N; int b; // 주어진 b진법의 수 N
-    int result;
-    // 
+    // N의 각 자리마다
+    int result = 0;
     for (int i = 0; i < s.size(); i++) {
-        // 매 자리마다 이미 더해진 값에 b 곱하기
+        // 이미 더해진 값에 b 곱하기
         result = result * b;
         // 현재 자리의 값을 10진법으로 변환하여 더하기
         if ('0' <= s[i] && s[i] <= '9) {

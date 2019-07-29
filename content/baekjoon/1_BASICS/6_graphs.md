@@ -106,39 +106,64 @@ edges[v2].push_back(v1); // (v2, v1) 저장
 - __인접 행렬을 이용한 구현__: O(V^2)
 ```cpp
 // x를 방문
-void dfs(int x) {
-    // 방문을 체크
-    check[x] = true;
-    // 경로 출력
-    printf("%d", x);
-    // 방문하지 않은 정점으로 이동할 수 있다면 (간선 존재),
-    for (int i  = 1; i <= n; i++) {
-        if (a[x][i] == 1 && check[i] == false) {
-            // 다음 정점으로 이동
-            dfs(i);
+    void dfs(int x) {
+        // 방문을 체크
+        check[x] = true;
+        // 경로 출력
+        printf("%d", x);
+        // 방문하지 않은 정점으로 이동할 수 있다면 (간선 존재),
+        for (int i  = 1; i <= n; i++) {
+            if (a[x][i] == 1 && check[i] == false) {
+                // 다음 정점으로 이동
+                dfs(i);
+            }
         }
     }
-}
 // 인접 행렬을 사용하였기 때문에 
 // a[x][i]는 간선 (x, i)의 존재여부를 나타냄
 ```
 - __인접 리스트를 이용한 구현__: O(V + E)
 ```cpp
-void dfs(int x) {
-    // 방문을 체크
-    check[x] = true;
-    // 경로 출력
-    printf("%d", x);
-    // 해당 정점과 연결된 모든 간선에서
-    for (int i = 0; i < a[x].size(); i++) {
-        int y = a[x][i];
-        // 방문하지 않은 정점으로 이어지면
-        if (check[y] == false) {
-            // 다음 정점으로 이동
-            dfs(y);
+    void dfs(int x) {
+        // 방문을 체크
+        check[x] = true;
+        // 경로 출력
+        printf("%d", x);
+        // 해당 정점과 연결된 모든 간선에서
+        for (int i = 0; i < a[x].size(); i++) {
+            int y = a[x][i];
+            // 방문하지 않은 정점으로 이어지면
+            if (check[y] == false) {
+                // 다음 정점으로 이동
+                dfs(y);
+            }
         }
     }
-}
+```
+- cf) 재귀 대신 __실제 스택으로 DFS 구현하기__ (인접 리스트 사용)
+```cpp
+    void dfs(int x) {
+        // 스택 선언
+        stack<int> s;
+        // 시작 정점부터 스택에 push
+        s.push(start)
+        // 스택이 빌 때까지
+        while (!s.empty()) {
+            // 제일 위의 정점을 pop하고
+            int x = s.top();
+            s.pop();
+            printf("%d", x);
+            // 해당 정점과 연결된 모든 간선에서
+            for (int i = 0; i < a[x].size(); i++) {
+                int y = a[x][i];
+                // 방문하지 않은 정점을 스택에 push
+                if (check[y] == false) {
+                    check[x] = true;
+                    s.push(y);
+                }
+            }
+        }
+    }
 ```
 
 ### BFS
@@ -152,51 +177,55 @@ void dfs(int x) {
 - 구현: 재귀함수보다는 __루프를 사용하여 반복적으로 구현__
 - __인접 행렬을 이용한 구현__: O(V^2)
 ```cpp
-// 큐 선언
-queue<int> q;
-// 시작 정점부터 큐에 push하고 체크
-q.push(start);
-check[start] = true;
-// 큐가 빌 때까지,
-while (!q.empty()) {
-    // 제일 앞의 정점을 pop하고
-    int x = q.front(); 
-    q.pop()
-    printf("%d", x);
-    // 방문하지 않은 모든 연결된 정점을 push 및 체크
-    for (int i = 1; i <= n; i++) {
-        if (a[x][i] == 1 && check[i] == false) {
-            check[i] = true;
-            q.push(i);
+    void bfs(int start) {
+        // 큐 선언
+        queue<int> q;
+        // 시작 정점부터 큐에 push하고 체크
+        q.push(start);
+        check[start] = true;
+        // 큐가 빌 때까지,
+        while (!q.empty()) {
+            // 제일 앞의 정점을 pop하고
+            int x = q.front(); 
+            q.pop()
+            printf("%d", x);
+            // 방문하지 않은 모든 연결된 정점을 push 및 체크
+            for (int i = 1; i <= n; i++) {
+                if (a[x][i] == 1 && check[i] == false) {
+                    check[i] = true;
+                    q.push(i);
+                }
+            }
         }
     }
-}
 ```
 - __인접리스트를 이용한 구현__: O(V + E)
 ```cpp
-queue<int> q;
-// 시작 정점부터 큐에 push하고 체크
-q.push(start);
-check[start] = true;
-// 큐가 빌 때까지, 
-while (!q.empty) {
-    int x = q.front();
-    q.pop();
-    printf("%d", x);
-    // 방문하지 않은 모든 연결된 정점을 push 및 체크
-    for (int i = 0; i < a[x].size(); i++) {
-        int y = a[x][i];
-        if (check[y] == false) {
-            q.push(y);
-            check[y] = true;
+    void bfs(int start) {
+        queue<int> q;
+        // 시작 정점부터 큐에 push하고 체크
+        q.push(start);
+        check[start] = true;
+        // 큐가 빌 때까지, 
+        while (!q.empty) {
+            int x = q.front();
+            q.pop();
+            printf("%d", x);
+            // 방문하지 않은 모든 연결된 정점을 push 및 체크
+            for (int i = 0; i < a[x].size(); i++) {
+                int y = a[x][i];
+                if (check[y] == false) {
+                    q.push(y);
+                    check[y] = true;
+                }
+            }
         }
     }
-}
 ```
 
 ### DFS vs. BFS
 1. DFS는 최대한 깊숙히 많이 가는 방법이고, BFS는 최대한 넓게 가는 방법이다.
 2. __DFS는 스택을 사용__ 하고 __BFS는 큐를 사용__ 한다.
-3. __DFS는 각 정점에 이르렀을 때 해당 정점 check를 하고__, __BFS는 각 정점에서 다음 정점을 큐에 push하면서 다음 정점을 check__ 한다.
-    - DFS: 해당 정점 check
-    - BFS: 다음 정점 미리 check (해당 정점에서 자기 자신 check X)
+3. __정점 체크__
+    - __재귀적인 DFS__: 제일 먼저 __해당 정점 check__
+    - __BFS__ & __반복적인 DFS__: 다음 정점 __큐/스택에 push하면서 미리 check__ (해당 정점에서 자기 자신 check X)

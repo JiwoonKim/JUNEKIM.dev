@@ -21,20 +21,20 @@ tags: ['백준', '알고리즘', 'Cpp', '다이나믹프로그래밍']
 - 작은 문제: N-1번째 피보나치 수 구하기, N-2번째 피보나치 수 구하기
 - 문제의 정답을 작은 문제의 정답을 합하는 것으로 구할 수 있다.
 ```cpp
-int d[100];
-int fibonacci(int n) {
-    if (n <= 1) {
-        return n;
-    }
-    else {
-        // memoriazation을 하여 다음에 사용할 수 있게 하기
-        if (d[n] > 0) { // 값이 존재할 경우 (우연히 양수이기에 조건 사용)
+    int d[100];
+    int fibonacci(int n) {
+        // 베이스 케이스
+        if (n <= 1) {
+            return n;
+        } 
+        // 값이 이미 존재하는 경우 (우연히 양수인 조건 사용)
+        else if (d[n] > 0) {
             return d[n];
         }
+        // 기록하여 다음에 사용할 수 있게 하기 (memoriazation)
         d[n] = fibonacci(n-1) + fibonacci(n-2);
         return d[n];
     }
-}
 ```
 
 ### 다이나믹을 푸는 두 가지 방법 (구현의 차이일 뿐)
@@ -42,21 +42,23 @@ int fibonacci(int n) {
     - 시간복잡도: 메모에 채워야하는 칸의 수 x 1칸을 채우는 복잡도
     - ex) 위의 피보나치 수 구하는 방식 (재귀함수 사용): O(N)
 2. __Bottom-up__: 작은 문제부터 하나도 빠짐없이 차례대로 푸는 방법
+```cpp
+    int d[100];
+    int fibonacci(int n) {
+        // 베이스 케이스
+        d[0] = 0; d[1] = 1;
+        // 반복을 통해 값 쌓아나가기
+        for (int i = 2; i <= n; i++) {
+            d[i] = d[i-1] + d[i-2];
+        }
+        // 최종 값 리턴
+        return d[n];
+    }
+```
     - 시간복잡도: 위와 동일
     - ex) for문으로 피보나치 수 구하는 방식: O(N)
 
-```cpp
-int d[100];
-int fibonacci(int n) {
-    d[0] = 0;
-    d[1] = 1;
-    for (int i = 2; i <= n; i++) {
-        d[i] = d[i-1] + d[i-2];
-    }
-    return d[n];
-}
-```
-- top-down 또는 bottom-up __편한대로 사용__ 하면 된다!
+top-down 또는 bottom-up __편한대로 사용__ 하면 된다!
 
 ### 문제 풀이 전략
 __d[n] 구하는 방식__ 으로 문제를 이해하기
