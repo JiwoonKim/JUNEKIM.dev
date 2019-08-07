@@ -9,13 +9,13 @@ html {
   font-weight: 300;
 }
 
-/* set margin to 0 for no funky spaces in the page
+/* no funky spaces around the page
 */
 html, body {
   margin: 0;
 }
 
-/* set the size and margin for the main content in blog
+/* size and margin for the main content in blog
 */
 main {
   margin: 3rem auto; 
@@ -27,14 +27,14 @@ main {
   }
 }
 
-/* no decoration around links
+/* style links
 */
 a {
-  color: #3B8686;
+  color: #56cfb4;
   text-decoration: none;
 }
 
-/* define style of post content within the article
+/* style of post content within the article
 */
 .post-content {
   line-height: 2rem;
@@ -57,8 +57,25 @@ a {
 .post-content ul, li {
   margin-bottom: 8px;
 }
+.post-content table {
+  border-collapse: collapse;
+  margin: 1.5rem 0rem;
+}
+.post-content table, th, td {
+  padding: 5px 15px;
+}
+.post-content tr {
+  border-bottom: 2px solid lightgrey;
+}
+.post-content th, td {
+  text-align: center;
+}
+.post-content th {
+  background-color: #383c41;
+  color: white;
+}
 
-/* define style of body content for list pages
+/* style of body content for list pages
 */
 .body-container {
   display: grid;
@@ -68,7 +85,7 @@ a {
   margin: 0;
 }
 
-/* define style of tags for list pages
+/* style of tag decorations for list pages
 */
 .body-tag-left {
   justify-self: center;
