@@ -1,7 +1,7 @@
 ---
 path: "/baekjoon/basic/graph/pset"
 date: '2019-05-06'
-title: "[백준] 풀이 06. 그래프 1"
+title: "[백준] 기초 06. 그래프 1 풀이"
 description: 백준 알고리즘 강의 기초 6강 문제풀이
 image: ''
 tags: ['백준', '알고리즘', 'Cpp', '그래프']

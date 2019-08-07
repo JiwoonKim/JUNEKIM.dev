@@ -1,7 +1,7 @@
 ---
 path: "/baekjoon/basic/dynamic_programming/pset"
 date: '2019-02-03'
-title: "[백준] 풀이 03. 다이나믹 프로그래밍 1"
+title: "[백준] 기초 03. 다이나믹 프로그래밍 1 풀이"
 description: 백준 알고리즘 강의 기초 3강 문제 풀이
 image: ''
 tags: ['백준', '알고리즘', 'Cpp', '다이나믹프로그래밍', '문제풀이']
