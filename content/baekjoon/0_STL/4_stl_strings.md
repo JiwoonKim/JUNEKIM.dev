@@ -43,8 +43,6 @@ str.insert(10, "!"); // hello world! (10번째 index에 추가)
 
 #### 문자열 <-> 숫자
 - 문자열 -> 숫자: `stoi()`, `stol`, `stof`, `stod`를 이용한다.
-    - 0 ~ 9 한 자리수 문자열을 숫자로 변환시에는 `c - '0'` 도 사용 가능하다.
-- 숫자 -> 문자열: `to_string()`를 이용한다.
 ```cpp
 string str = "10";
 int num = stoi(str);   // 10 (기본으로 10진법으로 바꿈)
@@ -54,6 +52,8 @@ num = stoi(str, 0 16); // 16 (16진법으로 숫자를 읽어 바꿈)
 str = "21 Guns";
 num = stoi(str); // 21 (숫자가 있는 부분까지만 읽어 바꿈)
 ```
+    - 0 ~ 9 한 자리수 문자열을 숫자로 변환시에는 `c - '0'` 도 사용 가능하다.
+- 숫자 -> 문자열: `to_string()`를 이용한다.
 
 #### 문자열 파싱 (string parsing)
 - `istringstream`을 사용하여 string을 표준 입출력처럼 사용할 수가 있다.
