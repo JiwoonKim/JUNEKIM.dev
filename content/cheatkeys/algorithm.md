@@ -1,9 +1,7 @@
 ---
-path: "/cheatkeys/algorithm"
 date: '2019-02-06'
 title: "알고리즘 치트키"
 description: 알고리즘 치트키 정리
-image: ''
 tags: ['Cpp', '치트키']
 ---
 > 프로그래밍 대회에 필요한 치트키들을 정리.

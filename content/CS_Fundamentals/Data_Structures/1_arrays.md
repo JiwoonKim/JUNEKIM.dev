@@ -16,20 +16,20 @@ sequence of same data type
 ### 정적 배엺 (Static Arrays)
 fixed-sized arrays
 - size must be determined at __compile time (before 실행)__
-- __stored in stack__
-- constraint: cannot use input as size
+- __stored in stack space__
+- constraint: cannot use variable as size
 ```cpp
 // one-dimension
 int nums1[5]; 
 int nums2[] = {1, 2, 3};
 // two-dimension
-int grid[row][col];
+int grid[5][5];
 ```
 
 ### 동적으로 할당된 배열 (Dynamically-allocated Arrays)
 fixed-sized arrays but can use input as size
 - size determined at __run-time (while 실행)__
-- __stored in heap__
+- __stored in heap space__
 - constraint: must predefine max size; cannot resize dynamically
 ```cpp
     // one-dimension
@@ -74,7 +74,7 @@ public:
 
 ### 백터 (Vectors)
 dynamically resizable arrays 
-- implemented version of dynamic array
+- implemented version of dynamic array in c++
 ```cpp
 #include <vector>
 using namespace std;
