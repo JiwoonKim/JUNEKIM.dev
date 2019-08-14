@@ -68,7 +68,7 @@ a {
   border-bottom: 2px solid lightgrey;
 }
 .post-content th, td {
-  text-align: center;
+  /*text-align: center;*/
 }
 .post-content th {
   background-color: #383c41;
