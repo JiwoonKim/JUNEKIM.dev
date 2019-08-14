@@ -7,9 +7,10 @@ tags: ['자료구조', 'Cpp']
 > 자료구조 기본 중 가장 기초적인 배열 소개
 
 ### 배열 (Arrays)
-sequence of same data type
-- stored in __contiguous memory space__
-- constant time access (a.k.a. __random access__)
+동일한 데이터 타입이 연속적으로 저장되는 자료구조 (sequence of same data type)
+- 메모리에 연속적으로 저장된다 (stored in __contiguous memory space__)
+- 인덱스 바탕의 임의 접근이 최대 장점이다 (constant time access; __random access__)
+    - 시간복잡도 O(1)만에 접근 가능
 
 ### 배열의 종류
 | 크기가 변하지 않는 배열 ( fixed array ) | 크기가 변할 수 있는 배열 ( resizable array )  |
