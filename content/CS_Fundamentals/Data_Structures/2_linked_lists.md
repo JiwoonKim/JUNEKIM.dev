@@ -4,50 +4,92 @@ title: "[자료구조] 02. 링크드 리스트"
 description: Data Structures in C++ - Linked Lists 정리
 tags: ['자료구조', 'Cpp']
 ---
-> educative.io의 Data Structures in C++ 정리
+> 자료구조 중 배열과 상호보완적인 관계를 가지는 링크드 리스트 소개
 
-### Linked Lists
-sequence of nodes linked together like a chain
+### 연결 리스트 (Linked Lists)
+동일한 데이터 타입의 노드들이 연속적으로 서로 연결된 자료구조 (sequence of nodes linked together like a chain)
 
-#### Array vs. Linked List
-| operation | Array | Linked List  |
-|:----------:|:-----:|:-------------:|
-| 선언 (메모리 할당) | fixed size \n (fixed block of memory based on size declared) | resizable \n (can access or release memory based on addition and deletion of elements) |
-| access | O(1) | O(n) |
-| append / prepend | O(n) | O(1) |
-| delete (front/back) | O(n) |O(1) |
+__노드(node)__: 데이터 (data) + 포인터 (pointer)
 
-### Singly Linked List
-list points in one direction (cannot point backward)
+__연결 리스트(linked list)__: 헤드 포인터 (head pointer)가 가르키는 노드를 시작으로 서로 연결된 노드들
+- 배열과 달리 연속적인 메모리 공간이 필요하지 않고, 필요에 따라 __크기를 자유롭게 늘리거나 줄일 수 있다__.
+- 또한, 맨앞 또는 맨뒤에 삽입/삭제해도 노드들을 옮겨야 할 필요가 없기 때문에 __양끝에서의 빠른 삽입 또는 삭제__ 가 최대 장점이다 (시간복잡도 __O(1)__ 만에 가능)
+- 그러나 배열과 달리 인덱스가 없어 임의 접근이 불가능하여, __탐색 및 접근이 느린 것__ 이 최대 단점이다 (일일이 노드들을 확인해야 되기 때문에 __O(n)__ 이 걸린다) 
 
-#### Node Class
-- data: value stored in node
-- pointer: refers to the next node in the list
+| 연산 | 시간복잡도 | 설명 |
+|:---|:---|:---|
+| __삽입__ | O(1) 또는 O(n) | __맨뒤/맨앞은 O(1)__ but 그외에는 탐색해야 하므로 O(n) |
+| __삭제__ | O(1) 또는 O(n) | __맨뒤/맨앞은 O(1)__ but 그외에는 탐색해야 하므로 O(n) |
+| __접근/탐색__ | O(n) | 일일이 노드들을 확인해야 된다 |
+
+### 연결 리스트의 종류
+
+#### (1) 단순 연결 리스트 (Singly Linked List)
+__한 방향__ 으로만 이어지는 링크드 리스트 (이전 노드로 반대로 돌아가는 방법이 없음)
 ```cpp
-    class Node {
-    private:
-        int data;
-        Node* next;
-    public: 
-        Node(int value) {
-            data = value;
-            next = nullptr;
-        }
-    }
+// 노드 정의                              // 단순 링크드 리스트 정의
+class Node {                        |    class SinglyLinkedList {
+    private:                        |        private:
+        int data;                   |            Node* head;
+        Node* next;                 |        public:
+    public:                         |            SinglyLinkedList() {
+        Node(int data) {            |                this->head = nullptr;
+            this->data = data;      |            }
+            this->next = nullptr;   |    };
+        }                           |
+};                                   
 ```
+- 한 방향으로만 노드들이 이어지기 때문에 __삽입 또는 삭제__ 연산을 할 때 __반드시 이전 노드를 기억하고 있어야__ 한다. 
+    - 그래야만 이전 노드와 다음 노드의 next 포인터를 새로 업데이트할 수 있다.
 
-#### LinkedList Class
-collection of node objects
-- head pointer: points to beginning of list
+#### (2) 이중 연결 리스트 (Doubly Linked List)
+__양방향__ 으로 이어지는 링크드 리스트 (이전 노드와 다음 노드 모두 바로 접근 가능)
 ```cpp
-    class LinkedList {
-    private:
-        Node* head;
-    public:
-        LinkedList() {
-            head = nullptr;
-        }
-    }
+// 노드 정의                              // 이중 링크드 리스트 정의 (단순과 동일)
+class Node {                        |    class DoublyLinkedList {
+    private:                        |        private:
+        int data;                   |            Node* head;
+        Node* prev;                 |        public:
+        Node* next;                 |            DoublyLinkedList() {
+    public:                         |                this->head = nullptr;
+        Node(int data) {            |            }
+            this->data = data;      |    };
+            this->prev = nullptr;   |
+            this->next = nullptr;   |
+        }                           |
+};                                   
 ```
+- 양방향으로 이어지기 때문에 단순 링크드 리스트와 달리, __삽입 또는 삭제__ 연산 시에 따로 __이전 노드를 기억하고 있을 필요가 없다__ .
+    - 단, 각 노드가 이전 노드를 기록하기 위한 __추가적인 메모리 공간이 사용__ 된다.
+    - 더불어서 이전 노드와 다음 노드 각각의 __prev와 next 포인터 모두에 대한 업데이트가 필요__ 하다. 
 
-### Doubly Linked List
+#### (+) Tail 포인터의 사용
+링크드 리스트의 __마지막 노드를 가르키는 포인터__ (이중 링크드 리스트와 함께 사용하면 좋다)
+- 헤드 포인터는 링크드 리스트의 노드들을 접근하는데 필수적이나, 테일 포인터는 선택적인 부분이다.
+- 테일 포인터를 사용했을 시에는 링크드 리스트의 __뒤에서의 삽입 또는 삭제__ 가 __빨라지는 장점__ 이 있다.
+    - 기존에 헤드 포인터만 있었을 때는 마지막 노드 이전 노드까지 탐색해야 했기 때문에 실제로 O(n)의 시간복잡도가 걸렸는데, 테일 포인터가 있을 경우에는 시간복잡도가 O(1)까지도 줄어들 수 있기 때문이다.
+- 테일 포인터는 실제로 단순 링크드 리스트보다는 __이중 링크드 리스트에서 더 쓸모가 있다__.
+    - 왜냐하면 테일 포인터가 마지막 노드를 가르키더라도 단순 링크드 리스트의 경우에는 마지막 노드 삭제 시 반드시 이전 노드를 기억하고 있어야 하므로, 결국에는 헤드부터 탐색을 하게 되어 큰 의미가 없기 때문이다.
+    - 즉, 단순 링크드 리스트에서는 테일 포인터의 추가로 뒤에서 삽입은 O(1)이 되나, 뒤에서의 삭제는 그대로 O(n)인 것이다.
+    - 그러나, __이중 링크드 리스트__ 에서는 이전 노드를 따로 기억해야 할 필요가 없기 때문에, 테일 포인터의 추가로 __뒤에서의 삽입과 삭제__ 는 모두 __O(1)__ 으로 줄어드는 효과를 볼 수 있기에 의미가 잇다.
+
+### ※ 주의 사항
+링크드 리스트을 구현하거나 관련 문제를 푸는 경우에 주의해야 할 점들
+
+#### 헤드 노드 vs. 다른 노드들
+링크드 리스트는 인덱스가 없는 자료구조이기 때문에 __항상 헤드(또는 테일) 포인터로만 노드들에 접근__ 할 수 있다. 헤드에 연산을 하는 경우에는 바로 실행이 가능하나, __헤드를 제외한 노드__ 에서 연산을 하는 경우에는 일단 먼저 __탐색__ 을 통해 해당 노드를 찾아야하는 과정이 필요하다. 그렇기 때문에 링크드 리스트에 연산을 하는 경우에는 반드시 __두 가지의 경우__ 로 나누어서 생각해야 오류가 나지 않는다.
+1. __헤드 노드__ 에 연산 실행하는 경우: O(1)
+2. __헤드를 제외한 다른 노드들__ 에 연산을 실행하는 경우: O(n)
+
+#### 목표 노드를 찾기 위한 조건 설정
+링크드 리스트 관련 문제를 풀면 기본 연산에서부터 다양한 알고리즘까지 탐색을 기반으로 하는 경우가 많다. 이 때, 탐색을 어디까지 해야하는지, __도달하고자 하는 목표 노드가 어느 것인지__ 에 대해 구체적으로 설정을 한 후 코드를 짜면 좋다. 왜냐하면, 도달하고자 하는 목표 노드가 무엇인지 또는 기억해야 하는 노드들이 무엇인지에 따라 __segmentation fault를 피하기 위해__ 설정해야 할 __조건들__ 이 달라지기 때문이다. 단순히 모든 노드를 순회하는 것이 목적이라면 부가적인 포인터가 null을 가르킬 때까지 다음 노드로 옮겨가면 되지만, 도달하고자 하는 목표 노드가 조금이라도 다른 경우라면 체크해야할 조건이 더 까다로워질 수 있다.
+```cpp
+// 모든 노드 순회하는 경우            // 마지막 노드 삭제를 위해 마지막 이전 노드 찾기
+Node* current = head;          |    Node* current = head;
+while (current) {              |    while (current && current->next) {
+    current = current->next;   |        current = current->next
+}                              |    }
+```
+- 여기서 특히 주의해야 할 부분들은 코드에서 노드의 데이터를 접근하기 전에 __반드시 그 노드가 비었는지 안 비었는지를 체크해야__ 한다는 점이다. 
+    - ex. `current->next->next`을 접근하는 것이라면 일단 먼저 `current->next`가 null이 아님을 반드시 확인한 후에 접근해야 한다.
+- 또한, 만일 n번째 노드에 접근해야 되는 경우라면 n번 포인터를 옮기는 것이 아니라 __(n-1)번 포인터를 옮기는 것__ 도 주의해야 할 부분 중 하나이다.

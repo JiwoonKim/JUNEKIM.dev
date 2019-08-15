@@ -8,9 +8,9 @@ tags: ['자료구조', 'Cpp']
 
 ### 배열 (Arrays)
 동일한 데이터 타입이 연속적으로 저장되는 자료구조 (sequence of same data type)
-- 메모리에 연속적으로 저장된다 (stored in __contiguous memory space__)
-- 인덱스 바탕의 임의 접근이 최대 장점이다 (constant time access; __random access__)
-    - 시간복잡도 O(1)만에 접근 가능
+- 메모리에 연속적으로 저장된다 (__contiguous memory space__)
+- 인덱스 바탕의 __임의 접근__ 이 최대 장점이다 (__random access__)
+    - 시간복잡도 O(1)만에 접근 가능 (constant time access)
 
 ### 배열의 종류
 | 크기가 변하지 않는 배열 ( fixed array ) | 크기가 변할 수 있는 배열 ( resizable array )  |
@@ -78,6 +78,8 @@ class DynamicArr {
 }
 ```
 - __동적으로 할당한 배열을 베이스로 사용__ 하되, 다 찼을 경우에 __새롭게 동적으로 할당한 배열로 대체하기__
+    - 그렇기 때문에 배열이 다 차지 않았을 경우에는 삽입이 O(1)이지만, 만일 다 찼을 경우에는 배열을 resize해야 하므로 O(n)이 걸린다.
+    - 단, 배열이 다 차지 않는 경우가 훨씬 더 많기 때문에 O(1)의 시간이 사실상 다 찼을 경우의 삽입 시간인 O(n)을 상쇄한다고 볼 수 있다 (분할 상환 분석; amortized time)
 - 즉, 상황에 따라 __크기가 변할 수 있는 배열__ (__resizable array__)
 - only possible if it is a dynamicically-allocated array
 
@@ -116,7 +118,7 @@ vector<vector<int> v(10, 0)> v[10]; // 10 rows & 10 columns of 0
 | | v.clear() | 전체 비우기 |
 | __푸시__ | v.push_back(`n`) | 맨뒤에 n 삽입 |
 | __팝__ | v.pop() | 맨 뒤 값 삭제 |
-| __크기__ | v.size() | |
+| __크기__ | v.size() | 크기 리턴 |
 | __비었나?__ | v.empty() | 비었는지 안 비었는지 확인 |
 
 #### 레퍼런스로 전달하기 (Pass by Reference)
