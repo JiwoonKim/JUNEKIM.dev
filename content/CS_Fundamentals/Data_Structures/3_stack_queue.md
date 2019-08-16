@@ -4,7 +4,7 @@ title: "[자료구조] 03. 스택과 큐"
 description: Data Structures in C++ - stack & queue 정리
 tags: ['자료구조', 'Cpp']
 ---
-> educative.io의 Data Structures in C++ 정리
+> 자료구조 중 특정한 방식으로 배열과 링크드 리스트를 사용하는 스택과 큐 소개
 
 ### 스택 (Stack)
 
