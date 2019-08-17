@@ -18,12 +18,12 @@ tags: ['자료구조', 'Cpp']
 | (1) 정적 배열 (static array) | (3) 동적 배열 (dynamic array) |
 | (2) 동적으로 할당된 배열 (dynamically-allocated array) |  |
 
-#### (1) 정적 배열 (Static Arrays)
+#### 1. 정적 배열 (Static Arrays)
 크기가 사전에 결정되어 변수로 선언이 불가능한 배열 (fixed array)
 ```cpp
 // 1차원 배열
-int nums1[5]; 
-int nums2[] = {1, 2, 3};
+int nums[5]; 
+int nums[] = {1, 2, 3};
 ```
 ```cpp
 // 2차원 배열
@@ -33,12 +33,12 @@ int grid[5][5];
     - 그러므로 변수로 크기를 정의할 수 없음 (ex. `int arr[num]` X)
 - 정적으로 메모리가 할당되어 __스택(stack) 공간에 저장__ 된다
 
-#### (2) 동적으로 할당된 배열 (Dynamically-allocated Arrays)
+#### 2. 동적으로 할당된 배열 (Dynamically-allocated Arrays)
 정적 배열과 마찬가지로 사전에 크기가 결정되지만, 변수로도 선언 가능한 배열 (also fixed array)
 ```cpp
 // 1차원 배열
-int* nums3 = new int[5];
-delete[] nums3;
+int* nums = new int[5];
+delete[] nums;
 ```
 ```cpp
 // 2차원 배열
@@ -53,7 +53,7 @@ for (int i = 0; i < row; i++) {
     - 최대 크기를 예측하여 __크기를 사전에 정의해야__ 하며, 상황에 따라 크기를 늘리거나 줄일 수 없는 단점이 있다 (__dynamically resize X__)
 - __힙(heap) 공간에 저장__ 된다
 
-#### (3) 동적 배열 (Dynamic Array)
+#### 3. 동적 배열 (Dynamic Array)
 사전에 크기가 결정될 필요가 없고, 상황에 따라 늘어나거나 줄어들 수 있는 배열 (resizable array)
 ```cpp
 class DynamicArr {
