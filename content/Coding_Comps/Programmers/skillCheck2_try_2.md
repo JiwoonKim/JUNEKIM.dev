@@ -54,21 +54,41 @@ int solution(vector<int> nums) {
  - ex. "011" -> [11, 101] => 결과: 2
 
 #### 내가 푼 방법
-시간복잡도 O(n!)
-- 주어진 숫자들을 가지고 만들 수 있는 모든 k-자리의 순열 수 구하기
-    - 중복된 숫자들이 가능하기 때문에 중복된 순열 수들 제외
-- 모든 조합 수들을 일일이 소수인지 체크
+시간복잡도: O(n * n! * loglog n), 공간복잡도: O(n * n!)
+1. 주어진 숫자들을 가지고 만들 수 있는 모든 k-길이의 순열 수 구하기 (중복된 숫자들이 가능하기 때문에 중복된 순열 수들 제외해야 함)
+    - 문제는 
+2. 구한 순열 중 소수의 개수 세기
+    - 각 순열이 소수인지 일일이 체크 (순열 개수 * O(loglog N))
 
 #### 내가 작성한 코드
 코드 다 작성도 못하고 끝났기 때문에 다시 찬찬히 생각한 코드를 대신 남김
 ```cpp
-int solution(string nums) {
+int solution(string numbers) {    
+    // 가능한 숫자들을 모두 만들어 저장
+    unordered_set<int> k_len_perms;
+    sort(numbers.begin(), numbers.end());
+    do {
+        /* 주어진 숫자들로 만들 수 있는 모든 순열 만들어
+           각 순열을 앞에서부터 k길이만큼 잘라 nPk의 순열들을 일일이 생성하여 저장
+           (unordered_set을 사용하기 때문에 중복된 순열들은 알아서 제외됨)
+        */
+        for (int k = 1, n = numbers.length(); k <= n; k++) {
+            string k_len_str = numbers.substr(0, k);
+            k_len_perms.insert(stoi(k_len_str));
+        }
+    } while (next_permutation(numbers.begin(), numbers.end()));
+    // 만들어진 모든 숫자들 중 소수의 개수 세기
     int count = 0;
-    // 모든 순열 만들어보기 
-    
+    for (auto it = k_len_perms.begin(); it != k_len_perms.end(); it++) {
+        if (isPrime(*it)) count++;
+    }
     return count;
 }
 ```
+
+#### 모범 답안과 비교
+시간복잡도 O(n), 공간복잡도 O(n)
+- 
 
 ### 결과 및 후기
 두 번째 문제 코드를 다 작성하지 못하여 __불합격__ 했다.
@@ -78,7 +98,7 @@ int solution(string nums) {
     - 순열 또는 조합을 구해야 하는 문제에서는 그걸 구하는 시간복잡도는 크게 신경 쓰지 말도록 하자ㅠㅜ
 
 ### What I learned
-- 소수와 순열 등 수학에 대한 전반적인 이해가 많이 부족했다
+- __소수__ 와 __순열__ 등 수학에 대한 전반적인 이해가 많이 부족했다
     - `소수 체크`: 주어진 숫자가 소수인지 체크하는 방법, 에라토스테네스의 체로 주어진 범위에서 소수 모두 구하기
-    - 순열 구하기: 중복순열을 제외한 모든 경우의 수를 구하는 방법
-- 순열과 조합 문제에서는 그걸 구하는 시간복잡도는 신경 쓰지 말자
+    - `순열 구하기`: STL next_permutations 사용하는 방법, unordered_set을 사용하여 중복순열을 제외하는 방법
+- __순열과 조합 문제__ 에서는 그걸 구하는 __시간복잡도는 신경 쓰지 말자__
