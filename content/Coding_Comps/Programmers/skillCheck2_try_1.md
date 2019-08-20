@@ -124,9 +124,34 @@ vector<int> solution(vector<int> progresses, vector<int> speeds) {
 
 #### 모범 답안과 비교
 시간복잡도 O(n), 공간복잡도 O(n)
-- 어쨋든 벡터에 있는 모든 값을 일일이 확인하고 배포할 날짜를 구해야 하므로, 적어도 시간복잡도 O(n)이 걸린다.
-- 마찬가지로, 벡터에 있는 모든 날짜를 순서대로 구하고 비교해야 하고 최종적으로 배포날짜와 기능 개수를 담은 벡터를 반환해야 하므로 공간복잡도 O(n)이 든다.
-- 큐를 활용하여 푸는 문제ㅠㅜ????!!!
+- __큐__ 를 활용하여 더 효율적으로 배포 개수 세기
+```cpp
+vector<int> solution(vector<int> progresses, vector<int> speeds) {
+    // 각 기능마다 배포하는데 걸리는 날짜 구하기
+    queue<int> q;
+    for (int i = 0, n = progresses.size(); i < n; i++) {
+        int progress_left = (100 - progresses[i]);
+        float day_left = (float) progress_left / (float) speeds;
+        q.push((int) ceil(day_left));
+    }
+    // 순서대로 배포되는 날짜들과 각 기능 개수 구하기
+    vector<int> answer;
+    int front_day = q.front();
+    int count = 0;
+    while (!q.empty()) {
+        // 새 날짜로 업데이트
+        if (q.front() > front_day) {
+            answer.push(count);
+            front_day = q.front();
+            count = 0;
+        }
+        count++;
+        q.pop();
+    }
+    answer.push(count);
+    return answer;
+}
+```
 
 ### 결과
 첫 번째 문제 풀이가 효율성에서 0을 맞아, __불합격__ 했다.
@@ -145,3 +170,4 @@ vector<int> solution(vector<int> progresses, vector<int> speeds) {
 문제 상황에 따라 __어떤 자료구조가 적합할지__ 에 대한 고려가 부족했다.
 - 문자열에서 연속된 문자의 짝을 체크하는 것은 괄호의 짝을 맞추는 것과 같은 모양새를 가지므로, 스택을 사용하는 것이 적절하다.
 - __짝 맞추기__(__pair matching__) 가 문제에 있을 경우, 무조건 __스택부터 생각하기!__
+- __앞->뒤로 이어지는 순서__ 가 중요하다면, __큐 사용하기!__
