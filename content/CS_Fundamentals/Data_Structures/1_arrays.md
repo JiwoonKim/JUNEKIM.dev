@@ -1,5 +1,5 @@
 ---
-date: '2019-06-07'
+date: '2019-08-14'
 title: "[자료구조] 01. 배열"
 description: Data Structures in C++ - Array 정리
 tags: ['자료구조', 'Cpp']

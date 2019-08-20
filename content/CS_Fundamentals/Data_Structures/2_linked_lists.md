@@ -1,5 +1,5 @@
 ---
-date: '2019-06-07'
+date: '2019-08-15'
 title: "[자료구조] 02. 연결 리스트"
 description: Data Structures in C++ - Linked Lists 정리
 tags: ['자료구조', 'Cpp']

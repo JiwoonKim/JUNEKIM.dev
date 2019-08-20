@@ -104,9 +104,9 @@ Least Common Multiplier
 - BUT 위 두 방식 전부 O(N)의 시간복잡도가 걸리므로 비효율적이다.
 
 #### 숫자가 소수인지 확인하는 방법
-- 가장 효율적인 방법은 N이 K (__2 <= K <= 루트 N__; 자연수)로 __나누어 떨어지는지 체크__
+- 가장 효율적인 방법은 N이 K (__2 <= K <= √N__; 자연수)로 __나누어 떨어지는지 체크__: O(√n)
 ```cpp
-// 소수 확인: O(루트 N)
+// 소수 확인: O(√N)
     bool prime(int n) {
         if (n < 2) {
             return false;
@@ -119,21 +119,19 @@ Least Common Multiplier
 ```
 
 #### 에라토스테네스의 체
-__범위 내__ 의 숫자들 중 모든 숫자를 구하는 방법
+__범위 내__ 의 숫자들 중 모든 소수를 구하는 방법: O(N * loglogN)
 - [m ~ n]의 모든 숫자를 써놓은 상태로 시작한다.
-- 위의 숫자 중에서 숫자 K (__m <= K <= 루트 n__; 자연수)의 __배수를 지워나간다__.
+- 위의 숫자 중에서 숫자 K (__m <= K <= √n__; 자연수)의 __배수를 지워나간다__.
 - __남아있는 수가 모두 소수가 된다.__
 ```cpp
 // 범위 내에서 소수 찾기: O(N * loglogN)
-    vector<int> prime;
-    vector<bool> check(n + 1, true);
-    for(int i = m; i*i <= n; i++) {
+    vector<bool> isPrime(n + 1, true);
+    for(int i = 2; i*i <= n; i++) {
         // 소수 저장
-        if (check[i] == true) {
-            prime.push_back(i);
-            // 소수의 배수를 모두 지우기
+        if (isPrime[i] == true) {
+            // 해당 소수의 배수를 모두 지우기
             for (j = i * 2; j <= n; j += i) {
-                check[j] = false;
+                isPrime[j] = false;
             }
         }
     }
