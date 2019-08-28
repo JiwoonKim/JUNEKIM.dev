@@ -121,3 +121,6 @@ stack<int> s;         |   queue<int> q;         |   deque<int> d;
 
 #### 1. 스택
 - top() 또는 pop() 전에 반드시 !empty() 임을 확인해야 한다. 아니면 seg fault 뜸
+- 스택에서의 특정 value를 pop해야 되는 연산이 필요한 경우 (ex. max value pop), 배열 기반의 스택보다는 연결 리스트 기반으로 스택을 구현하는 것이 좋다
+
+#### 2. 큐
