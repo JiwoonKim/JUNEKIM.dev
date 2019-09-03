@@ -121,6 +121,8 @@ stack<int> s;         |   queue<int> q;         |   deque<int> d;
 
 #### 1. 스택
 - top() 또는 pop() 전에 반드시 !empty() 임을 확인해야 한다. 아니면 seg fault 뜸
+- 스택에서 조건을 바탕으로 특정 부분까지를 pop해야 되는 경우 (ex. pop until '('), 반드시 `while(조건)`을 사용해야 한다
+    - 만일 if로 조건을 체크하고 while을 사용하는 경우, 둘이 반드시 분리된 조건인지 확인할 것! 
 - 스택에서의 특정 value를 pop해야 되는 연산이 필요한 경우 (ex. max value pop), 배열 기반의 스택보다는 연결 리스트 기반으로 스택을 구현하는 것이 좋다
 
 #### 2. 큐
