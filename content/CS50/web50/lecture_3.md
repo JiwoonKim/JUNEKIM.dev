@@ -3,7 +3,7 @@ date: '2018-07-23'
 title: "Web50 lecture 3 - SQL"
 description: CS50 Web Programming with Javascript and Python lecture 3 정리
 image: ''
-tags: ['CS50', 'Web50', 'SQL']
+tags: ['CS50', 'Web50', 'Python', 'SQL']
 ---
 > Harvard's Web Programming with Python and Javascript lecture 3 정리
 
@@ -76,7 +76,17 @@ SELECT MAX(duration) FROM flights;
 DELETE FROM flights WHERE destination='TOKYO'
 ```
 
-### Relating Tables & Compount Queries
+#### Relating Tables & Compount Queries
+- tables inside a database can be related in some way (bcuz SQL = relational database)
+- __Foreign Keys__: reference an id column of table B from a column in table A
+    - in table A, the id value (corresponding to table B) is called foreign keys
+```sql
+CREATE TABLE passengers (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    flight_id INTEGER REFERENCES flights
+);
+```
 
 ### Security Concerns
 

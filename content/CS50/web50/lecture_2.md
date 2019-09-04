@@ -3,7 +3,7 @@ date: '2018-07-21'
 title: "Web50 lecture 2 - Python & Flask"
 description: CS50 Web Programming with Javascript and Python lecture 2 정리
 image: ''
-tags: ['CS50', 'Web50', 'Flask']
+tags: ['CS50', 'Web50', 'Python', 'Flask']
 ---
 > Harvard's Web Programming with Python and Javascript lecture 2 정리
 

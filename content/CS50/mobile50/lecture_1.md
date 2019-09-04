@@ -1,10 +1,8 @@
 ---
-path: "/mobile50/1"
 date: '2019-03-18'
 title: "Mobile50 lecture 1 - ES6"
 description: 
-image: ''
-tags: ['웹개발', '프론트엔드', 'JavaScript']
+tags: ['CS50', 'Mobile50', 'JavaScript']
 ---
 > Understanding JavaScript ES6 Standards
 
@@ -20,7 +18,7 @@ tags: ['웹개발', '프론트엔드', 'JavaScript']
 ### Closures
 a function having __access to the parent scope__, __even after the parent function has closed__
 
-#### Immediately Invoked Function Expression (IIFE)
+### Immediately Invoked Function Expression (IIFE)
 - a.k.a __self-invoking function__
 - __function expression invoked automatically, w/o being called__
     - function expression must be _wrapped around parenthesis_
@@ -116,6 +114,25 @@ way to alleviate the callback hell problem
 ### Classes
 - introduced in ES6
 - simplifies the defining of complex objects w/ __their own prototypes__
+```js
+class Set {
+    constructor(arr) {
+        this.arr = arr
+    }
+    add(val) {
+        if (!this.has(val)) this.arr.push(val)
+    }
+    delete(val) {
+        this.arr = this.arr.filter(x => x !== val)
+    }
+    has(val) {
+        return this.arr.includes(val)
+    }
+    get size() {
+        return this.arr.length
+    }
+}
+```
 - __classes__ (abstract form)
     - define properties and methods
     - define constructor method
@@ -124,6 +141,24 @@ way to alleviate the callback hell problem
     - methods: any function invoked on instances
     - properties: any values associated w/ the instances
     - static methods: not related to specific instance but overall classes
+```js
+// extend class based on native set class
+class MySet extends Set {
+    constructor(arr) {
+        super(arr)
+        this.originalArray = arr
+    }
+    add(val) {
+        super.add(val)
+    }
+    toArray() {
+        return Array.from(this)
+    }
+    reset() {
+        return new MySet(this.originalArray)
+    }
+}
+```
 - __inheritance__:
     - `extends` a class to define a new class
     - `super` refers to the class being extended

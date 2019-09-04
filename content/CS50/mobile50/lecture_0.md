@@ -1,10 +1,8 @@
 ---
-path: "/mobile50/0"
 date: '2019-03-15'
 title: "Mobile50 lecture 0 - JavaScript"
 description: 
-image: ''
-tags: ['웹개발', '프론트엔드', 'JavaScript']
+tags: ['CS50', 'Mobile50', 'JavaScript']
 ---
 > Understanding JavaScript
 
