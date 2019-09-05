@@ -1,6 +1,6 @@
 ---
 date: '2019-08-18'
-title: "[OS] 0. 스택과 큐"
+title: "[OS] 0. "
 description: 운영체제 정리
 tags: ['운영체제']
 ---
