@@ -25,3 +25,10 @@ tags: ['Git', '치트키']
 
 ### synchronize 코드 (협업시 유용)
 - 
+
+### 커밋 관리
+- 커밋 삭제
+```git
+git reset --hard HEAD^
+git push origin -f
+```
