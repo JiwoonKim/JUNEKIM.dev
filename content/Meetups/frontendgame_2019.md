@@ -3,7 +3,7 @@ date: '2019-06-22'
 title: "Front Endgame 2019"
 description: Front Endgame 2019
 image: ''
-tags: ['GDG', 'Front Endgame', '컨퍼런스']
+tags: ['GDG', '프론트엔드', '컨퍼런스']
 ---
 > Front Endgame 2019 참가 후기
 
