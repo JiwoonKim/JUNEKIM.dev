@@ -40,6 +40,8 @@ tags: ['Setup', '매뉴얼']
 ### Node 설치
 https://nodejs.org/en/
 
+#### yarn 설치
+
 ### Python 설치
 1. add python to PATH 체크
 2. customize install location에서 C:\Python\Python37 설정
