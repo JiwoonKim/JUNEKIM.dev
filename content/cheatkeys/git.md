@@ -24,7 +24,9 @@ tags: ['Git', '치트키']
 3. `git push origin <branch>`
 
 ### synchronize 코드 (협업시 유용)
-- 
+- fork
+- `git branch <name>`
+
 
 ### 커밋 관리
 - 커밋 삭제
