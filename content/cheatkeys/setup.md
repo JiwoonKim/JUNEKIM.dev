@@ -27,7 +27,7 @@ tags: ['Setup', '매뉴얼']
 - (참고) https://github.com/Microsoft/vscode-docs/blob/vnext/docs/editor/tasks.md#changing-the-encoding-for-a-task-output
 - user setting에서 "files.autoGuessEncoding": true, 추가하여 file encoding 오류 방지
 
-### g++ compiler 설치 (c++ 언어 파일 컴파일을 위해)
+### g++ compiler 설치 (c++ 언어 파일 컴파일러)
 1. mingw exe의 basic setup에서 다음의 4개 선택 후 installation -> apply changes 실행하기
     - mingw-developer-toolkit
     - mingw32-base
@@ -38,16 +38,19 @@ tags: ['Setup', '매뉴얼']
 4. cpp 파일 컴파일 시 `g++ -o name name.cpp` 사용하기
 
 ### Node 설치
-https://nodejs.org/en/
-
-#### yarn 설치
+1. nvm windows 먼저 설치
+2. `nvm install`로 node.js 설치
+3. npm 설정
+    - 셀 설정: `npm config set shell "C:\\Program Files\\Git\\bin\\bash.exe"`
+4. yarn 설정
+    - node.js 사용 버전 < 11: npm shell script 설정 default로 냅두기
+    - node.js. 사용 버전 >= 11: `npm config set script-shell "C:\\Program Files\\Git\\bin\\bash.exe"` (npm 설정에 맞춰 yarn 설정이 자동으로 변경됨)
 
 ### Python 설치
 1. add python to PATH 체크
 2. customize install location에서 C:\Python\Python37 설정
     - c 드라이브 아래에 python 폴더를 하나 만들고 그 안에서 파이썬 버전들을 관리하는 것이 용이
     - (bcuz 파이썬 2가지 버전 사용: python 2.x, python 3.x)
-
 3. virtual env 설치: `pip install virtualenv`
 
 ### Docker 설치
