@@ -38,7 +38,7 @@ set of rules that determine the dimensions of __every element__ (_both inline an
 ```
 
 ### Block & Inline elements
-`Block`:
+- `Block`:
     - __width__: automatically set to _width of parent container_
     - __height__: _based on the content_ it contains
     - __align__: __floats__ _for left/right_, __auto-margins__ _for center_

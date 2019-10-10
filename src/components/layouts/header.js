@@ -7,15 +7,13 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTags, faSearch, faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 
-import ToggleMenu from './menu'
+import SidebarMenu from './menu'
 import './header.css'
 
 // header component (title + meta data)
 const Header = ({ title, metaDataType, metaData }) => (
   <header>
-    <nav>
-      <ToggleMenu />
-    </nav>
+    <SidebarMenu />
     <div className="banner-container">
       <HeaderTitle title={title} metaDataType={metaDataType}/>
       <MetaData metaDataType={metaDataType} metaData={metaData}/>

@@ -25,7 +25,7 @@ const Footer = () => (
         <h1>
           <span>© {new Date().getFullYear()}, Built by {` `}</span>
           <Link to="/">
-          {data.site.siteMetadata.author}
+            {data.site.siteMetadata.author}
           </Link>
           <span>{` `}</span>
           <a className="footer-github-link" href="https://github.com/JiwoonKim">
