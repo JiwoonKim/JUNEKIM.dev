@@ -53,6 +53,11 @@ tags: ['Setup', '매뉴얼']
     - (bcuz 파이썬 2가지 버전 사용: python 2.x, python 3.x)
 3. virtual env 설치: `pip install virtualenv`
 
+### Java 설치
+1. [Java SE 버전의 JDK 설치](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+2. 시스템 변수 PATH에 설치한 {자바 파일 경로/bin} 경로 추가
+3. `java`로 명령 실행
+
 ### Docker 설치
 - windows 버전 (hv가 있는지에 따라) docker 또는 docker toolbox 설치
 - docker toolbox
