@@ -45,7 +45,7 @@ tags: ['CS50', 'Web50', 'Git']
     - `git pull`: git fetch + git merge origin/master
 
 #### GitHub Flow
-![](./githubflow.PNG)
+<img src="./githubflow.PNG" width="100%">
 
 #### Branching
 - feature of Git that allows a project to move in multiple different directions simultaneously.
