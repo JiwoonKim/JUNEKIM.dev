@@ -1,19 +1,27 @@
-module.exports = {
-  pathPrefix: "/babydragon",
-  siteMetadata: {
-    title: `지운이의 개발공부 로그`,
-    description: `공부한 내용을 정리하는 개발 로그입니다`,
-    author: `김지운`,
-  },
+const siteMetaConfig = require('./gatsby-site-meta-config');
 
+module.exports = {
+  siteMetadata: siteMetaConfig,
+  pathPrefix: "/babydragon", // TODO: 도메인 바꾸기 (Netlify)
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    'gatsby-plugin-catch-links',
+    /**
+     * Create File nodes from files (for ''transformer' 
+     * plugins to transform file nodes to specific data)
+     */
     {
+      /** Create "posts" directory for files in path "content" */
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content`,
-        name: `pages`,
+        name: `posts`,
+      },
+    },
+    {
+      /** Create "about" directory for file in path "about" */
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/about`,
+        name: `about`,
       },
     },
     {
@@ -49,12 +57,13 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: siteMetaConfig.title,
+        short_name: siteMetaConfig.title,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -62,8 +71,6 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+  'gatsby-plugin-offline',
   ],
 }
