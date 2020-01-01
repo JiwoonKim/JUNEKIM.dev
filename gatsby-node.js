@@ -87,4 +87,5 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
   }
+  // TODO: create file path for each image file node (.PNG, .JPEG...)
 }

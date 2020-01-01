@@ -24,6 +24,9 @@ module.exports = {
         name: `about`,
       },
     },
+    /**
+     * Transform markdown files into MarkdownRemark (using Remark)
+     */
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -56,9 +59,11 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-react-helmet`,
+    /** Transform images into ImageSharp nodes (using Sharp)*/
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    /** */
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
