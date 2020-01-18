@@ -5,7 +5,7 @@ module.exports = {
   pathPrefix: "/babydragon", // TODO: 도메인 바꾸기 (Netlify)
   plugins: [
     /**
-     * Create File nodes from files (for ''transformer' 
+     * Create File nodes from files (for 'transformer' 
      * plugins to transform file nodes to specific data)
      */
     {
@@ -31,6 +31,8 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          /**
+           * gatsby-remark-vscode로 대체하기
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -41,6 +43,10 @@ module.exports = {
               noInlineHighlight: false,
             },
           },
+          */
+         /*
+         Copies local files linked to/from Markdown files to the public directory
+          => maybe don't need...?
           {
             resolve: "gatsby-remark-copy-linked-files",
             options: {
@@ -55,16 +61,22 @@ module.exports = {
               destinationDir: "babydragon",
               ignoreFileExtensions: [],
             },
-          },  
+          },
+          */
         ],
       },
     },
-    /** Transform images into ImageSharp nodes (using Sharp)*/
+    /** Transform image files into ImageSharp nodes (using Sharp)
+     *  to provide fields for GraphQL to process images (ex. create responsive images) 
+    */
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    /** */
+    /** Support server-rendering data by React Helmet
+     *  to provide control to add title, meta attributes to your document head for SEO purposes.
+     */
     `gatsby-plugin-react-helmet`,
     {
+      /** PWA Configuration */
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: siteMetaConfig.title,
@@ -76,6 +88,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    /** Support offline and more resistant to bad network connections */
   'gatsby-plugin-offline',
   ],
 }
