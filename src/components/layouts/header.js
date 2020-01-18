@@ -1,8 +1,6 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import 'lodash.kebabcase'
-
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTags, faSearch, faCalendarAlt } from '@fortawesome/free-solid-svg-icons'

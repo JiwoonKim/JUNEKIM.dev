@@ -1,5 +1,5 @@
 const path = require('path');
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const { createFilePath } = require('gatsby-source-filesystem');
 const _ = require('lodash');
 
 // create pages from markdown files
@@ -78,14 +78,13 @@ exports.createPages = ({ actions, graphql }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === 'MarkdownRemark') {
     const value = createFilePath({ node, getNode })
 
     createNodeField({
-      name: `slug`,
+      name: 'slug',
       node,
       value,
     })
   }
-  // TODO: create file path for each image file node (.PNG, .JPEG...)
 }

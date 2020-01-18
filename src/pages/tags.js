@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import 'lodash.kebabcase'
 
 import Layout from '../components/layouts/layout'
 

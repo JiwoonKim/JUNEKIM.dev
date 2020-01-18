@@ -31,6 +31,16 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590, // TODO: 블로그 콘텐츠의 가로길이만큼 설정
+              wrapperStyle: {
+                margin: 0,
+              },
+              linkImagesToOriginal: false,
+            },
+          },
           /**
            * gatsby-remark-vscode로 대체하기
           {
@@ -44,25 +54,13 @@ module.exports = {
             },
           },
           */
-         /*
-         Copies local files linked to/from Markdown files to the public directory
-          => maybe don't need...?
+          /** */
           {
             resolve: "gatsby-remark-copy-linked-files",
             options: {
-              // `ignoreFileExtensions` defaults to [`png`, `jpg`, `jpeg`, `bmp`, `tiff`]
-              // as we assume you'll use gatsby-remark-images to handle
-              // images in markdown as it automatically creates responsive
-              // versions of images.
-              //
-              // If you'd like to not use gatsby-remark-images and just copy your
-              // original images to the public directory, set
-              // `ignoreFileExtensions` to an empty array.
-              destinationDir: "babydragon",
-              ignoreFileExtensions: [],
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
             },
           },
-          */
         ],
       },
     },
