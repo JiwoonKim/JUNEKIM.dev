@@ -2,7 +2,7 @@ const siteMetaConfig = require('./gatsby-site-meta-config');
 
 module.exports = {
   siteMetadata: siteMetaConfig,
-  pathPrefix: "/babydragon", // TODO: 도메인 바꾸기 (Netlify)
+  pathPrefix: "/babydragon", // TODO: 도메인 바꾸기
   plugins: [
     /**
      * Create File nodes from files (for 'transformer' 
@@ -31,7 +31,26 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          /**
+           * Syntax highlighting using VS Code's extensions and themes
+           * rendered for code snippets in markdown files.
+           */
           {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              colorTheme: 'Andromeda',
+              extensions: [
+                {
+                  identifier: 'EliverLara.andromeda',
+                  version: '1.6.0',
+                }
+              ],
+            },
+          },
+          {
+            /**
+             * Processes images in markdown so they can be used in the production build.
+             */
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590, // TODO: 블로그 콘텐츠의 가로길이만큼 설정
@@ -41,20 +60,11 @@ module.exports = {
               linkImagesToOriginal: false,
             },
           },
-          /**
-           * gatsby-remark-vscode로 대체하기
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              classPrefix: "language-",
-              inlineCodeMarker: null,
-              aliases: {},
-              showLineNumbers: false,
-              noInlineHighlight: false,
-            },
-          },
+          /** 
+           * Creates copies of local files linked to/from markdown files
+           * to the public folder (public/hash.../file). The generated HTML
+           * page from the markdown file will be modified to point to it.
           */
-          /** */
           {
             resolve: "gatsby-remark-copy-linked-files",
             options: {
@@ -64,13 +74,17 @@ module.exports = {
         ],
       },
     },
-    /** Transform image files into ImageSharp nodes (using Sharp)
-     *  to provide fields for GraphQL to process images (ex. create responsive images) 
+    /** 
+     * Transform image files into ImageSharp nodes (using Sharp)
+     * to provide fields for GraphQL to process images.
+     * (ex. create responsive images) 
     */
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    /** Support server-rendering data by React Helmet
-     *  to provide control to add title, meta attributes to your document head for SEO purposes.
+    /** 
+     * Support server-rendering data by React Helmet to provide
+     * control to add title, meta attributes to your document head
+     * for SEO purposes.
      */
     `gatsby-plugin-react-helmet`,
     {
@@ -87,6 +101,6 @@ module.exports = {
       },
     },
     /** Support offline and more resistant to bad network connections */
-  'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
   ],
 }
