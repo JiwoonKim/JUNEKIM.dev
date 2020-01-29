@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{PlB2:function(t){t.exports=JSON.parse('{"data":{"site":{"siteMetadata":{"title":"JUNE.io"}}}}')},RXBc:function(t,e,a){"use strict";a.r(e);var n=a("PlB2"),i=a("q1tI"),r=a.n(i),c=a("Wbzz"),l=a("+0cL");e.default=function(){return r.a.createElement(c.StaticQuery,{query:"755544856",render:function(t){return r.a.createElement(l.a,{title:t.site.siteMetadata.title,metaDataType:"all"},r.a.createElement("main",null))},data:n})}}}]);
+//# sourceMappingURL=component---src-pages-index-js-e805f697ce0ab7c1a958.js.map
