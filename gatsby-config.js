@@ -10,7 +10,7 @@ module.exports = {
      */
     {
       /** Create "posts" directory for files in path "content" */
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content`,
         name: `posts`,
@@ -18,7 +18,7 @@ module.exports = {
     },
     {
       /** Create "about" directory for file in path "about" */
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/about`,
         name: `about`,
@@ -28,7 +28,7 @@ module.exports = {
      * Transform markdown files into MarkdownRemark (using Remark)
      */
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           /**
@@ -36,7 +36,7 @@ module.exports = {
            * rendered for code snippets in markdown files.
            */
           {
-            resolve: `gatsby-remark-vscode`,
+            resolve: 'gatsby-remark-vscode',
             options: {
               colorTheme: 'Andromeda',
               extensions: [
@@ -51,7 +51,7 @@ module.exports = {
             /**
              * Processes images in markdown so they can be used in the production build.
              */
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 590, // TODO: 블로그 콘텐츠의 가로길이만큼 설정
               wrapperStyle: {
@@ -66,7 +66,7 @@ module.exports = {
            * page from the markdown file will be modified to point to it.
           */
           {
-            resolve: "gatsby-remark-copy-linked-files",
+            resolve: 'gatsby-remark-copy-linked-files',
             options: {
               ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
             },
@@ -79,14 +79,14 @@ module.exports = {
      * to provide fields for GraphQL to process images.
      * (ex. create responsive images) 
     */
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     /** 
      * Support server-rendering data by React Helmet to provide
      * control to add title, meta attributes to your document head
      * for SEO purposes.
      */
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
     {
       /** PWA Configuration */
       resolve: `gatsby-plugin-manifest`,

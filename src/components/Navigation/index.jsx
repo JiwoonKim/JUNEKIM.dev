@@ -1,7 +1,8 @@
 import React from 'react';
+import {  } from 'prop-types';
 import styled from '@emotion/styled';
 
-function Navigation({ children }) {
+function Navigation({ theme, children }) {
   return (
     <Wrapper>
       {children.map(menuItem => (
@@ -16,7 +17,9 @@ export default Navigation;
 const Wrapper = styled.div`
   position: fixed;
   display: flex;
-  height: 300px; /* fix */
+  max-height: 300px;
+  height: 50%;
+  background-color:
 `;
 
 const Button = styled.button`
