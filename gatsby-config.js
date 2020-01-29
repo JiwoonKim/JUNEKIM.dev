@@ -2,7 +2,6 @@ const siteMetaConfig = require('./gatsby-site-meta-config');
 
 module.exports = {
   siteMetadata: siteMetaConfig,
-  pathPrefix: "/babydragon", // TODO: 도메인 바꾸기
   plugins: [
     /**
      * Create File nodes from files (for 'transformer' 
