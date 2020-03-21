@@ -15,14 +15,16 @@ module.exports = {
         name: `posts`,
       },
     },
+    /*
     {
-      /** Create "about" directory for file in path "about" */
+       Create "about" directory for file in path "about"
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/about`,
         name: `about`,
       },
     },
+    */
     /**
      * Transform markdown files into MarkdownRemark (using Remark)
      */
