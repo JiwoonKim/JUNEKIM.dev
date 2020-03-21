@@ -1,25 +1,45 @@
-module.exports = {
-  pathPrefix: "/babydragon",
-  siteMetadata: {
-    title: `지운이의 개발공부 로그`,
-    description: `공부한 내용을 정리하는 개발 로그입니다`,
-    author: `김지운`,
-  },
+const siteMetaConfig = require('./gatsby-site-meta-config');
 
+module.exports = {
+  siteMetadata: siteMetaConfig,
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    'gatsby-plugin-catch-links',
+    /**
+     * Create File nodes from files (for 'transformer' 
+     * plugins to transform file nodes to specific data)
+     */
     {
+      /** Create "posts" directory for files in path "content" */
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content`,
         name: `pages`,
       },
     },
+    /**
+     * Transform markdown files into MarkdownRemark (using Remark)
+     */
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          /**
+           * Syntax highlighting using VS Code's extensions and themes
+           * rendered for code snippets in markdown files.
+           */
+          /*
+          {
+            resolve: 'gatsby-remark-vscode',
+            options: {
+              colorTheme: 'Andromeda',
+              extensions: [
+                {
+                  identifier: 'EliverLara.andromeda',
+                  version: '1.6.0',
+                }
+              ],
+            },
+          },
+          */
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -30,6 +50,11 @@ module.exports = {
               noInlineHighlight: false,
             },
           },
+          /** 
+           * Creates copies of local files linked to/from markdown files
+           * to the public folder (public/{hash #}/file). The generated HTML
+           * page from the markdown file will be modified to point to it.
+          */
           {
             resolve: "gatsby-remark-copy-linked-files",
             options: {
@@ -41,15 +66,29 @@ module.exports = {
               // If you'd like to not use gatsby-remark-images and just copy your
               // original images to the public directory, set
               // `ignoreFileExtensions` to an empty array.
-              destinationDir: "babydragon",
               ignoreFileExtensions: [],
             },
           },  
         ],
       },
     },
+    /** 
+     * Transform image files into ImageSharp nodes (using Sharp)
+     * to provide fields for GraphQL to process images.
+     * (ex. create responsive images) 
+    */
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    /** 
+     * Support server-rendering data by React Helmet to provide
+     * control to add title, meta attributes to your document head
+     * for SEO purposes.
+     */
+    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-catch-links',
+    /** 
+     * PWA Configuration 
+     */
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
